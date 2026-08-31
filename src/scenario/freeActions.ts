@@ -1,0 +1,148 @@
+import type { Condition, ScenarioNode } from '../types/scenario'
+
+const canReturn: Condition = {
+  type: 'any', conditions: [
+    { type: 'all', conditions: [{ type: 'flag', key: 'hospital_done' }, { type: 'flag', key: 'police_done' }] },
+    { type: 'all', conditions: [{ type: 'flag', key: 'hospital_done' }, { type: 'flag', key: 'home_done' }] },
+    { type: 'all', conditions: [{ type: 'flag', key: 'police_done' }, { type: 'flag', key: 'home_done' }] },
+  ],
+}
+
+export const freeActionNodes: ScenarioNode[] = [
+  {
+    id: 'free_action_hub', title: '自由行動', text: [
+      '母さんが出勤した後の部屋は静かだった。傷を診てもらうべきだ。警察へ相談することもできる。家に、理由へつながるものが残っているかもしれない。',
+      '順番に正解があるとは思えない。今の俺にできることから始めるしかない。',
+    ], choices: [
+      { label: '病院へ行く', next: 'hospital', timeCost: 12 },
+      { label: '警察へ行く', next: 'police', timeCost: 12 },
+      { label: '自宅を調べる', next: 'home_search', timeCost: 2 },
+      { label: '団地へ戻る', next: 'danchi_return', condition: canReturn },
+    ],
+  },
+  {
+    id: 'hospital', title: '病院', location: 'hospital', timeCost: 35, text: [
+      '医師は傷を洗浄し、一本ずつ確認した。「幸い、どれも浅いです。化膿と破傷風には気をつけてください」',
+      '原因を聞かれ、家族にやられた可能性があると答えると、医師は驚きながらも声を落とした。安全な場所はあるか、警察への相談は必要か。怪異を説明することも、俺を笑うこともなかった。',
+      '処置を終えた待合室で、高齢の男女が昔の土地の話をしていた。家を建てる前に「地鎮さん」をした、いやあれは「地還し」だ、と名称で揉めている。',
+      '赤い布、赤い紙、赤い土。土地を掘るときや大きく変えるとき、子供も一緒に参加したという。血や傷の話は一度も出ない。',
+    ], choices: [
+      { label: '高齢者に話しかける', next: 'hospital_elder', timeCost: 8 },
+      { label: '病院を出る', next: 'free_action_hub', effects: [{ type: 'setFlag', key: 'hospital_done', value: true }] },
+    ], effects: [{ type: 'addKnowledge', key: 'local_custom_heard' }, { type: 'adjustHidden', key: 'FACT', amount: 1 }],
+  },
+  {
+    id: 'hospital_elder', title: '待合室', location: 'hospital', text: [
+      '尋ねると、二人は少し意外そうにしながら説明してくれた。呼び名も道具も、地域どころか家ごとに違ったらしい。',
+      '「土地から借りたものは土地へ返す、ってな」',
+      '「家の難儀は家で分ける、とも言ったねえ。一人に介護も病気も背負わせるなってことよ」',
+      '生活の知恵としては理解できる。それがどうして剃刀になる？　今朝赤い夢を見たせいで、赤という情報だけを拾っている可能性もある。一致は因果ではない。',
+      'もっと調べるなら市立図書館の郷土資料にあるかもしれない、と教えられた。',
+    ], choices: [{ label: '礼を言って病院を出る', next: 'free_action_hub', effects: [{ type: 'setFlag', key: 'hospital_done', value: true }, { type: 'addKnowledge', key: 'jigaeshi_meaning' }, { type: 'setFlag', key: 'library_lead', value: true }] }],
+  },
+  {
+    id: 'police', title: '警察署', location: 'police', timeCost: 30, text: [
+      '担当の警察官は腕の写真を撮り、残っていた刃をどう保管したか確認した。今夜安全に眠れる場所、母さんと距離を置けるか、妹にも危険がないか。必要なら避難先や被害届について案内するという。',
+      '俺は隣人が怪しいのかもしれない、母さんは宗教のようなものに関わったのかもしれない、と説明しかけた。口にすると、どれも推測の形しかしていなかった。',
+      '「それは現時点では推測ですね。確認できていることと分けましょう」',
+      '冷たい言い方ではなかった。むしろ、俺が恐怖で結びつけたものを一つずつほどいてくれた。母さんの職場へ所在確認をしてよいか尋ねられ、了承した。',
+    ], choices: [{ label: '警察署を出る', next: 'police_call', effects: [{ type: 'setFlag', key: 'police_done', value: true }, { type: 'setFlag', key: 'police_consulted', value: true }] }],
+  },
+  {
+    id: 'police_call', title: '母からの電話', timeCost: 4, text: [
+      '外へ出たところで母さんから電話が来た。',
+      '「警察に何話したの？」',
+      '背中が冷えた。なぜ知っている。そう思った直後、母さんが「職場に電話が来た」と続けた。警察が確認しただけだ。監視でも、不可解な力でもない。',
+      '「家のことを外へ出したら駄目。外へ持っていったら、また戻ってくるでしょう」',
+      '何が戻るのか尋ねても、母さんは仕事中だからと電話を切った。普通の理由が分かった後にも、言葉だけが残った。',
+    ], next: 'free_action_hub', effects: [{ type: 'addKnowledge', key: 'mother_externalization_fear' }],
+  },
+  {
+    id: 'home_search', title: '自宅を調べる', location: 'home', text: [
+      '母さんのいない実家を調べることに、後ろめたさがあった。傷がなければしなかっただろう。だが傷はある。何も見なかったことにはできない。',
+    ], choices: [
+      { label: '仏壇を見る', next: 'home_altar', timeCost: 5 },
+      { label: '母親の周辺を調べる', next: 'home_mother_notes', timeCost: 7 },
+      { label: '家族写真を見る', next: 'home_photos', timeCost: 6 },
+      { label: '昔の自分の部屋を調べる', next: 'home_old_room', timeCost: 8 },
+      { label: '探索を切り上げる', next: 'free_action_hub', effects: [{ type: 'setFlag', key: 'home_done', value: true }] },
+    ],
+  },
+  {
+    id: 'home_altar', title: '仏壇', location: 'home', text: [
+      '仏壇には、若い父さんの写真がある。俺が幼い頃に死んだ。周りの大人は「見守っている」「運命だった」「向こうで待っている」と言った。',
+      '子供の俺は、その言葉が嫌いだった。死んだことを、残された人間が勝手に意味のあることへ変えるな。そう思っていた。',
+      '引き出しの奥に、古い赤茶色の布が畳まれていた。血の跡には見えない。用途は分からない。',
+    ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addKnowledge', key: 'red_brown_cloth' }],
+  },
+  {
+    id: 'home_mother_notes', title: '母親のメモ', location: 'home', text: [
+      '台所のメモ帳には、隣人の食事、薬、洗濯、ゴミ出しの日が細かく書かれていた。「塩分少なめ」「ゼリーなら食べる」「毛布、次回洗う」。',
+      '母さんは老人を本気で心配し、真面目に世話をしていた。それは演技には見えない。善意があったことと、俺の腕を傷つけたことは両立する。片方で片方を消してはいけない。',
+    ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addKnowledge', key: 'mother_care_notes' }],
+  },
+  {
+    id: 'home_photos', title: '家族写真', location: 'home', text: [
+      '父さんが生きていた頃は四人。死んだ後は三人。並べると、写真から一人分の重さが抜けている。',
+      '俺は父親を失った。でも母さんは夫を失ったんだ。その当たり前を、俺は自分の喪失の外側へ置いたまま大人になった。',
+      '古い一枚に、幼い俺が写っている。足元は赤っぽい土で、背後に布が渡されていた。工事現場の行事だろうか。',
+    ], variants: [{
+      condition: { type: 'knowledge', key: 'jigaeshi_meaning' },
+      text: [
+        '父さんがいた頃の四人家族と、死後の三人家族。俺は父親を失った。母さんは夫を失った。その違いを、初めて同じ写真の中で考えた。',
+        '幼い俺が赤い土の上に立つ写真。背後には赤茶色の布。病院で聞いた「地還し」の道具と一致する。',
+        'これは地還しの写真ではないか。そう見える。だが知識を得た後だから、似たものを同じだと思い込んでいる可能性もある。写真だけでは断定できない。',
+      ],
+    }], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addKnowledge', key: 'childhood_red_land_photo' }, { type: 'addSelfMemory', key: 'mother_lost_husband' }],
+  },
+  {
+    id: 'home_old_room', title: '昔の部屋', location: 'home', text: [
+      '古いHTML入門書、CD-R、黄ばんだLANケーブル、デスクトップPC。俺は個人ホームページを作っていたらしい。自分のことなのに、細部が抜け落ちている。',
+      '古いヘッドセットを持ち上げた瞬間、記憶とも想像ともつかない声が浮かんだ。',
+      '――それ、リンク間違ってるよ。',
+      '女性の声。名前は出てこない。PCは電源ケーブルも外され、今すぐ中身を確かめられる状態ではなかった。',
+    ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addSelfMemory', key: 'old_web_creation' }, { type: 'adjustHidden', key: 'SELF', amount: 1 }],
+  },
+  {
+    id: 'danchi_return', title: '団地', location: 'housing_complex', timeCost: 15, text: [
+      '団地へ戻ると、入口の植え込みで年配の女性に声をかけられた。子供の頃、何度か菓子をもらった近所の人だ。',
+      '「まあ、大きくなって。お母さん、元気に働いてる？」',
+      '天気と仕事と、昔の商店街の話をした。普通の立ち話だった。だから俺も、隣の老人について何気なく尋ねた。',
+      '女性は首を傾げた。',
+      '「亡くなったでしょう？」',
+      '「……え？」',
+      '「何日か前よ。あなたが帰ってくる前」',
+    ], next: 'neighbor_fact', effects: [{ type: 'addKnowledge', key: 'neighbor_dead' }, { type: 'setFlag', key: 'neighbor_death_revealed', value: true }, { type: 'adjustHidden', key: 'FACT', amount: 2 }],
+  },
+  {
+    id: 'neighbor_fact', location: 'housing_complex', text: [
+      '死亡した日は、母さんが数日家を空けていた期間に重なる。母さんが戻ったとき、老人はもう死んでいた。知らなかった可能性はある。',
+      'だが台所のメモは帰宅後も続いていた。食事、薬、洗濯、会話。母さんは、今も介護をしているつもりでいる。',
+      '確認しなければならない。電話をかける指が、傷とは別の理由で震えた。',
+    ], choices: [{ label: '母さんへ電話する', next: 'final_call', timeCost: 2 }],
+  },
+  {
+    id: 'final_call', title: '母への確認', text: [
+      '「昨日、おじいさんのところ行った？」',
+      '『行ったよ』',
+      '「会った？」',
+      '『会ったって、そりゃ会うでしょう』',
+      '「話した？」',
+      '『話したわよ。今日はあまり食べたくないって。だからゼリーを置いてきたの』',
+      '母さんの声に迷いはなかった。作り話を考えている間も、俺を脅そうとする響きもない。いつもの母さんが、昨日の出来事を説明している。',
+      '「おじいさん、死んでるって聞いたんだけど」',
+      '短い沈黙があった。',
+      '『何言ってるの？　昨日会ったって言ったでしょう。生きてる人を死んだなんて言うもんじゃないよ』',
+      '俺は返事ができなかった。嘘をついている声には聞こえない。それでも老人が死亡しているのは、近所の噂ではなく、確認できる事実だった。',
+      '二つの事実らしいものが、同じ場所に重ならずに存在していた。',
+    ], next: 'vertical_slice_end',
+  },
+  {
+    id: 'vertical_slice_end', title: '縦スライス版 終了', text: [
+      '母さんは、仕事へ戻るからと電話を切った。団地の窓はどれも同じように明るく、隣の部屋だけを見分けることはできなかった。',
+      '俺はまだ、何も説明できていない。',
+      '――『アカノユメ』縦スライス版はここまでです。',
+    ], terminal: true,
+  },
+]
+
