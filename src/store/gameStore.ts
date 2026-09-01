@@ -5,6 +5,7 @@ import type { GameSnapshot } from '../types/game'
 import type { Choice } from '../types/scenario'
 import { loadGame, saveGame } from './saveStorage'
 import { hasPreviousTrueClear, recordTrueClear } from './progressStorage'
+import { playtestLogger } from '../playtest/playtestLogger'
 
 const initialBase = (): GameSnapshot => ({
   currentNode: 'prologue',
@@ -36,7 +37,9 @@ const snapshotFrom = (state: GameStore): GameSnapshot => ({
 export const useGameStore = create<GameStore>((set, get) => ({
   ...createInitialSnapshot(),
   chooseChoice: (choice) => set((state) => {
-    const nextState = choose(snapshotFrom(state), choice, scenario)
+    const before = snapshotFrom(state)
+    const nextState = choose(before, choice, scenario)
+    playtestLogger.transition(before, nextState, choice, getAvailableChoices(scenario[before.currentNode], before))
     if (nextState.currentNode === 'true_end') recordTrueClear()
     return nextState
   }),
@@ -47,7 +50,9 @@ export const useGameStore = create<GameStore>((set, get) => ({
     if (!next) return state
     const target = scenario[next]
     if (!target) return state
-    const nextState = enterNode(snapshotFrom(state), target)
+    const before = snapshotFrom(state)
+    const nextState = enterNode(before, target)
+    playtestLogger.transition(before, nextState)
     if (nextState.currentNode === 'true_end') recordTrueClear()
     return nextState
   }),
