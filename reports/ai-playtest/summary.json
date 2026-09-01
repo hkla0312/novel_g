@@ -1,54 +1,54 @@
 {
-  "generatedAt": "2026-09-01T12:06:32.106Z",
+  "generatedAt": "2026-09-01T12:15:36.594Z",
   "runCount": 10000,
   "firstRunCount": 9500,
   "secondRunCount": 500,
   "endings": {
-    "BAD": 1488,
-    "NORMAL": 8473,
-    "TRUE": 39,
+    "BAD": 1432,
+    "NORMAL": 8537,
+    "TRUE": 31,
     "SECRET": 0,
     "SOFTLOCK": 0
   },
   "endingPercentFirstRun": {
-    "BAD": 15,
-    "NORMAL": 84.6,
-    "TRUE": 0.4,
+    "BAD": 14.4,
+    "NORMAL": 85.3,
+    "TRUE": 0.3,
     "SECRET": 0,
     "SOFTLOCK": 0
   },
   "averageEndTime": 1003,
-  "averageKnowledgeAt1600": 22.2,
+  "averageKnowledgeAt1600": 22.3,
   "rates": {
-    "mina": 1.1,
+    "mina": 5.5,
     "neighborHome": 35.8,
-    "butsuma": 26.5,
-    "jigaeshi": 64.9,
-    "neighborInjury": 88.7,
+    "butsuma": 28.8,
+    "jigaeshi": 64.6,
+    "neighborInjury": 88.5,
     "brotherInitial": 100,
     "hospital": 86.3,
     "police": 99.9,
-    "library": 87.5,
+    "library": 87.9,
     "pc": 100,
     "secretFirstRun": 0,
     "secretSecondRun": 0,
-    "oldRoomPaperMemory": 7.3,
-    "minaUnlocked": 7.3,
+    "oldRoomPaperMemory": 8.9,
+    "minaUnlocked": 8.8,
     "hospitalRepeated": 0,
     "policeRepeated": 0
   },
   "hypothesisRates": {
     "H1": 100,
-    "H2": 88.7,
-    "H3": 26.5,
-    "H4": 23.4,
-    "H5": 8.3,
-    "H6": 64.9,
-    "H7": 71.3,
+    "H2": 88.5,
+    "H3": 28.8,
+    "H4": 27,
+    "H5": 8.6,
+    "H6": 64.6,
+    "H7": 72.3,
     "H8": 100,
-    "H9": 17.4,
+    "H9": 18,
     "H10": 100,
-    "H11": 1.3
+    "H11": 1.4
   },
   "softlocks": [],
   "representativeOrders": [
@@ -62,7 +62,7 @@
     },
     {
       "order": "警察→老人宅→PC",
-      "count": 863
+      "count": 762
     },
     {
       "order": "病院→警察→図書館→老人宅→PC",
@@ -70,7 +70,7 @@
     },
     {
       "order": "警察→老人宅→図書館→PC",
-      "count": 495
+      "count": 596
     },
     {
       "order": "警察→病院→図書館→老人宅→PC",
@@ -78,72 +78,72 @@
     },
     {
       "order": "病院→警察→老人宅→図書館→PC",
-      "count": 403
+      "count": 386
     },
     {
       "order": "警察→病院→老人宅→図書館→PC",
-      "count": 265
+      "count": 225
     },
     {
       "order": "病院→警察→老人宅→PC",
-      "count": 193
+      "count": 210
     },
     {
       "order": "警察→病院→老人宅→PC",
-      "count": 169
+      "count": 209
     }
   ],
   "personas": {
     "ordinary": {
       "runs": 500,
       "endings": {
-        "BAD": 82,
-        "NORMAL": 415,
+        "BAD": 78,
+        "NORMAL": 419,
         "TRUE": 3,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1001
+      "averageEndTime": 1002
     },
     "horror_veteran": {
       "runs": 500,
       "endings": {
-        "BAD": 62,
-        "NORMAL": 435,
-        "TRUE": 3,
+        "BAD": 61,
+        "NORMAL": 439,
+        "TRUE": 0,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1001
+      "averageEndTime": 1002
     },
     "occult_believer": {
       "runs": 500,
       "endings": {
-        "BAD": 80,
-        "NORMAL": 417,
+        "BAD": 72,
+        "NORMAL": 425,
         "TRUE": 3,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1003
+      "averageEndTime": 1005
     },
     "skeptic": {
       "runs": 500,
       "endings": {
-        "BAD": 66,
-        "NORMAL": 433,
+        "BAD": 61,
+        "NORMAL": 438,
         "TRUE": 1,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1006
+      "averageEndTime": 1004
     },
     "trust_mother": {
       "runs": 500,
       "endings": {
-        "BAD": 57,
-        "NORMAL": 438,
-        "TRUE": 5,
+        "BAD": 52,
+        "NORMAL": 445,
+        "TRUE": 3,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
@@ -152,19 +152,19 @@
     "distrust_mother": {
       "runs": 500,
       "endings": {
-        "BAD": 94,
-        "NORMAL": 405,
+        "BAD": 99,
+        "NORMAL": 400,
         "TRUE": 1,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1003
+      "averageEndTime": 1002
     },
     "suspect_neighbor": {
       "runs": 500,
       "endings": {
-        "BAD": 79,
-        "NORMAL": 420,
+        "BAD": 72,
+        "NORMAL": 427,
         "TRUE": 1,
         "SECRET": 0,
         "SOFTLOCK": 0
@@ -174,13 +174,13 @@
     "suspect_brother": {
       "runs": 500,
       "endings": {
-        "BAD": 95,
-        "NORMAL": 404,
-        "TRUE": 1,
+        "BAD": 88,
+        "NORMAL": 412,
+        "TRUE": 0,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1001
+      "averageEndTime": 1003
     },
     "trust_sister": {
       "runs": 500,
@@ -196,42 +196,42 @@
     "safety_first": {
       "runs": 500,
       "endings": {
-        "BAD": 81,
-        "NORMAL": 417,
+        "BAD": 80,
+        "NORMAL": 418,
         "TRUE": 2,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1000
+    },
+    "rush_neighbor": {
+      "runs": 500,
+      "endings": {
+        "BAD": 74,
+        "NORMAL": 421,
+        "TRUE": 5,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
       "averageEndTime": 1002
     },
-    "rush_neighbor": {
-      "runs": 500,
-      "endings": {
-        "BAD": 77,
-        "NORMAL": 420,
-        "TRUE": 3,
-        "SECRET": 0,
-        "SOFTLOCK": 0
-      },
-      "averageEndTime": 1004
-    },
     "internet_first": {
       "runs": 500,
       "endings": {
-        "BAD": 71,
-        "NORMAL": 429,
+        "BAD": 72,
+        "NORMAL": 428,
         "TRUE": 0,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1003
+      "averageEndTime": 1002
     },
     "local_history": {
       "runs": 500,
       "endings": {
         "BAD": 43,
-        "NORMAL": 454,
-        "TRUE": 3,
+        "NORMAL": 455,
+        "TRUE": 2,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
@@ -240,9 +240,9 @@
     "family_first": {
       "runs": 500,
       "endings": {
-        "BAD": 51,
-        "NORMAL": 446,
-        "TRUE": 3,
+        "BAD": 45,
+        "NORMAL": 454,
+        "TRUE": 1,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
@@ -251,41 +251,41 @@
     "efficient": {
       "runs": 500,
       "endings": {
-        "BAD": 39,
+        "BAD": 40,
         "NORMAL": 458,
-        "TRUE": 3,
+        "TRUE": 2,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1001
+      "averageEndTime": 1000
     },
     "completionist": {
       "runs": 500,
       "endings": {
-        "BAD": 32,
-        "NORMAL": 465,
-        "TRUE": 3,
+        "BAD": 30,
+        "NORMAL": 470,
+        "TRUE": 0,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1019
+      "averageEndTime": 1020
     },
     "skipper": {
       "runs": 500,
       "endings": {
-        "BAD": 149,
-        "NORMAL": 350,
-        "TRUE": 1,
+        "BAD": 141,
+        "NORMAL": 357,
+        "TRUE": 2,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 998
+      "averageEndTime": 999
     },
     "avoid_scary": {
       "runs": 500,
       "endings": {
-        "BAD": 81,
-        "NORMAL": 419,
+        "BAD": 82,
+        "NORMAL": 418,
         "TRUE": 0,
         "SECRET": 0,
         "SOFTLOCK": 0
@@ -295,24 +295,24 @@
     "deep_reader": {
       "runs": 500,
       "endings": {
-        "BAD": 70,
-        "NORMAL": 429,
-        "TRUE": 1,
+        "BAD": 62,
+        "NORMAL": 433,
+        "TRUE": 5,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1001
+      "averageEndTime": 1002
     },
     "casual": {
       "runs": 500,
       "endings": {
-        "BAD": 106,
-        "NORMAL": 392,
-        "TRUE": 2,
+        "BAD": 107,
+        "NORMAL": 393,
+        "TRUE": 0,
         "SECRET": 0,
         "SOFTLOCK": 0
       },
-      "averageEndTime": 1001
+      "averageEndTime": 1000
     }
   }
 }
