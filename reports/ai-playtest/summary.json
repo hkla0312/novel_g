@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T12:15:36.594Z",
+  "generatedAt": "2026-09-01T15:32:51.342Z",
   "runCount": 10000,
   "firstRunCount": 9500,
   "secondRunCount": 500,
@@ -18,7 +18,7 @@
     "SOFTLOCK": 0
   },
   "averageEndTime": 1003,
-  "averageKnowledgeAt1600": 22.3,
+  "averageKnowledgeAt1600": 21.9,
   "rates": {
     "mina": 5.5,
     "neighborHome": 35.8,
