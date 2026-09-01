@@ -2,7 +2,7 @@ import type { ScenarioNode } from '../types/scenario'
 
 export const prologueNodes: ScenarioNode[] = [
   {
-    id: 'prologue', title: 'PROLOGUE', text: [
+    id: 'prologue', title: 'PROLOGUE', audio: { ambience: 'prologue-night', bgm: null, fadeMs: 1200 }, text: [
       '深夜。実家の布団の中で、俺は浅い眠りを行き来していた。',
       '背中に人の体温がある。母さんの腕が子供を抱くように俺の胸へ回っている。こんなふうに眠った記憶は、もう何十年もない。',
       '振りほどこうとした。身体が動かない。',
@@ -17,7 +17,7 @@ export const prologueNodes: ScenarioNode[] = [
     ], next: 'wake_injury',
   },
   {
-    id: 'wake_injury', title: '07:31　実家', location: 'home', timeCost: 1, text: [
+    id: 'wake_injury', title: '07:31　実家', location: 'home', timeCost: 1, audio: { ambience: null, bgm: 'main-investigation', fadeMs: 1600, bgmVolumeScale: .72 }, text: [
       '腕の痛みで目が覚めた。熱い。寝痺れとは違う、皮膚を直接こすられるような痛みだ。',
       '「……嘘だろ」',
       '左腕に細い傷が何本も走っている。数本には折った剃刀の刃が浅く引っかかっていた。',
