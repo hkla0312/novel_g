@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { choose, enterNode, getAvailableChoices, getNextNodeId, getNodeText } from '../engine/gameEngine'
 import { validateScenario } from '../engine/validateScenario'
+import { getArchiveEntries } from '../archive/archiveEngine'
 import type { GameSnapshot } from '../types/game'
 import { scenario, scenarioNodes } from '.'
 
@@ -303,8 +304,9 @@ describe('vertical slice routes', () => {
   })
 
   it('keeps the source site distinct from Akano Yume and the brother polite', () => {
-    expect(scenario.pc_aka.text.join('\n')).toContain('「アカノユメ」という名前はどこにもない')
-    expect(scenario.author_reveal.text.join('\n')).toContain('アカノユメそのものを、俺が作ったわけではない')
+    const informed = { ...start(), knowledge: ['akano_yume_document'] }
+    expect(getNodeText(scenario.pc_aka, informed).join('\n')).toContain('「アカノユメ」という名前はどこにもない')
+    expect(getNodeText(scenario.author_reveal, informed).join('\n')).toContain('アカノユメそのものを、俺が作ったわけではない')
     expect(scenario.brother_initial_call.text.join('\n')).toContain('お義兄さん')
     expect(scenario.brother_initial_call.text.join('\n')).not.toContain('掲示板')
     expect(scenario.brother_initial_call.text.join('\n')).toContain('『……あります』')
@@ -358,6 +360,62 @@ describe('vertical slice routes', () => {
     state = pick(state, '止める')
     state = continueTo(state, 'ending_junction')
     expect(getNextNodeId(scenario.ending_junction, state)).toBe('normal_end')
+  })
+
+  it('does not display internal ending classifications in chapter headings', () => {
+    for (const id of ['bad_end', 'normal_end', 'true_end', 'true_end_close', 'secret_end']) {
+      expect(scenario[id].title).not.toMatch(/BAD|NORMAL|TRUE|SECRET/)
+    }
+  })
+
+  it('keeps ACT3 generic when neither the A4 nor local custom was collected', () => {
+    const plain = start()
+    const opening = getNodeText(scenario.act3_opening, plain).join('\n')
+    const hub = getNodeText(scenario.act3_hub, plain).join('\n')
+    expect(opening).not.toContain('老人が残した紙')
+    expect(opening).not.toContain('古い風習')
+    expect(hub).not.toContain('黄ばんだ紙')
+    expect(hub).not.toContain('図書館')
+  })
+
+  it('does not name unseen documents, Mina, Akano Yume, or the injury in minimal late-game text', () => {
+    const plain = start()
+    expect(getNodeText(scenario.pc_aka, plain).join('\n')).not.toMatch(/黄ばんだ|老人の紙|ミナ|アカノユメ/)
+    expect(getNodeText(scenario.author_reveal, plain).join('\n')).not.toMatch(/黄ばんだ|ミナ|アカノユメ/)
+    expect(getNodeText(scenario.bad_end, plain).join('\n')).not.toMatch(/孫世代|強制退去|仏間|黄ばんだ/)
+    expect(getNodeText(scenario.true_end, plain).join('\n')).not.toContain('孫世代')
+    const widowOnly = { ...plain, knowledge: ['neighbor_long_widowhood'] }
+    expect(getNodeText(scenario.normal_end, widowOnly).join('\n')).not.toContain('人を傷つけた事実')
+  })
+
+  it('introduces the brother and Akano Yume naturally when the optional first call was skipped', () => {
+    const plain = start()
+    expect(getNodeText(scenario.brother_call, plain)[0]).toBe('妹の夫へ電話した。老人宅で見た文章について、義弟はしばらく黙っていた。')
+    expect(getNodeText(scenario.brother_call, plain).join('\n')).not.toContain('もう一度')
+    const entered = enterNode(plain, scenario.brother_call)
+    expect(entered.knowledge).toContain('akano_yume_name_from_brother')
+  })
+
+  it('keeps ARCHIVE from naming Akano Yume before the player hears or finds that name', () => {
+    const state = { ...start(), knowledge: ['original_site_author', 'source_site_not_akano_yume'] }
+    const entries = getArchiveEntries(state)
+    expect(entries.some((entry) => entry.id === 'akano_yume')).toBe(false)
+    expect(entries.flatMap((entry) => entry.facts).map((fact) => fact.text).join('\n')).not.toContain('アカノユメ')
+  })
+
+  it('does not turn neighborhood testimony into an official fact before verification', () => {
+    const factText = scenario.neighbor_fact.text.join('\n')
+    const callText = scenario.final_call.text.join('\n')
+    expect(factText).not.toMatch(/死亡した日|台所のメモ|数日家を空け/)
+    expect(callText).not.toContain('確認できる事実')
+    expect(callText).toContain('二つの証言')
+  })
+
+  it('does not mention the hospital, Akano Yume, or the neighbor paper in unresearched variants', () => {
+    const plain = start()
+    expect(getNodeText(scenario.act2_home_photos, plain).join('\n')).not.toContain('病院で聞いた')
+    expect(getNodeText(scenario.library_religion, plain).join('\n')).not.toMatch(/アカノユメ|老人の紙/)
+    expect(scenario.neighbor_late_boundary.text.join('\n')).not.toMatch(/俺のページ|転載/)
   })
 })
 
