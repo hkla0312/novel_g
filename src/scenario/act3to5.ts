@@ -189,7 +189,7 @@ export const act3to5Nodes: ScenarioNode[] = [
     ],
   },
   {
-    id: 'mother_returns_evening', title: 'ACT 5　母が帰ってくる', location: 'home', text: [
+    id: 'mother_returns_evening', title: 'ACT 5　母が帰ってくる', location: 'home', audio: { bgm: 'main-investigation', fadeMs: 1200, bgmVolumeScale: .58 }, text: [
       '玄関の鍵が回った。',
       '「ただいまー」',
       '母さんは買い物袋を両手に下げ、いつもの声で帰ってきた。俺の腕を見て、心配そうに顔を曇らせる。',
@@ -288,7 +288,7 @@ export const act3to5Nodes: ScenarioNode[] = [
     ], next: 'bad_end',
   },
   {
-    id: 'bad_end', title: 'BAD END　アカノユメをみた。', location: 'old_room', text: [
+    id: 'bad_end', title: 'BAD END　アカノユメをみた。', location: 'old_room', audio: { bgm: 'end-bad', ambience: null, fadeMs: 1800 }, text: [
       '「こいつらはおかしい。話なんか通じない」',
       '孫世代への傷害。強制退去。仏間の紙。母さんの傷害。義弟の赤い夢。一つの危険な信仰が家族全員へ広がった。そうしか見えなくなった。',
       '家族を昔の自分の部屋から追い出した。画面に残る古い文と、書き写した黄ばんだ紙の文を並べた。',
@@ -300,7 +300,7 @@ export const act3to5Nodes: ScenarioNode[] = [
     ], terminal: true,
   },
   {
-    id: 'normal_end', title: 'NORMAL END　帰宅', variants: [
+    id: 'normal_end', title: 'NORMAL END　帰宅', audio: { bgm: 'end-normal', ambience: null, fadeMs: 1800 }, variants: [
       { condition: knowledge('words_helped_brother'), text: [
         '俺は母さんへ古いPCを見せた。「アカノユメを作ったわけじゃない。でも、元になった言葉を書いたのは俺だ」',
         '父さんを失った後、俺がどうして地域の風習を書いたのか。今日確かめられた範囲だけを話した。',
@@ -332,7 +332,7 @@ export const act3to5Nodes: ScenarioNode[] = [
     ], terminal: true,
   },
   {
-    id: 'true_end', title: 'TRUE END　それでも、信じる', text: [
+    id: 'true_end', title: 'TRUE END　それでも、信じる', audio: { bgm: 'end-true', ambience: null, fadeMs: 1800 }, text: [
       '母さんはすぐに変わらなかった。翌朝も「おじいちゃんの薬」と言いかけ、途中で止まった。',
       '俺たちは医療と生活支援へ繋がった。母さんの見た老人を、いないと言い続けることも、いると認めることもしなかった。',
       '義弟には「あれで楽になったなら、そこまで嘘だったことにはしない」と伝えた。',
@@ -350,7 +350,7 @@ export const act3to5Nodes: ScenarioNode[] = [
     ], terminal: true,
   },
   {
-    id: 'secret_end', title: 'SECRET END　アカノユメ', text: [
+    id: 'secret_end', title: 'SECRET END　アカノユメ', audio: { bgm: 'end-secret', ambience: null, fadeMs: 1800 }, text: [
       '数日後、ミナと通話しながら、ネットに残る断片を見た。',
       '「俺が消して回ったって意味ないか」',
       '『無理でしょ』',
