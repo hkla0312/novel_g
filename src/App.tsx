@@ -28,13 +28,15 @@ export default function App() {
     </header>
 
     <main className="story" aria-live="polite">
-      {node?.title && <h2 className="chapter-title">{node.title}</h2>}
-      <div className="prose">{text.map((paragraph, index) => <p key={`${node?.id}-${index}`}>{paragraph}</p>)}</div>
+      <div className="story-page" key={node?.id}>
+        {node?.title && <h2 className="chapter-title">{node.title}</h2>}
+        <div className="prose">{text.map((paragraph, index) => <p key={`${node?.id}-${index}`}>{paragraph}</p>)}</div>
 
-      <div className="choices" aria-label="選択肢">
-        {choices.map((choice) => <button key={`${choice.label}-${choice.next}`} onClick={() => chooseChoice(choice)}>{choice.label}</button>)}
-        {node?.next && <button onClick={continueNode}>続きを読む</button>}
-        {node?.terminal && <button onClick={confirmRestart}>最初から読む</button>}
+        <div className="choices" aria-label="選択肢">
+          {choices.map((choice) => <button key={`${choice.label}-${choice.next}`} onClick={() => chooseChoice(choice)}>{choice.label}</button>)}
+          {node?.next && <button onClick={continueNode}>続きを読む</button>}
+          {node?.terminal && <button onClick={confirmRestart}>最初から読む</button>}
+        </div>
       </div>
     </main>
 

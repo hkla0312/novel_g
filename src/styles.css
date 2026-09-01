@@ -55,6 +55,12 @@ button { color: inherit; }
 .current-time { font-family: ui-monospace, monospace; font-size: 1.05rem; letter-spacing: .08em; }
 
 .story { width: min(100%, 700px); margin: 0 auto; padding: clamp(44px, 8vh, 86px) 28px 64px; }
+.story-page { animation: story-page-enter 480ms cubic-bezier(.22, .72, .35, 1) both; }
+
+@keyframes story-page-enter {
+  from { opacity: 0; transform: translateY(7px); filter: blur(1.5px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
 .chapter-title { margin: 0 0 38px; font-size: .82rem; font-family: system-ui, sans-serif; font-weight: 500; color: var(--muted); letter-spacing: .16em; }
 .prose { font-size: clamp(1rem, 2vw, 1.08rem); line-height: 2.05; letter-spacing: .035em; }
 .prose p { margin: 0 0 1.55em; }
@@ -145,5 +151,8 @@ button { color: inherit; }
   .backlog__entry { grid-template-columns: 45px 1fr; gap: 9px; }
 }
 
-@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+  .story-page { animation: none; }
+}
 
