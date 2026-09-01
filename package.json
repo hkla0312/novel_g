@@ -10,6 +10,7 @@
     "test": "vitest run --configLoader runner --exclude src/simulation/report.test.ts",
     "validate": "vitest run --configLoader runner src/scenario/scenario.test.ts",
     "simulate": "vitest run --configLoader runner src/simulation/report.test.ts",
+    "report:human": "node scripts/aggregate-human-playtests.mjs",
     "preview": "vite preview --configLoader runner --host 0.0.0.0 --port 4173"
   },
   "dependencies": {
