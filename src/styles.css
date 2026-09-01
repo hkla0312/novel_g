@@ -141,6 +141,19 @@ button { color: inherit; }
 .save-slot strong { color: var(--cold-light); font: 600 .75rem system-ui, sans-serif; letter-spacing: .1em; text-shadow: 0 0 8px var(--cold-glow); }
 .save-slot small { color: var(--muted); }
 .save-slot:disabled { cursor: default; opacity: .45; }
+.config-list { display: grid; gap: 24px; }
+.config-list label { display: grid; grid-template-columns: 1fr auto; gap: 9px; color: var(--cold-light); font: .75rem system-ui, sans-serif; letter-spacing: .08em; }
+.config-list input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: #a8cfe8; }
+.config-list .config-check { grid-template-columns: auto 1fr; align-items: center; }
+.playtest-badge { position: fixed; z-index: 8; left: 8px; top: 8px; color: #aab4be; font: .58rem system-ui, sans-serif; letter-spacing: .12em; opacity: .7; }
+.playtest-question { line-height: 1.8; }
+.modal textarea, .survey-list textarea { width: 100%; min-height: 104px; resize: vertical; padding: 12px; color: var(--ink); background: #07090c; border: 1px solid var(--line); line-height: 1.7; }
+.playtest-confidence { display: grid; gap: 8px; margin: 18px 0; font: .7rem system-ui, sans-serif; color: var(--muted); }
+.playtest-submit, .playtest-export button, .survey-list button { padding: 12px 16px; color: var(--cold-light); background: #10151a; border: 1px solid #3c4852; cursor: pointer; }
+.playtest-export { position: fixed; z-index: 9; right: 12px; bottom: 76px; width: min(420px, calc(100vw - 24px)); max-height: 70vh; overflow: auto; padding: 12px; background: #0b0e12; border: 1px solid #38424b; }
+.playtest-export summary { cursor: pointer; margin-bottom: 12px; }
+.survey-list { display: grid; gap: 18px; }
+.survey-list label { display: grid; gap: 7px; color: #bbc4cc; font: .72rem/1.5 system-ui, sans-serif; }
 
 .debug-toggle { position: fixed; right: 8px; top: 8px; z-index: 10; border: 0; background: #333; color: #fff; padding: 5px 7px; font: .6rem monospace; opacity: .55; }
 .debug-panel { position: fixed; inset: 8px 8px auto auto; z-index: 30; width: min(390px, calc(100vw - 16px)); max-height: calc(100vh - 16px); overflow: auto; padding: 12px; background: #202020; color: #eee; font: 12px/1.4 monospace; box-shadow: 0 10px 50px #0008; }
@@ -161,6 +174,8 @@ button { color: inherit; }
   .toolbar { justify-content: space-around; padding-inline: 6px; }
   .toolbar button { flex: 1; padding-inline: 4px; }
   .toolbar button { font-size: .62rem; }
+  .toolbar { overflow-x: auto; justify-content: flex-start; }
+  .toolbar button { min-width: 58px; }
   .modal-shade { padding: 0; align-items: end; }
   .modal { width: 100%; max-height: 88vh; border-width: 1px 0 0; }
   .backlog__entry { grid-template-columns: 45px 1fr; gap: 9px; }
