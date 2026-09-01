@@ -122,6 +122,20 @@ button { color: inherit; }
 .backlog__entry time { color: var(--muted); font: .7rem ui-monospace, monospace; padding-top: 5px; }
 .backlog__entry--choice span { color: #bdc9d3; font-style: italic; }
 
+.archive-intro { margin: 0 0 24px; color: var(--muted); font-size: .82rem; line-height: 1.8; }
+.archive { display: grid; gap: 28px; }
+.archive__category h3 { margin: 0 0 9px; color: var(--muted); font: 500 .7rem system-ui, sans-serif; letter-spacing: .16em; }
+.archive__entries { border-top: 1px solid var(--line); }
+.archive-entry { border-bottom: 1px solid var(--line); }
+.archive-entry summary { min-height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 12px 4px; cursor: pointer; list-style: none; }
+.archive-entry summary::-webkit-details-marker { display: none; }
+.archive-entry summary::after { content: "+"; color: var(--muted); font: 400 1.1rem system-ui, sans-serif; }
+.archive-entry[open] summary::after { content: "−"; }
+.archive-entry ul { list-style: none; margin: 0; padding: 0 4px 12px; }
+.archive-entry li { padding: 13px 0; border-top: 1px solid #20252b; }
+.archive-entry p { margin: 0 0 8px; line-height: 1.8; }
+.archive-entry small { color: var(--muted); font: .66rem/1.5 system-ui, sans-serif; letter-spacing: .04em; }
+
 .save-list { display: grid; gap: 10px; }
 .save-slot { display: grid; gap: 5px; }
 .save-slot strong { color: var(--cold-light); font: 600 .75rem system-ui, sans-serif; letter-spacing: .1em; text-shadow: 0 0 8px var(--cold-glow); }
@@ -146,6 +160,7 @@ button { color: inherit; }
   .choices button { min-height: 56px; }
   .toolbar { justify-content: space-around; padding-inline: 6px; }
   .toolbar button { flex: 1; padding-inline: 4px; }
+  .toolbar button { font-size: .62rem; }
   .modal-shade { padding: 0; align-items: end; }
   .modal { width: 100%; max-height: 88vh; border-width: 1px 0 0; }
   .backlog__entry { grid-template-columns: 45px 1fr; gap: 9px; }

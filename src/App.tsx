@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BacklogModal } from './components/BacklogModal'
+import { ArchiveModal } from './components/ArchiveModal'
 import { DebugPanel } from './components/DebugPanel'
 import { SaveLoadModal } from './components/SaveLoadModal'
 import { getAvailableChoices, getNextNodeId, getNodeText } from './engine/gameEngine'
@@ -7,7 +8,7 @@ import { scenario } from './scenario'
 import { useGameStore } from './store/gameStore'
 import { formatTime } from './utils/time'
 
-type Overlay = 'backlog' | 'save' | 'load' | null
+type Overlay = 'backlog' | 'archive' | 'save' | 'load' | null
 
 export default function App() {
   const [overlay, setOverlay] = useState<Overlay>(null)
@@ -43,12 +44,14 @@ export default function App() {
 
     <nav className="toolbar" aria-label="ゲームメニュー">
       <button onClick={() => setOverlay('backlog')}>バックログ</button>
+      <button onClick={() => setOverlay('archive')}>ARCHIVE</button>
       <button onClick={() => setOverlay('save')}>SAVE</button>
       <button onClick={() => setOverlay('load')}>LOAD</button>
       <button onClick={confirmRestart}>最初から</button>
     </nav>
 
     {overlay === 'backlog' && <BacklogModal onClose={() => setOverlay(null)} />}
+    {overlay === 'archive' && <ArchiveModal onClose={() => setOverlay(null)} />}
     {(overlay === 'save' || overlay === 'load') && <SaveLoadModal mode={overlay} onClose={() => setOverlay(null)} />}
     <DebugPanel />
   </div>
