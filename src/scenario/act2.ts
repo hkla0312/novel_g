@@ -201,7 +201,10 @@ export const act2Nodes: ScenarioNode[] = [
       '笑う女性の声。リンクを直してくれた声と同じだ。胸の奥が不意に痛んだ。忘れていたことへの罪悪感が、名前を押し上げる。',
       '「…………ミナ」',
       '約二十年前、個人サイトを通じて知り合った。会ったことはない。それでも父さんを失った後の俺にとって、家の外と繋がる大切な相手だった。',
-    ], choices: [{ label: '連絡先を探して戻る', next: 'home_act2' }], effects: [
+    ], choices: [
+      { label: 'ミナへ今すぐ連絡する', next: 'mina_contact', timeCost: 12 },
+      { label: '連絡先を探して戻る', next: 'home_act2' },
+    ], effects: [
       { type: 'addSelfMemory', key: 'online_friend_mina' },
       { type: 'setFlag', key: 'mina_unlocked', value: true },
     ],
@@ -242,7 +245,10 @@ export const act2Nodes: ScenarioNode[] = [
       '年賀状も同じ年で途切れていた。電話横の連絡先メモは古い番号のまま。誕生日や正月の新しい痕跡はない。',
       '擦り減った椅子、補修した眼鏡ケース、安い湯飲み。どれも誰かの生活が続いた跡だ。',
       '眼鏡ケースの縫い目は不揃いだった。自分で何度も縫い直したらしい。',
-    ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
+    ], choices: [
+      { label: '奥の仏間を確かめる', next: 'neighbor_red_objects', timeCost: 12 },
+      { label: '部屋を調べ続ける', next: 'neighbor_home_hub' },
+    ], effects: [
       { type: 'setFlag', key: 'neighbor_life_checked', value: true },
       { type: 'addKnowledge', key: 'neighbor_long_widowhood' },
       { type: 'addKnowledge', key: 'neighbor_family_contact_ended' },
@@ -266,7 +272,10 @@ export const act2Nodes: ScenarioNode[] = [
       '退色した赤布。赤い紐。赤鉛筆で書き込まれたコピー用紙。印刷方式も紙の色も違う。貼り直したテープ跡が、古い文字の上へ重なっている。',
       '同じ一文を何度も手書きした紙もあった。血の跡も刃物もない。一人の人間が何十年も手放せなかったものが、普通の仏間の中へ堆積していた。',
       '襖の奥に、何度も折られた黄ばんだA4が見える。',
-    ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
+    ], choices: [
+      { label: '黄ばんだA4を調べる', next: 'neighbor_old_paper', timeCost: 15 },
+      { label: '部屋を調べ続ける', next: 'neighbor_home_hub' },
+    ], effects: [
       { type: 'setFlag', key: 'neighbor_red_checked', value: true },
       { type: 'addKnowledge', key: 'layered_red_objects' },
       { type: 'addKnowledge', key: 'butsuma_faith_accumulation' },
