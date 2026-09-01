@@ -267,7 +267,7 @@ export const act2Nodes: ScenarioNode[] = [
     ],
   },
   {
-    id: 'neighbor_red_objects', title: '仏間', location: 'neighbor_apartment', text: [
+    id: 'neighbor_red_objects', title: '仏間', location: 'neighbor_apartment', audio: { bgm: null, fadeMs: 900 }, text: [
       '仏壇には亡くなった妻の遺影があった。異様なのは、その周囲だけだ。',
       '退色した赤布。赤い紐。赤鉛筆で書き込まれたコピー用紙。印刷方式も紙の色も違う。貼り直したテープ跡が、古い文字の上へ重なっている。',
       '同じ一文を何度も手書きした紙もあった。血の跡も刃物もない。一人の人間が何十年も手放せなかったものが、普通の仏間の中へ堆積していた。',
@@ -283,7 +283,7 @@ export const act2Nodes: ScenarioNode[] = [
     ],
   },
   {
-    id: 'neighbor_old_paper', title: '古い紙', location: 'neighbor_apartment', text: [
+    id: 'neighbor_old_paper', title: '古い紙', location: 'neighbor_apartment', audio: { bgm: 'main-investigation', fadeMs: 1800, bgmVolumeScale: .42 }, text: [
       '引き出しの底に、何度も折られた黄ばんだA4用紙があった。折り目は薄くなり、裏からテープで補修されている。',
       '印刷はかすれていた。昔のWebページを印刷したものらしい。余白には赤鉛筆の書き込みがある。',
       '見出しに「アカノユメ」とあった。',
