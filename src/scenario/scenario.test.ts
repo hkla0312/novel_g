@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { choose, enterNode, getAvailableChoices, getNextNodeId } from '../engine/gameEngine'
+import { choose, enterNode, getAvailableChoices, getNextNodeId, getNodeText } from '../engine/gameEngine'
 import { validateScenario } from '../engine/validateScenario'
 import type { GameSnapshot } from '../types/game'
 import { scenario, scenarioNodes } from '.'
@@ -56,7 +56,8 @@ describe('vertical slice routes', () => {
     state = pick(state, '戻る')
     state = pick(state, '探索を切り上げる')
     state = pick(state, '団地へ戻る')
-    state = continueTo(state, 'neighbor_fact')
+    state = pick(state, '前の住居での話を聞く')
+    state = followNextUntil(state, 'neighbor_fact')
     state = pick(state, '母さんへ電話する')
     state = continueTo(state, 'act2_opening')
     state = continueTo(state, 'verification_hub')
@@ -79,9 +80,9 @@ describe('vertical slice routes', () => {
     state = pick(state, '部屋を調べ続ける')
     state = pick(state, '食事・介護用品を調べる')
     state = pick(state, '部屋を調べ続ける')
-    state = pick(state, '赤いものを調べる')
+    state = pick(state, '仏間を調べる')
     state = pick(state, '部屋を調べ続ける')
-    state = pick(state, '古い紙を調べる')
+    state = pick(state, '黄ばんだA4を調べる')
     expect(state.knowledge).toContain('akano_yume_document')
     state = pick(state, '紙の内容を記録して戻る')
     state = pick(state, '老人宅を出る')
@@ -127,7 +128,8 @@ describe('vertical slice routes', () => {
     const labels = getAvailableChoices(scenario.free_action_hub, state).map((choice) => choice.label)
     expect(labels).toContain('団地へ戻る')
     state = pick(state, '団地へ戻る')
-    state = continueTo(state, 'neighbor_fact')
+    state = pick(state, '前の住居での話を聞く')
+    state = followNextUntil(state, 'neighbor_fact')
     state = pick(state, '母さんへ電話する')
     state = continueTo(state, 'act2_opening')
     state = continueTo(state, 'verification_hub')
@@ -172,7 +174,7 @@ describe('vertical slice routes', () => {
     }))).toBe('normal_end')
     expect(getNextNodeId(scenario.ending_junction, atJunction({
       flags: { author_revealed: true, brother_understood: true, mother_accompanied: true, mother_empathy_spoken: true },
-      knowledge: ['library_jigaeshi_confirmed', 'neighbor_long_widowhood'],
+      knowledge: ['library_jigaeshi_confirmed', 'neighbor_long_widowhood', 'neighbor_faith_contained_after_loss', 'neighbor_injury_faith_possible_link', 'neighbor_early_recipient_after_wife_loss'],
       selfMemory: ['loss_father', 'old_web_creation', 'escape_into_local_history', 'online_friend_mina'],
       hidden: { FACT: 6, SELF: 5, UNDERSTANDING: 4 },
     }))).toBe('true_end')
@@ -181,7 +183,7 @@ describe('vertical slice routes', () => {
   it('unlocks SECRET only after TRUE with the optional Mina and document trail', () => {
     const complete: GameSnapshot = {
       ...start(), currentNode: 'true_end',
-      flags: { true_cleared: true, mina_contacted: true, mina_deepened: true, original_pages_recovered: true, brother_understood: true },
+      flags: { true_cleared_previous: true, mina_contacted: true, mina_deepened: true, original_pages_recovered: true, brother_understood: true },
       knowledge: ['library_jigaeshi_confirmed', 'neighbor_long_widowhood'],
     }
     expect(getAvailableChoices(scenario.true_end, complete).map((item) => item.label))
@@ -194,7 +196,7 @@ describe('vertical slice routes', () => {
     let state = enterNode({
       ...start(), currentTime: 960,
       flags: { mina_contacted: true },
-      knowledge: ['library_jigaeshi_confirmed', 'akano_yume_document', 'neighbor_long_widowhood'],
+      knowledge: ['library_jigaeshi_confirmed', 'akano_yume_document', 'neighbor_long_widowhood', 'neighbor_faith_contained_after_loss', 'neighbor_injury_faith_possible_link', 'neighbor_early_recipient_after_wife_loss'],
       selfMemory: ['loss_father', 'old_web_creation', 'escape_into_local_history', 'online_friend_mina'],
       hidden: { FACT: 5, SELF: 4, UNDERSTANDING: 1 },
     }, scenario.act3_opening)
@@ -214,9 +216,50 @@ describe('vertical slice routes', () => {
     expect(ending).toBe('true_end')
     state = continueTo(state, ending!)
     expect(state.flags.true_cleared).toBe(true)
+    expect(getAvailableChoices(scenario.true_end, state).map((item) => item.label)).not.toContain('数日後、ミナへ連絡する')
+    state = { ...state, flags: { ...state.flags, true_cleared_previous: true } }
     state = pick(state, '数日後、ミナへ連絡する')
     expect(state.currentNode).toBe('secret_end')
     expect(scenario.secret_end.terminal).toBe(true)
+  })
+
+  it('keeps the neighbor incident factual while leaving its motive inferential', () => {
+    const allText = scenarioNodes.flatMap((node) => [
+      ...node.text, ...(node.variants?.flatMap((variant) => variant.text) ?? []),
+    ]).join('\n')
+    expect(allText).toContain('孫世代の親族')
+    expect(allText).toContain('不起訴')
+    expect(allText).toContain('県営住宅')
+    expect(allText).toContain('年賀状も同じ年で途切れ')
+    expect(allText).toContain('仏間だけ')
+    expect(allText).not.toContain('私は孫にアカノユメの儀式をした')
+    expect(allText).not.toContain('老人がアカノユメを作った')
+  })
+
+  it('keeps the source site distinct from Akano Yume and the brother polite', () => {
+    expect(scenario.pc_aka.text.join('\n')).toContain('「アカノユメ」という名前はどこにもない')
+    expect(scenario.author_reveal.text.join('\n')).toContain('アカノユメそのものを、俺が作ったわけではない')
+    expect(scenario.brother_initial_call.text.join('\n')).toContain('お義兄さん')
+    expect(scenario.brother_initial_call.text.join('\n')).not.toContain('掲示板')
+    expect(scenario.brother_initial_call.text.join('\n')).toContain('『……あります』')
+  })
+
+  it('keeps optional knowledge out of unconditional later text', () => {
+    const plain = start()
+    expect(scenario.work_call_1600.text.join('\n')).not.toContain('黄ばんだ紙')
+    expect(getNodeText(scenario.mother_returns_evening, plain).join('\n')).not.toContain('病院で処置した')
+    expect(getNodeText(scenario.mother_returns_evening, { ...plain, flags: { hospital_done: true } }).join('\n')).toContain('病院で処置した')
+    expect(scenario.normal_end.text.join('\n')).not.toContain('地還しの元の意味')
+    expect(scenario.bad_end.text.join('\n')).not.toContain('母さんの手から鍵')
+    expect(scenario.true_end.text.join('\n')).not.toContain('死後の部屋')
+  })
+
+  it('allows the death reveal without collecting the injury rumor', () => {
+    let state = enterNode(start(), scenario.danchi_return)
+    state = pick(state, '最近の様子だけを聞く')
+    expect(state.flags.neighbor_injury_rumor_heard).not.toBe(true)
+    expect(state.knowledge).toContain('neighbor_dead')
+    expect(state.currentNode).toBe('danchi_death_reveal')
   })
 
   it('continues after 16:00 without Mina and reaches a non-secret ending', () => {

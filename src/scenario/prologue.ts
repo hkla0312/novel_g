@@ -11,7 +11,7 @@ export const prologueNodes: ScenarioNode[] = [
   },
   {
     id: 'red_dream', text: [
-      '赤い夢を見た。',
+      'また、赤い夢を見た。昔から、寝苦しい夜には時々見る。',
       '赤い地面に、家の影が落ちていた。誰かが土を手ですくい、俺の掌へ戻そうとしている。受け取ってはいけない気がした。',
       'それでも夢の中の俺は、手を閉じた。',
     ], next: 'wake_injury',
@@ -85,6 +85,7 @@ export const prologueNodes: ScenarioNode[] = [
       { label: '隣のおじいさんって誰？', next: 'q_neighbor', timeCost: 3, condition: { type: 'not', condition: { type: 'flag', key: 'asked_neighbor' } }, effects: [{ type: 'setFlag', key: 'asked_neighbor', value: true }, { type: 'addKnowledge', key: 'neighbor_profile' }] },
       { label: 'お前は何かされてないのか？', next: 'q_sister_harmed', timeCost: 3, condition: { type: 'not', condition: { type: 'flag', key: 'asked_sister' } }, effects: [{ type: 'setFlag', key: 'asked_sister', value: true }] },
       { label: '旦那はこのことを知ってるのか？', next: 'q_husband', timeCost: 3, condition: { type: 'not', condition: { type: 'flag', key: 'asked_husband' } }, effects: [{ type: 'setFlag', key: 'asked_husband', value: true }] },
+      { label: '義弟に電話する', next: 'brother_initial_call', timeCost: 5, condition: { type: 'all', conditions: [{ type: 'flag', key: 'asked_husband' }, { type: 'not', condition: { type: 'flag', key: 'brother_initial_called' } }] } },
       { label: 'もういい', next: 'free_action_hub' },
     ],
   },
@@ -135,8 +136,34 @@ export const prologueNodes: ScenarioNode[] = [
       '「知ってる。私が隣のおじいさんの部屋に入りたくなくて、何度か介護について行ってくれた」',
       '「あいつは何て言ってた」',
       '「お母さんを一人で行かせない方がいいって。でも、おじいさんに何かされたとは言ってない」',
+      '妹はそこで少し言い淀んだ。',
+      '「母さんも最初は嫌がってたよ。仏間に変な紙がいっぱいある、気味悪いって」',
+      '「奥さんを亡くした話を聞いてからは、悪い人じゃないって言うようになった」',
+      '「おじいさんの方は、見なくていいよ、気味悪いだろうって言ったみたい。何かすすめたわけじゃないって」',
       '別の地域で育った義弟には、母さんの言葉がどう聞こえたのだろう。少なくとも妹は、夫が何かを隠しているとは考えていなかった。',
-    ], next: 'sister_questions', effects: [{ type: 'addKnowledge', key: 'husband_knows' }],
+    ], next: 'sister_questions', effects: [{ type: 'addKnowledge', key: 'husband_knows' }, { type: 'addKnowledge', key: 'mother_initially_feared_butsuma' }, { type: 'addKnowledge', key: 'neighbor_did_not_recruit_mother' }],
+  },
+  {
+    id: 'brother_initial_call', title: '義弟への電話', text: [
+      '義弟は仕事の合間だった。声は低く、疲れていた。',
+      '『お義兄さん、腕は……大丈夫ですか』',
+      '「今はな。隣の部屋に何度か入ったんだって？」',
+      '『はい。お義母さんの手伝いで』',
+      '長い間があった。',
+      '『……お義兄さん』',
+      '『アカノユメって、知ってますか』',
+      '「何だ、それ」',
+      '『知らないなら、いいです。俺から言わない方がいいと思います』',
+      '「赤い夢って見たことあるか」',
+      '『……あります』',
+      '「いつから」',
+      '『最近です。隣の部屋に行くようになってから……たぶん』',
+      '他の土地で育った義弟も、赤い夢を見ている。腕の痛みが急に強くなった。',
+    ], next: 'sister_questions', effects: [
+      { type: 'setFlag', key: 'brother_initial_called', value: true },
+      { type: 'addKnowledge', key: 'akano_yume_name_from_brother' },
+      { type: 'addKnowledge', key: 'brother_red_dream' },
+    ],
   },
 ]
 

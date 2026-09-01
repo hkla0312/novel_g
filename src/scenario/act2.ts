@@ -40,6 +40,8 @@ export const act2Nodes: ScenarioNode[] = [
       '管理窓口では、個人情報なので詳しい事情は話せないと言われた。事情を説明し、俺が隣室の居住者の家族ではないことも正直に伝えた。',
       '職員は記録を確認してから答えた。',
       '「亡くなられたのは四日前です。発見後、警察と親族の確認も済んでいます」',
+      '前住所からの入居書類には、親族間のトラブルと警察対応後の単身転居とだけあった。県営住宅では年金を中心に暮らしていたという。',
+      '「事件の内容までは、こちらではお答えできません」',
       '「母は、その後も部屋へ出入りしていたかもしれません」',
       '「その件はこちらでは分かりません。鍵についても管理側からお渡しはできません」',
       '死亡日時は確認できた。母さんが誰と話したのかは、やはり分からない。',
@@ -47,6 +49,8 @@ export const act2Nodes: ScenarioNode[] = [
       { type: 'setFlag', key: 'verified_with_management', value: true },
       { type: 'setFlag', key: 'neighbor_death_official', value: true },
       { type: 'addKnowledge', key: 'neighbor_death_datetime' },
+      { type: 'addKnowledge', key: 'neighbor_single_pension_tenancy' },
+      { type: 'addKnowledge', key: 'neighbor_family_trouble_record' },
       { type: 'adjustHidden', key: 'FACT', amount: 1 },
     ],
   },
@@ -57,7 +61,9 @@ export const act2Nodes: ScenarioNode[] = [
         text: [
           '朝に相談した警察官が対応した。俺は推測を除き、近隣住民から死亡を聞いたことと、母さんが昨日会ったと主張していることだけを伝えた。',
           '「確認には時間がかかります。あなたへ開示できない情報もあります」',
-          '待った後、老人が四日前に死亡し、必要な手続きが進んでいることだけは確認された。',
+      '待った後、老人が四日前に死亡し、必要な手続きが進んでいることだけは確認された。',
+      '以前、孫世代の親族に怪我を負わせた件で警察対応があった。結果は不起訴。その後、前の住居を退去したことも、開示できる範囲で確認された。',
+      '何が原因だったのか、何をしようとしたのかは記録からは分からない。',
           '「お母さんの話が何を意味するかは、こちらでは判断できません。まず安全を優先してください」',
           '当然の返答だ。死亡は事実になった。それ以上はまだ推測のままだ。',
         ],
@@ -65,11 +71,15 @@ export const act2Nodes: ScenarioNode[] = [
     ], text: [
       '事情を最初から説明した。傷害のこと、隣人の死亡を聞いたこと、母さんが昨日会ったと主張していること。',
       '警察官は確認できる事実と家族の発言を分けて記録した。長く待った後、老人が四日前に死亡していることだけは確認された。',
+      '過去に孫世代の親族へ怪我を負わせた件で警察対応があり、不起訴になったこと。その後に前住所を退去したことも、開示可能な範囲で確認できた。',
+      '事件の動機や宗教に関する記録はない。',
       '母さんの認識については医療や安全確保も含めて家族で対応するよう勧められた。警察は答えを持っていない。無能なのではなく、答えられる範囲を越えている。',
     ], choices: [{ label: '団地へ戻る', next: 'verification_hub' }], effects: [
       { type: 'setFlag', key: 'verified_with_police', value: true },
       { type: 'setFlag', key: 'neighbor_death_official', value: true },
       { type: 'addKnowledge', key: 'neighbor_death_official_record' },
+      { type: 'addKnowledge', key: 'neighbor_relative_injury_confirmed' },
+      { type: 'addKnowledge', key: 'neighbor_nonprosecution_and_eviction' },
       { type: 'adjustHidden', key: 'FACT', amount: 1 },
     ],
   },
@@ -114,9 +124,11 @@ export const act2Nodes: ScenarioNode[] = [
   {
     id: 'mother_room_first', title: '母親の部屋・一回目', location: 'home', text: [
       '仕事の書類、日用品、老人の薬の一覧。清拭用品と介護用手袋も補充されている。',
+      '古いメモの最初の頃には「仏間に入らない」とあった。その後、「奥さんの話」「線香」「話を聞く」と変わる。',
+      'さらに後のページでは「赤い紙、要整理」「一人で持たない」という言葉が、介護メモの余白へ混じっていた。',
       'メモの日付は途切れていない。母さんは老人が死んだ後も、同じ生活の続きをしていた。だが記録の丁寧さは、それ以前から変わっていない。',
       '母さんは本当に老人を心配していた。善意だったから安全だった、とは言えない。それでも善意まで嘘にするのは違う。',
-    ], choices: [{ label: '戻る', next: 'home_act2' }], effects: [{ type: 'addKnowledge', key: 'mother_care_was_sincere' }],
+    ], choices: [{ label: '戻る', next: 'home_act2' }], effects: [{ type: 'addKnowledge', key: 'mother_care_was_sincere' }, { type: 'addKnowledge', key: 'mother_faith_internalization_path' }],
   },
   {
     id: 'mother_room_second', title: '母親の部屋・二回目', location: 'home', text: [
@@ -199,24 +211,30 @@ export const act2Nodes: ScenarioNode[] = [
   },
   {
     id: 'neighbor_home_hub', title: '老人宅', location: 'neighbor_apartment', text: [
-      '古い団地の、ごく普通の一室だった。閉め切った空気と生活用品の匂いが残っている。祭壇も、儀式の跡もない。',
-      'ただ部屋を見渡すと、赤い物が妙に多いことに気づく。',
+      '古い県営住宅の、ごく普通の一室だった。台所には古い電気ケトル。寝室には洗濯物と薬。年金で暮らす一人の老人の生活が、そのまま止まっている。',
+      '居間までは普通だ。奥の仏間だけ、閉じた襖の向こうから赤い紙の端が見えていた。',
     ], choices: [
       { label: '生活の痕跡を調べる', next: 'neighbor_life', timeCost: 12, condition: notFlag('neighbor_life_checked') },
       { label: '食事・介護用品を調べる', next: 'neighbor_care', timeCost: 12, condition: notFlag('neighbor_care_checked') },
-      { label: '赤いものを調べる', next: 'neighbor_red_objects', timeCost: 12, condition: notFlag('neighbor_red_checked') },
-      { label: '古い紙を調べる', next: 'neighbor_old_paper', timeCost: 15, condition: notFlag('neighbor_paper_checked') },
+      { label: '仏間を調べる', next: 'neighbor_red_objects', timeCost: 12, condition: notFlag('neighbor_red_checked') },
+      { label: '黄ばんだA4を調べる', next: 'neighbor_old_paper', timeCost: 15, condition: { type: 'all', conditions: [{ type: 'flag', key: 'neighbor_red_checked' }, notFlag('neighbor_paper_checked')] } },
+      { label: '前の事件を思い出す', next: 'neighbor_connect_incident', condition: { type: 'all', conditions: [{ type: 'flag', key: 'neighbor_paper_checked' }, { type: 'flag', key: 'neighbor_injury_rumor_heard' }, notFlag('neighbor_incident_connected')] } },
+      { label: '老人が残した境界を考える', next: 'neighbor_late_boundary', timeCost: 8, condition: { type: 'all', conditions: [{ type: 'flag', key: 'neighbor_life_checked' }, { type: 'flag', key: 'neighbor_paper_checked' }, notFlag('neighbor_boundary_checked')] } },
       { label: '老人宅を出る', next: 'act2_hub' },
     ],
   },
   {
     id: 'neighbor_life', title: '生活の痕跡', location: 'neighbor_apartment', text: [
       '棚に若い夫婦の写真があった。女性の写真だけが後年の額にも入っている。妻を亡くしてから、長く一人で暮らしていたらしい。',
+      'その横に子供世代の家族写真。さらに幼い子を抱いた写真がある。孫だろうか。ある年から先、新しい写真は増えていない。',
+      '年賀状も同じ年で途切れていた。電話横の連絡先メモは古い番号のまま。誕生日や正月の新しい痕跡はない。',
       '擦り減った椅子、補修した眼鏡ケース、安い湯飲み。どれも誰かの生活が続いた跡だ。',
       '眼鏡ケースの縫い目は不揃いだった。自分で何度も縫い直したらしい。',
     ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
       { type: 'setFlag', key: 'neighbor_life_checked', value: true },
       { type: 'addKnowledge', key: 'neighbor_long_widowhood' },
+      { type: 'addKnowledge', key: 'neighbor_family_contact_ended' },
+      { type: 'addKnowledge', key: 'neighbor_family_photo_gap' },
     ],
   },
   {
@@ -231,13 +249,16 @@ export const act2Nodes: ScenarioNode[] = [
     ],
   },
   {
-    id: 'neighbor_red_objects', title: '赤いもの', location: 'neighbor_apartment', text: [
-      '色褪せた座布団。菓子箱を結ぶ赤い糸。古い包装紙。棚には赤鉛筆で線を引いた冊子がある。',
-      '新しい物と古い物が混じっている。一度の儀式で揃えた物には見えない。長い時間の中で残され、結果として部屋が赤く見えている。',
-      '赤い物は多い。それ以上の意味は、まだ物の側からは出てこない。',
+    id: 'neighbor_red_objects', title: '仏間', location: 'neighbor_apartment', text: [
+      '仏壇には亡くなった妻の遺影があった。異様なのは、その周囲だけだ。',
+      '退色した赤布。赤い紐。赤鉛筆で書き込まれたコピー用紙。印刷方式も紙の色も違う。貼り直したテープ跡が、古い文字の上へ重なっている。',
+      '同じ一文を何度も手書きした紙もあった。血の跡も刃物もない。一人の人間が何十年も手放せなかったものが、普通の仏間の中へ堆積していた。',
+      '襖の奥に、何度も折られた黄ばんだA4が見える。',
     ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
       { type: 'setFlag', key: 'neighbor_red_checked', value: true },
       { type: 'addKnowledge', key: 'layered_red_objects' },
+      { type: 'addKnowledge', key: 'butsuma_faith_accumulation' },
+      { type: 'addKnowledge', key: 'neighbor_faith_kept_inside' },
     ],
   },
   {
@@ -247,11 +268,38 @@ export const act2Nodes: ScenarioNode[] = [
       '見出しに「アカノユメ」とあった。',
       '本文の多くは読めない。それでも一行だけ残っている。',
       '――家の痛みは、家の血で分ける。',
+      '「一人で持ってはいけない」「赤いものを返す」「家族で分ける」。異なる時期の追記が、元の文字へ重なっている。',
       '秘密組織の配布物には見えない。老人自身か誰かがページを印刷し、何十年も読み返した紙だ。妻を早く亡くし、長く一人で暮らした老人にとって意味があったのかもしれない。救いだったのか、傷を深くしたのか。それも紙からは分からない。',
     ], choices: [{ label: '紙の内容を記録して戻る', next: 'neighbor_home_hub' }], effects: [
       { type: 'setFlag', key: 'neighbor_paper_checked', value: true },
       { type: 'addKnowledge', key: 'akano_yume_document' },
       { type: 'adjustHidden', key: 'FACT', amount: 1 },
+    ],
+  },
+  {
+    id: 'neighbor_connect_incident', title: '前の事件', location: 'neighbor_apartment', text: [
+      '団地入口で聞いた、孫世代の親族の怪我。黄ばんだ紙には「家の痛みは、家の血で分ける」。',
+      '「……まさか」',
+      'それ以上は言葉にできなかった。事件は事実だ。この紙との因果を証明するものはない。',
+    ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
+      { type: 'setFlag', key: 'neighbor_incident_connected', value: true },
+      { type: 'addKnowledge', key: 'neighbor_injury_faith_possible_link' },
+    ],
+  },
+  {
+    id: 'neighbor_late_boundary', title: '仏間の外', location: 'neighbor_apartment', text: [
+      '妻の命日と、仏間で最も古い印刷物の時期は近い。インターネット黎明期の紙だ。老人が俺のページを直接読んだ証拠はない。すでに怪談めいた転載の一つへ触れたように見える。',
+      '写真と年賀状は、家族との時間がある年を境に止まっている。仏間の紙は、それより後も増えていた。',
+      '老人は信仰を捨てていない。一方で、県営住宅へ来てからそれを仏間の外へ広げた跡もない。',
+      '母さんは血縁者ではない。老人は条件の外にいる母さんを傷つけなかった。そもそも、歩くだけで息が上がる身体で、誰かを押さえつける力は残っていなかっただろう。',
+      'それだけではない。一度家族を失った人間が、また同じことをするのを恐れた。そう考えると、仏間の閉じ方には説明がつく。',
+      '説明がつくだけだ。老人自身の言葉は、もう聞けない。',
+    ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
+      { type: 'setFlag', key: 'neighbor_boundary_checked', value: true },
+      { type: 'addKnowledge', key: 'neighbor_faith_contained_after_loss' },
+      { type: 'addKnowledge', key: 'mother_was_nonblood_and_neighbor_frail' },
+      { type: 'addKnowledge', key: 'neighbor_early_recipient_after_wife_loss' },
+      { type: 'adjustHidden', key: 'UNDERSTANDING', amount: 1 },
     ],
   },
   {
@@ -326,7 +374,7 @@ export const act2Nodes: ScenarioNode[] = [
     id: 'work_call_1600', title: '16:00　勤務先からの電話', text: [
       '『お疲れさまです。今日の授業ですが、予定どおり来られそうですか？』',
       '塾の事務員の声だった。朝の俺は、夕方から仕事へ行くつもりでいた。腕を隠す服まで考えていた。',
-      '病院、警察、死亡した隣人、母さんの鍵、黄ばんだ紙。調べるうちに、普通の一日の優先順位から仕事が外れていた。',
+      '腕の傷。死亡した隣人。それでも会ったと言う母さん。調べるうちに、普通の一日の優先順位から仕事が外れていた。',
     ], choices: [{ label: 'それどころではない', next: 'act3_opening', effects: [{ type: 'setFlag', key: 'work_call_done', value: true }] }],
   },
 ]

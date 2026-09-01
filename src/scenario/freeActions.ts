@@ -107,18 +107,41 @@ export const freeActionNodes: ScenarioNode[] = [
       '古いヘッドセットを持ち上げた瞬間、記憶とも想像ともつかない声が浮かんだ。',
       '――それ、リンク間違ってるよ。',
       '女性の声。名前は出てこない。PCは電源ケーブルも外され、今すぐ中身を確かめられる状態ではなかった。',
-    ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addSelfMemory', key: 'old_web_creation' }, { type: 'adjustHidden', key: 'SELF', amount: 1 }],
+    ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addSelfMemory', key: 'old_web_creation' }, { type: 'addKnowledge', key: 'old_pc_exists' }, { type: 'adjustHidden', key: 'SELF', amount: 1 }],
   },
   {
     id: 'danchi_return', title: '団地', location: 'housing_complex', timeCost: 15, text: [
       '団地へ戻ると、入口の植え込みで年配の女性に声をかけられた。子供の頃、何度か菓子をもらった近所の人だ。',
       '「まあ、大きくなって。お母さん、元気に働いてる？」',
       '天気と仕事と、昔の商店街の話をした。普通の立ち話だった。だから俺も、隣の老人について何気なく尋ねた。',
-      '女性は首を傾げた。',
+    ], choices: [
+      { label: '前の住居での話を聞く', next: 'danchi_injury_rumor', timeCost: 5 },
+      { label: '最近の様子だけを聞く', next: 'danchi_death_reveal' },
+    ],
+  },
+  {
+    id: 'danchi_injury_rumor', title: '団地入口の噓', location: 'housing_complex', text: [
+      '「前のところでも、ちょっとあったらしいのよ」',
+      '「家族と揉めたとか？」',
+      '「孫だったかなあ。怪我させたって話は聞いたことある。警察も来たけど、身内のことで大事にはならなかったとか」',
+      '「それで前のところにいづらくなって、こっちの県営住宅に来たんじゃなかったかな。まあ、噓だけどね」',
+      '女性は老人を責める口調ではなかった。話の年代も、孫だということさえ曖昧だった。',
+    ], next: 'danchi_death_reveal', effects: [
+      { type: 'addKnowledge', key: 'neighbor_injury_rumor' },
+      { type: 'setFlag', key: 'neighbor_injury_rumor_heard', value: true },
+    ],
+  },
+  {
+    id: 'danchi_death_reveal', title: '団地入口', location: 'housing_complex', text: [
+      '女性は老人の最近の様子を思い出そうとして、首を傾げた。',
       '「亡くなったでしょう？」',
       '「……え？」',
       '「何日か前よ。あなたが帰ってくる前」',
-    ], next: 'neighbor_fact', effects: [{ type: 'addKnowledge', key: 'neighbor_dead' }, { type: 'setFlag', key: 'neighbor_death_revealed', value: true }, { type: 'adjustHidden', key: 'FACT', amount: 2 }],
+    ], next: 'neighbor_fact', effects: [
+      { type: 'addKnowledge', key: 'neighbor_dead' },
+      { type: 'setFlag', key: 'neighbor_death_revealed', value: true },
+      { type: 'adjustHidden', key: 'FACT', amount: 2 },
+    ],
   },
   {
     id: 'neighbor_fact', location: 'housing_complex', text: [

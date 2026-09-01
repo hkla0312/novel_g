@@ -6,6 +6,8 @@ const notFlag = (key: string): Condition => ({ type: 'not', condition: flag(key)
 
 const trueRequirements: Condition = { type: 'all', conditions: [
   flag('author_revealed'), knowledge('library_jigaeshi_confirmed'), knowledge('neighbor_long_widowhood'),
+  knowledge('neighbor_faith_contained_after_loss'), knowledge('neighbor_injury_faith_possible_link'),
+  knowledge('neighbor_early_recipient_after_wife_loss'),
   flag('brother_understood'), flag('mother_accompanied'), flag('mother_empathy_spoken'),
   { type: 'collectionCount', collection: 'selfMemory', atLeast: 4 },
   { type: 'hidden', key: 'UNDERSTANDING', atLeast: 4 },
@@ -16,7 +18,7 @@ const normalRequirements: Condition = { type: 'all', conditions: [
 ] }
 
 const secretRequirements: Condition = { type: 'all', conditions: [
-  flag('true_cleared'), flag('mina_contacted'), flag('mina_deepened'), flag('original_pages_recovered'),
+  flag('true_cleared_previous'), flag('mina_contacted'), flag('mina_deepened'), flag('original_pages_recovered'),
   knowledge('library_jigaeshi_confirmed'), knowledge('neighbor_long_widowhood'), flag('brother_understood'),
 ] }
 
@@ -54,6 +56,7 @@ export const act3to5Nodes: ScenarioNode[] = [
       '『これ、元のページじゃないよ。フォントもリンクも違う』',
       '「コピーか」',
       '『たぶん。昔はHTMLごとコピーして、文章を足す人もいたから』',
+      '『「アカノユメ」って名前も、あんたのページにはなかったと思う。外の掲示板で呼ばれ始めたんじゃないかな』',
       '「元の文章、覚えてるか」',
       '『はっきりは。でも、血とか刃物とか、そんなのはなかったと思う』',
       'ミナも答えを持ってはいない。ただ、この紙が最初ではないことだけは強くなった。',
@@ -68,6 +71,16 @@ export const act3to5Nodes: ScenarioNode[] = [
       '押し入れの古いPCを机に置いた。電源ケーブルを挿し、ボタンを押す。',
       'ファンが鳴った。二度止まりそうになり、それでも古いデスクトップが表示された。',
       '呆気ないほど普通だった。勝手に開くファイルも、警告もない。「site_old」というフォルダがある。',
+    ], variants: [
+      { condition: knowledge('old_pc_exists'), text: [
+        '押し入れで確認した古いPCを机に置いた。電源ケーブルを挿し、ボタンを押す。',
+        'ファンが鳴った。二度止まりそうになり、それでも古いデスクトップが表示された。',
+        '「site_old」というフォルダがある。',
+      ] },
+      { condition: { type: 'selfMemory', key: 'old_web_creation' }, text: [
+        'HTML入門書の奥を改めて探し、古いPC本体を引き出した。',
+        '電源を入れると、古いデスクトップが起動した。「site_old」というフォルダが残っている。',
+      ] },
     ], next: 'pc_index',
   },
   {
@@ -88,13 +101,14 @@ export const act3to5Nodes: ScenarioNode[] = [
     id: 'pc_town', title: 'town.html', text: [
       '地還しの写真が、低い解像度で貼られていた。図書館の資料から引いた文もある。',
       '「家の難儀は家で分ける。一人に全部を持たせない」',
-      '血も刃物もない。赤い紙に困っていることを書き、家族で話す。そういう「新しいやり方」を、俺は勝手に足していた。',
+      '血も刃物もない。地還し、赤土、赤布、赤紙、子供も参加すること。寝苦しい夜に赤い夢を見ることがある、と自分の経験まで添えていた。',
+      '俺の夢は、幼い頃の赤土と、大人に腕を持たれた感覚の繰り返しだ。このページより前から見ている。',
     ], next: 'pc_aka', effects: [{ type: 'addKnowledge', key: 'original_harmless_ritual' }],
   },
   {
-    id: 'pc_aka', title: 'aka.html', text: [
-      '見出しは「アカノユメ」。',
-      '老人の紙と同じ文の骨組みがある。ただし、ここでは「家の痛みは、家の人で分ける」だった。',
+    id: 'pc_aka', title: 'memo.html', text: [
+      'ページの見出しは「赤い土の話」。「アカノユメ」という名前はどこにもない。',
+      '老人の紙と同じ文の骨組みがある。ただし、ここでは「家の難儀は、家の人で分ける」だった。',
       'ページのソースに、ミナの書いたコメントが残っている。「リンク先、ここじゃないよ」。',
       '心臓が一度、強く打った。キーボードへ置いた手のひらが湿っている。',
       'ファイルの作成者名。更新履歴。余白に残った俺の本名。どれも同じ場所を指していた。',
@@ -102,25 +116,27 @@ export const act3to5Nodes: ScenarioNode[] = [
   },
   {
     id: 'author_reveal', title: '原点', text: [
-      '黄ばんだ紙は、このページをコピーした先で何度も書き換えられたものだ。',
-      '最初の文章を書いた人間は、今この画面を見ている。',
+      '黄ばんだ紙は、このページの言葉を転載した先で何度も書き換えられたものだ。アカノユメそのものを、俺が作ったわけではない。',
+      'だが、後に變形された言葉の元を書いた人間は、今この画面を見ている。',
       '「……俺だ。」',
     ], next: 'brother_call', effects: [
       { type: 'setFlag', key: 'author_revealed', value: true },
       { type: 'setFlag', key: 'original_pages_recovered', value: true },
       { type: 'addKnowledge', key: 'original_site_author' },
+      { type: 'addKnowledge', key: 'source_site_not_akano_yume' },
       { type: 'adjustHidden', key: 'FACT', amount: 2 },
       { type: 'adjustHidden', key: 'SELF', amount: 2 },
     ],
   },
   {
     id: 'brother_call', title: '義弟', text: [
-      '妹の夫へ電話した。そこで初めて、彼がアカノユメの紙を読んでいたと知った。',
-      '「全部が間違ってるわけじゃない」',
-      '「俺が書いたんだ。元は、そんな意味じゃなかった」',
-      '「お前がどういうつもりで書いたかなんて関係ない。俺があれを読んだとき、お前はそこにいなかった」',
+      '妹の夫へもう一度電話した。老人宅で紙を見て、同じ名前の文章が少しずつ違う形で外にもあると知ったという。赤い夢の記述も読んだ。',
+      '義弟に地還しの記憶はない。彼が赤い夢を見始めたのは、老人宅でその言葉を読んだ後だ。知った内容が夢の形を与えたと考えれば、それだけで説明はつく。',
+      '『全部が間違ってるわけじゃないと思うんです』',
+      '「元の言葉を書いたのは俺だ。アカノユメという名前も、血の話も後から足された」',
+      '『お義兄さんがどういうつもりで書いたかなんて、関係ないです。俺があれを読んだとき、お義兄さんはそこにいなかった』',
       '声は怒っているというより、追い詰められていた。',
-      '「あれで少し楽になった。それも間違いだったって言うのか？」',
+      '『全部信じてるわけじゃないです。でも、あれで少し楽になった。それも間違いだったって言うんですか』',
     ], choices: [
       { label: '何言ってんだ、お前', next: 'brother_reject' },
       { label: '母さんに何を言われた？', next: 'brother_information' },
@@ -130,14 +146,14 @@ export const act3to5Nodes: ScenarioNode[] = [
   {
     id: 'brother_reject', text: [
       '「何言ってんだ、お前。あの文章で母さんは人を傷つけたんだぞ」',
-      '「……そうか」',
+      '『……そうですか』',
       '義弟はそれ以上話さなかった。間違ったことを止めるためには、それで十分だと思った。',
     ], next: 'mother_returns_evening', effects: [{ type: 'setFlag', key: 'brother_rejected', value: true }],
   },
   {
     id: 'brother_information', text: [
       '「母さんに何を言われた？」',
-      '「別に。紙を見せられて、俺が勝手に読んだ」',
+      '『別に。紙を見つけて、俺が勝手に読んだんです。老人にも、お義母さんにも勧められてません』',
       '仕事を失う不安。妹を支えられないかもしれない恐怖。彼は事実を話したが、どの言葉が彼を支えたのかは言わなかった。',
     ], next: 'mother_returns_evening', effects: [{ type: 'setFlag', key: 'brother_questioned', value: true }, { type: 'adjustHidden', key: 'FACT', amount: 1 }],
   },
@@ -145,7 +161,7 @@ export const act3to5Nodes: ScenarioNode[] = [
     id: 'brother_understand', text: [
       '「どこが間違ってないと思った？」',
       '長い沈黙の後、義弟が息を吐いた。',
-      '「……一人で全部抱えなくていいってところ」',
+      '『……一人で全部抱えなくていいってところです』',
       '仕事の不安も、妹を支える責任も、自分に価値がないという思いも、彼は一人で抱えていた。',
       '「あれを読んで楽になったなら、そこまで嘘だったことにはできない」',
       '口にしてから、腕の傷が痛んだ。楽にする言葉と、人を傷つける行為は、同じにはできない。',
@@ -161,12 +177,17 @@ export const act3to5Nodes: ScenarioNode[] = [
       '「ただいまー」',
       '母さんは買い物袋を両手に下げ、いつもの声で帰ってきた。俺の腕を見て、心配そうに顔を曇らせる。',
       '「腕、大丈夫だった？」',
-      '「病院で処置した」',
-      '「そう。良かった」',
+      '「応急処置はした」',
+      '「そう……無理しないでね」',
       'それから母さんは豆腐を冷蔵庫へ入れ、惣菜を皿へ移した。半分だけ別の容器によそう。',
       '「それ、何」',
       '「おじいちゃんの。ちょっと行ってくるね」',
-    ], choices: [
+    ], variants: [{ condition: flag('hospital_done'), text: [
+      '玄関の鍵が回った。', '「ただいまー」',
+      '母さんは買い物袋を両手に下げ、いつもの声で帰ってきた。俺の腕を見て、心配そうに顔を曇らせる。',
+      '「腕、大丈夫だった？」', '「病院で処置した」', '「そう。良かった」',
+      'それから母さんは豆腐を冷蔵庫へ入れ、惣菜を皿へ移した。半分だけ別の容器によそう。', '「それ、何」', '「おじいちゃんの。ちょっと行ってくるね」',
+    ] }], choices: [
       { label: '止める', next: 'mother_stop' },
       { label: '一緒に行く', next: 'mother_go_together' },
       { label: '黙って見送る', next: 'mother_let_go' },
@@ -226,6 +247,8 @@ export const act3to5Nodes: ScenarioNode[] = [
       '母さんの唇が動いた。声になるまで時間がかかった。',
       '「あんたたち、まだ小さかったから」',
       '俺は父を失った。母さんは夫を失い、その日から二人の子供を一人で育てた。',
+      '妻を失った老人は、家族を助けようとして一線を越えたのかもしれない。その結果、写真と年賀状が途切れた。今、母さんは同じ線の手前にいる。',
+      '助けたかったということと、誰かを傷つけたことは別だ。善意は、腕の傷を消さない。',
       '「でも、今日もいたよ」',
       '「今日は俺と帰ろう」',
       '「……ご飯、どうしよう」',
@@ -235,6 +258,7 @@ export const act3to5Nodes: ScenarioNode[] = [
       { type: 'setFlag', key: 'mother_empathy_spoken', value: true },
       { type: 'addSelfMemory', key: 'mother_lost_husband' },
       { type: 'addKnowledge', key: 'mother_helping_intent' },
+      { type: 'addKnowledge', key: 'neighbor_mother_mirror_understood' },
       { type: 'adjustHidden', key: 'UNDERSTANDING', amount: 2 },
     ],
   },
@@ -246,9 +270,10 @@ export const act3to5Nodes: ScenarioNode[] = [
     ], next: 'bad_end',
   },
   {
-    id: 'bad_end', title: 'BAD END　アカノユメをみた。', location: 'neighbor_apartment', text: [
+    id: 'bad_end', title: 'BAD END　アカノユメをみた。', location: 'old_room', text: [
       '「こいつらはおかしい。話なんか通じない」',
-      '母さんの手から鍵を取り、隣室へ入った。誰にも邪魔されず紙を読める場所が必要だった。',
+      '孫世代への傷害。強制退去。仏間の紙。母さんの傷害。義弟の赤い夢。一つの危険な信仰が家族全員へ広がった。そうしか見えなくなった。',
+      '家族を昔の自分の部屋から追い出した。画面に残る古い文と、書き写した黄ばんだ紙の文を並べた。',
       '眠れない頭で読むと、かすれた文字が別の意味に見えた。痛みを外へ出す。赤い夢から戻る。',
       '腕の傷へ刃を当てた。痛みの瞬間だけ、頭の中が静かになった。効いていると思った。',
       '次はもう少し深くした。',
@@ -258,8 +283,8 @@ export const act3to5Nodes: ScenarioNode[] = [
   },
   {
     id: 'normal_end', title: 'NORMAL END　帰宅', text: [
-      '俺は母さんへ古いPCを見せた。「これを書いたのは俺だ。元は血を分ける話じゃない」',
-      '父さんを失った後、俺がどうして書いたのか。地還しの元の意味も話した。',
+      '俺は母さんへ古いPCを見せた。「アカノユメを作ったわけじゃない。でも、元になった言葉を書いたのは俺だ」',
+      '父さんを失った後、俺がどうして地域の風習を書いたのか。今日確かめられた範囲だけを話した。',
       '母さんはすぐには信じなかった。それでも腕へ触れようとはしなくなった。妹と一緒に医療と生活支援へ繋げた。',
       '数年後、義弟の部屋で赤い布と赤い糸が見つかった。コピーされた文章には、彼の言葉が書き足されていた。',
       'その部屋の主がどこへ行ったのか、紙は教えてくれなかった。',
@@ -271,8 +296,8 @@ export const act3to5Nodes: ScenarioNode[] = [
       '俺たちは医療と生活支援へ繋がった。母さんの見た老人を、いないと言い続けることも、いると認めることもしなかった。',
       '義弟には「あれで楽になったなら、そこまで嘘だったことにはしない」と伝えた。',
       '「でも、人を傷つけるところまで正しいとは言えない」',
+      '老人が家族を助けようとした可能性は、孫世代の親族を傷つけた事実を軽くしない。母さんの善意も、俺の腕を許容する理由にはならない。',
       '言葉が誰かを救ったことと、その言葉で誰かが傷ついたことは、両方とも残った。',
-      '死後の部屋で母さんが誰と話したのかは、その後も分からない。',
     ], choices: [
       { label: '数日後、ミナへ連絡する', next: 'secret_end', condition: secretRequirements },
       { label: 'この結末を閉じる', next: 'true_end_close' },

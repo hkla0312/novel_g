@@ -4,11 +4,12 @@ import { scenario } from '../scenario'
 import type { GameSnapshot } from '../types/game'
 import type { Choice } from '../types/scenario'
 import { loadGame, saveGame } from './saveStorage'
+import { hasPreviousTrueClear, recordTrueClear } from './progressStorage'
 
 const initialBase = (): GameSnapshot => ({
   currentNode: 'prologue',
   currentTime: 450,
-  flags: {}, knowledge: [], selfMemory: [], visitedNodes: [], visitedLocations: [], backlog: [],
+  flags: { true_cleared_previous: hasPreviousTrueClear() }, knowledge: [], selfMemory: [], visitedNodes: [], visitedLocations: [], backlog: [],
   hidden: { FACT: 0, UNDERSTANDING: 0, SELF: 0 },
 })
 
@@ -34,21 +35,28 @@ const snapshotFrom = (state: GameStore): GameSnapshot => ({
 
 export const useGameStore = create<GameStore>((set, get) => ({
   ...createInitialSnapshot(),
-  chooseChoice: (choice) => set((state) => choose(snapshotFrom(state), choice, scenario)),
+  chooseChoice: (choice) => set((state) => {
+    const nextState = choose(snapshotFrom(state), choice, scenario)
+    if (nextState.currentNode === 'true_end') recordTrueClear()
+    return nextState
+  }),
   continueNode: () => set((state) => {
     const node = scenario[state.currentNode]
     if (!node) return state
     const next = getNextNodeId(node, snapshotFrom(state))
     if (!next) return state
     const target = scenario[next]
-    return target ? enterNode(snapshotFrom(state), target) : state
+    if (!target) return state
+    const nextState = enterNode(snapshotFrom(state), target)
+    if (nextState.currentNode === 'true_end') recordTrueClear()
+    return nextState
   }),
   restart: () => set(createInitialSnapshot()),
   saveToSlot: (slot) => { saveGame(slot, snapshotFrom(get())) },
   loadFromSlot: (slot) => {
     const data = loadGame(slot)
     if (!data || !scenario[data.snapshot.currentNode]) return false
-    set(data.snapshot)
+    set({ ...data.snapshot, flags: { ...data.snapshot.flags, true_cleared_previous: data.snapshot.flags.true_cleared_previous || hasPreviousTrueClear() } })
     return true
   },
   jumpToNode: (id) => {
