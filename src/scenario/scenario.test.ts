@@ -97,7 +97,6 @@ describe('vertical slice routes', () => {
     state = pick(state, '家族写真を見直す')
     state = pick(state, '戻る')
     state = pick(state, '昔の自分の部屋を調べる')
-    state = pick(state, '戻る')
     state = pick(state, '古いヘッドセットを手に取る')
     expect(state.flags.mina_unlocked).toBe(true)
     state = pick(state, '連絡先を探して戻る')
@@ -165,6 +164,52 @@ describe('vertical slice routes', () => {
       .toContain('「地還し」で詳しく探す')
   })
 
+  it('hides completed hospital and police actions instead of repeating identical visits', () => {
+    const state = enterNode({ ...start(), flags: { hospital_done: true, police_done: true } }, scenario.free_action_hub)
+    const labels = getAvailableChoices(scenario.free_action_hub, state).map((item) => item.label)
+    expect(labels).not.toContain('病院へ行く')
+    expect(labels).not.toContain('警察へ行く')
+  })
+
+  it('shows ordinary living traces before care items or the butsuma', () => {
+    const first = enterNode(start(), scenario.neighbor_home_hub)
+    expect(getAvailableChoices(scenario.neighbor_home_hub, first).map((item) => item.label)).toEqual(['生活の痕跡を調べる', '老人宅を出る'])
+    const afterLife = { ...first, flags: { ...first.flags, neighbor_life_checked: true } }
+    const labels = getAvailableChoices(scenario.neighbor_home_hub, afterLife).map((item) => item.label)
+    expect(labels).toContain('食事・介護用品を調べる')
+    expect(labels).toContain('仏間を調べる')
+  })
+
+  it('unlocks Mina from the document and the two relevant memories without unrelated SELF count', () => {
+    const state = enterNode({
+      ...start(), currentNode: 'home_act2', flags: { old_room_paper_memory_done: true },
+      knowledge: ['akano_yume_document'], selfMemory: ['old_web_creation', 'escape_into_local_history'],
+    }, scenario.home_act2)
+    expect(getAvailableChoices(scenario.home_act2, state).map((item) => item.label)).toContain('古いヘッドセットを手に取る')
+  })
+
+  it('offers a contextual old-room lead immediately after acquiring the yellow A4', () => {
+    const state = enterNode({ ...start(), knowledge: ['akano_yume_document'] }, scenario.act2_hub)
+    expect(getAvailableChoices(scenario.act2_hub, state).map((item) => item.label)).toContain('黄ばんだ紙を持って昔の部屋へ戻る')
+  })
+
+  it('records the memories explicitly recalled by the old room paper and PC about page', () => {
+    const paper = enterNode(start(), scenario.old_room_paper_memory)
+    expect(paper.selfMemory).toContain('old_web_creation')
+    expect(paper.selfMemory).toContain('escape_into_local_history')
+    const about = enterNode(start(), scenario.pc_about)
+    expect(about.selfMemory).toContain('loss_father')
+  })
+
+  it('separates death confirmation from the optional police history confirmation', () => {
+    const deathOnly = enterNode(start(), scenario.verify_police)
+    expect(deathOnly.knowledge).toContain('neighbor_death_official_record')
+    expect(deathOnly.knowledge).not.toContain('neighbor_relative_injury_confirmed')
+    const history = enterNode(deathOnly, scenario.verify_police_history)
+    expect(history.knowledge).toContain('neighbor_relative_injury_confirmed')
+    expect(history.knowledge).toContain('neighbor_nonprosecution_and_eviction')
+  })
+
   it('routes BAD, NORMAL, and TRUE from state combinations rather than a visible score choice', () => {
     const base = start()
     const atJunction = (overrides: Partial<GameSnapshot>): GameSnapshot => ({ ...base, currentNode: 'ending_junction', ...overrides })
@@ -178,6 +223,17 @@ describe('vertical slice routes', () => {
       selfMemory: ['loss_father', 'old_web_creation', 'escape_into_local_history', 'online_friend_mina'],
       hidden: { FACT: 6, SELF: 5, UNDERSTANDING: 4 },
     }))).toBe('true_end')
+  })
+
+  it('routes thematic understanding to TRUE without requiring every optional neighbor inference', () => {
+    const state: GameSnapshot = {
+      ...start(), currentNode: 'ending_junction',
+      flags: { author_revealed: true, brother_understood: true, mother_accompanied: true, mother_empathy_spoken: true },
+      knowledge: ['library_jigaeshi_confirmed', 'neighbor_long_widowhood'],
+      selfMemory: ['loss_father', 'old_web_creation', 'escape_into_local_history'],
+      hidden: { FACT: 4, SELF: 3, UNDERSTANDING: 3 },
+    }
+    expect(getNextNodeId(scenario.ending_junction, state)).toBe('true_end')
   })
 
   it('unlocks SECRET only after TRUE with the optional Mina and document trail', () => {
@@ -244,6 +300,11 @@ describe('vertical slice routes', () => {
     expect(scenario.brother_initial_call.text.join('\n')).toContain('『……あります』')
   })
 
+  it('records the red-dream testimony when the mandatory ACT4 brother call is reached', () => {
+    const state = enterNode(start(), scenario.brother_call)
+    expect(state.knowledge).toContain('brother_red_dream')
+  })
+
   it('keeps optional knowledge out of unconditional later text', () => {
     const plain = start()
     expect(scenario.work_call_1600.text.join('\n')).not.toContain('黄ばんだ紙')
@@ -252,6 +313,16 @@ describe('vertical slice routes', () => {
     expect(scenario.normal_end.text.join('\n')).not.toContain('地還しの元の意味')
     expect(scenario.bad_end.text.join('\n')).not.toContain('母さんの手から鍵')
     expect(scenario.true_end.text.join('\n')).not.toContain('死後の部屋')
+  })
+
+  it('uses acquired-only NORMAL and PC variants without leaking optional interpretation', () => {
+    const plain = start()
+    expect(getNodeText(scenario.normal_end, plain).join('\n')).not.toContain('老人が人を傷つけた事実')
+    expect(getNodeText(scenario.normal_end, plain).join('\n')).not.toContain('義弟が読んだのは')
+    expect(getNodeText(scenario.normal_end, { ...plain, knowledge: ['neighbor_long_widowhood'] }).join('\n')).toContain('最初から誰かを傷つけるため')
+    expect(getNodeText(scenario.normal_end, { ...plain, knowledge: ['words_helped_brother'] }).join('\n')).toContain('義弟が読んだのは俺の意図ではなかった')
+    expect(getNodeText(scenario.pc_aka, plain).join('\n')).not.toContain('図書館で見た地還し')
+    expect(getNodeText(scenario.pc_aka, { ...plain, knowledge: ['library_jigaeshi_confirmed'] }).join('\n')).toContain('図書館で見た地還し')
   })
 
   it('allows the death reveal without collecting the injury rumor', () => {

@@ -43,7 +43,7 @@ export const archiveDefinitions: ArchiveEntryDefinition[] = [
     ],
   },
   {
-    id: 'brother', category: '人物', title: '義弟', visibleWhen: knowledge('husband_knows'), facts: [
+    id: 'brother', category: '人物', title: '義弟', visibleWhen: any(knowledge('husband_knows'), knowledge('brother_red_dream')), facts: [
       { text: '母の介護に何度か付き添い、老人宅に入ったことがある。', source: '妹', sourceType: '証言', condition: knowledge('husband_knows') },
       { text: '最近、赤い夢を見たことがあると話した。', source: '義弟', sourceType: '証言', condition: knowledge('brother_red_dream') },
       { text: '「一人で全部抱えなくていい」という部分に少し救われたと話した。', source: '義弟', sourceType: '証言', condition: knowledge('words_helped_brother') },

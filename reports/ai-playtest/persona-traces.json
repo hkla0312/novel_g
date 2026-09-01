@@ -1,0 +1,7258 @@
+Warning: truncated output (original token count: 83502)
+Total output lines: 12061
+
+[
+  {
+    "runId": 1,
+    "persona": "ordinary",
+    "ending": "NORMAL",
+    "endTime": 985,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 466
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 466
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 508
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 512
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 559
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 559
+      },
+      {
+        "node": "home_search",
+        "label": "母親の周辺を調べる",
+        "time": 561
+      },
+      {
+        "node": "home_mother_notes",
+        "label": "戻る",
+        "time": 579
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 579
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 585
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 585
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 585
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 600
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 605
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 615
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 665
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 665
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 685
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 685
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 685
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 700
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 740
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 740
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 790
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 790
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 825
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 825
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 825
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 825
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 945
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 945
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 985
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 985
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 985
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 985
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 985
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 985
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "一緒に行く",
+        "time": 985
+      },
+      {
+        "node": "mother_go_together",
+        "label": "ここには誰もいない",
+        "time": 985
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 23,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 35,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 37,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 39,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 41,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 58,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 60,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 61,
+        "node": "mother_go_together",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "mother_care_notes",
+      "childhood_red_land_photo",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "mother_visited_neighbor_yesterday",
+      "traditional_rite_has_no_self_harm",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "no_akano_yume_in_religious_records",
+      "neighbor_death_official_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "mother_lost_husband",
+      "escape_into_local_history",
+      "old_web_creation",
+      "loss_father"
+    ]
+  },
+  {
+    "runId": 2,
+    "persona": "horror_veteran",
+    "ending": "NORMAL",
+    "endTime": 1043,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "義弟に電話する",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 477
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 480
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 480
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 522
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 526
+      },
+      {
+        "node": "hospital",
+        "label": "高齢者に話しかける",
+        "time": 573
+      },
+      {
+        "node": "hospital_elder",
+        "label": "礼を言って病院を出る",
+        "time": 581
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 581
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 596
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 601
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 611
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 731
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 731
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 731
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 736
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 744
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 744
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 749
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を調べる",
+        "time": 749
+      },
+      {
+        "node": "mother_room_first",
+        "label": "戻る",
+        "time": 767
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 767
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 785
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 785
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 803
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 803
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 803
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 818
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 868
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 868
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 908
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 908
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 928
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 928
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 928
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 933
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 933
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 933
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 983
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 983
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 1023
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 1023
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 1043
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 1043
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1043
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1043
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1043
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 1043
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "一緒に行く",
+        "time": 1043
+      },
+      {
+        "node": "mother_go_together",
+        "label": "ここには誰もいない",
+        "time": 1043
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 18,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 26,
+        "node": "danchi_return",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 48,
+        "node": "library_hub",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 50,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 52,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 54,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 57,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 76,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 78,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 79,
+        "node": "mother_go_together",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "sister_previous_incidents",
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "akano_yume_name_from_brother",
+      "brother_red_dream",
+      "neighbor_profile",
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "jigaeshi_meaning",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_official_record",
+      "possible_childhood_jigaeshi_participation",
+      "mother_care_was_sincere",
+      "mother_faith_internalization_path",
+      "unidentified_old_key",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "traditional_rite_has_no_self_harm",
+      "key_opens_neighbor_apartment",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "mother_visited_neighbor_yesterday",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume"
+    ],
+    "selfMemory": [
+      "loss_father",
+      "escape_into_local_history",
+      "old_web_creation"
+    ]
+  },
+  {
+    "runId": 3,
+    "persona": "occult_believer",
+    "ending": "NORMAL",
+    "endTime": 992,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "義弟に電話する",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 474
+      },
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 477
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 480
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 480
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 522
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 526
+      },
+      {
+        "node": "hospital",
+        "label": "高齢者に話しかける",
+        "time": 573
+      },
+      {
+        "node": "hospital_elder",
+        "label": "礼を言って病院を出る",
+        "time": 581
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 581
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 596
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 601
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 611
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 731
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 731
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 751
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 751
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 791
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 791
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 791
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 791
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 841
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 841
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 841
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 846
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 854
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を調べる",
+        "time": 854
+      },
+      {
+        "node": "mother_room_first",
+        "label": "戻る",
+        "time": 872
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 872
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 872
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 887
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 937
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 937
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 957
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 957
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 992
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 992
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 992
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 992
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 992
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 992
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "黙って見送る",
+        "time": 992
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 18,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 26,
+        "node": "danchi_return",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 50,
+        "node": "library_hub",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 52,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 54,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 56,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 67,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 69,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "neighbor_profile",
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "akano_yume_name_from_brother",
+      "brother_red_dream",
+      "sister_previous_incidents",
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "jigaeshi_meaning",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_official_record",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "possible_childhood_jigaeshi_participation",
+      "mother_care_was_sincere",
+      "mother_faith_internalization_path",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "no_akano_yume_in_religious_records",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume"
+    ],
+    "selfMemory": [
+      "escape_into_local_history",
+      "old_web_creation",
+      "loss_father"
+    ]
+  },
+  {
+    "runId": 4,
+    "persona": "skeptic",
+    "ending": "BAD",
+    "endTime": 1065,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 469
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 469
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 511
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 515
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 562
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 562
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 577
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 582
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 592
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 642
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 642
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 642
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 642
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 662
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 662
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 782
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 782
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 822
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 822
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 822
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 827
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 835
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を調べる",
+        "time": 835
+      },
+      {
+        "node": "mother_room_first",
+        "label": "戻る",
+        "time": 853
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 853
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 871
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 871
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 889
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 889
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 889
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 889
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 894
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 894
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 894
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "生活の痕跡を調べる",
+        "time": 899
+      },
+      {
+        "node": "neighbor_life",
+        "label": "部屋を調べ続ける",
+        "time": 911
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "食事・介護用品を調べる",
+        "time": 911
+      },
+      {
+        "node": "neighbor_care",
+        "label": "部屋を調べ続ける",
+        "time": 923
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "仏間を調べる",
+        "time": 923
+      },
+      {
+        "node": "neighbor_red_objects",
+        "label": "部屋を調べ続ける",
+        "time": 935
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 935
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 935
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 955
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 970
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 1010
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 1010
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 1030
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 1030
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 1065
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 1065
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1065
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1065
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1065
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 1065
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "老人が死んでいることを伝える",
+        "time": 1065
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 19,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 52,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 54,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 56,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 58,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H3",
+        "confidence": 82,
+        "reason": "普通の居室に対して仏間だけ赤い資料が堆積していた。",
+        "nextIntent": "黄ばんだ紙の内容を確認したい。"
+      },
+      {
+        "step": 62,
+        "node": "library_hub",
+        "currentHypothesis": "H3",
+        "confidence": 82,
+        "reason": "普通の居室に対して仏間だけ赤い資料が堆積していた。",
+        "nextIntent": "黄ばんだ紙の内容を確認したい。"
+      },
+      {
+        "step": 64,
+        "node": "library_hub",
+        "currentHypothesis": "H3",
+        "confidence": 82,
+        "reason": "普通の居室に対して仏間だけ赤い資料が堆積していた。",
+        "nextIntent": "黄ばんだ紙の内容を確認したい。"
+      },
+      {
+        "step": 66,
+        "node": "library_hub",
+        "currentHypothesis": "H3",
+        "confidence": 82,
+        "reason": "普通の居室に対して仏間だけ赤い資料が堆積していた。",
+        "nextIntent": "黄ばんだ紙の内容を確認したい。"
+      },
+      {
+        "step": 68,
+        "node": "library_hub",
+        "currentHypothesis": "H3",
+        "confidence": 82,
+        "reason": "普通の居室に対して仏間だけ赤い資料が堆積していた。",
+        "nextIntent": "黄ばんだ紙の内容を確認したい。"
+      },
+      {
+        "step": 79,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 81,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "neighbor_profile",
+      "sister_previous_incidents",
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_death_official_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "possible_childhood_jigaeshi_participation",
+      "mother_care_was_sincere",
+      "mother_faith_internalization_path",
+      "unidentified_old_key",
+      "key_opens_neighbor_apartment",
+      "neighbor_long_widowhood",
+      "neighbor_family_contact_ended",
+      "neighbor_family_photo_gap",
+      "postmortem_care_items",
+      "layered_red_objects",
+      "butsuma_faith_accumulation",
+      "neighbor_faith_kept_inside",
+      "traditional_rite_has_no_self_harm",
+      "no_akano_yume_in_religious_records",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "loss_father",
+      "old_web_creation"
+    ]
+  },
+  {
+    "runId": 5,
+    "persona": "trust_mother",
+    "ending": "NORMAL",
+    "endTime": 970,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 475
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 475
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 522
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 522
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 564
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 568
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 570
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 570
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 585
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 585
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 595
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 615
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 615
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 735
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 735
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 735
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 735
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 785
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 785
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 825
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 825
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 825
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 840
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 860
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 860
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 900
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 900
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 950
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 950
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 950
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 970
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 970
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 970
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 970
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "止める",
+        "time": 970
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 25,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 42,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 44,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 46,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 48,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 61,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 63,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "neighbor_profile",
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "local_custom_heard",
+      "mother_externalization_fear",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_death_official_record",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "traditional_rite_has_no_self_harm",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "escape_into_local_history",
+      "old_web_creation",
+      "loss_father"
+    ]
+  },
+  {
+    "runId": 6,
+    "persona": "distrust_mother",
+    "ending": "NORMAL",
+    "endTime": 1050,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 466
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 466
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 508
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 512
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 559
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 559
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 561
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 561
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 576
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 576
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 586
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 636
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 636
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 756
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 756
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 776
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 776
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 816
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 816
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 816
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 836
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を調べる",
+        "time": 841
+      },
+      {
+        "node": "mother_room_first",
+        "label": "戻る",
+        "time": 859
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 859
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 867
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 867
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 885
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 885
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 890
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 890
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 890
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 905
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 955
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 955
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 995
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 995
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 1015
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 1015
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 1050
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 1050
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1050
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1050
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1050
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 1050
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "黙って見送る",
+        "time": 1050
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 19,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 46,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 48,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 50,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 52,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 54,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 65,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 67,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_death_official_record",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "mother_care_was_sincere",
+      "mother_faith_internalization_path",
+      "possible_childhood_jigaeshi_participation",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "traditional_rite_has_no_self_harm",
+      "no_akano_yume_in_religious_records",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "loss_father",
+      "escape_into_local_history",
+      "old_web_creation"
+    ]
+  },
+  {
+    "runId": 7,
+    "persona": "suspect_neighbor",
+    "ending": "NORMAL",
+    "endTime": 984,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 475
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 475
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 477
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 485
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 485
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 490
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 490
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 490
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 532
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 536
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 551
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 556
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 566
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 586
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 586
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 706
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 706
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 706
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 726
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 731
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 736
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を調べる",
+        "time": 736
+      },
+      {
+        "node": "mother_room_first",
+        "label": "戻る",
+        "time": 754
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 754
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 772
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 772
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 790
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 790
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 790
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "生活の痕跡を調べる",
+        "time": 795
+      },
+      {
+        "node": "neighbor_life",
+        "label": "部屋を調べ続ける",
+        "time": 807
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "食事・介護用品を調べる",
+        "time": 807
+      },
+      {
+        "node": "neighbor_care",
+        "label": "部屋を調べ続ける",
+        "time": 819
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "仏間を調べる",
+        "time": 819
+      },
+      {
+        "node": "neighbor_red_objects",
+        "label": "部屋を調べ続ける",
+        "time": 831
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "黄ばんだA4を調べる",
+        "time": 831
+      },
+      {
+        "node": "neighbor_old_paper",
+        "label": "紙の内容を記録して戻る",
+        "time": 846
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "前の事件を思い出す",
+        "time": 846
+      },
+      {
+        "node": "neighbor_connect_incident",
+        "label": "部屋を調べ続ける",
+        "time": 846
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "仏間の外に同じ痕跡がないか確かめる",
+        "time": 846
+      },
+      {
+        "node": "neighbor_late_boundary",
+        "label": "部屋を調べ続ける",
+        "time": 854
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 854
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 854
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 854
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 894
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 894
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 944
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 944
+      },
+      {
+        "node": "act2_hub",
+        "label": "黄ばんだ紙を持って昔の部屋へ戻る",
+        "time": 944
+      },
+      {
+        "node": "old_room_paper_memory",
+        "label": "いったん戻る",
+        "time": 961
+      },
+      {
+        "node": "home_act2",
+        "label": "古いヘッドセットを手に取る",
+        "time": 961
+      },
+      {
+        "node": "old_room_headset_memory",
+        "label": "連絡先を探して戻る",
+        "time": 971
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 971
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 979
+      },
+      {
+        "node": "home_act2",
+        "label": "昔の部屋を見直す",
+        "time": 979
+      },
+      {
+        "node": "old_room_repeat",
+        "label": "戻る",
+        "time": 984
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 984
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 984
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 984
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 984
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 984
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 984
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 984
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 984
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 984
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "止める",
+        "time": 984
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 27,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 52,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 54,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 56,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 58,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H3",
+        "confidence": 82,
+        "reason": "普通の居室に対して仏間だけ赤い資料が堆積していた。",
+        "nextIntent": "黄ばんだ紙の内容を確認したい。"
+      },
+      {
+        "step": 59,
+        "node": "neighbor_old_paper",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 60,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 62,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H5",
+        "confidence": 77,
+        "reason": "傷害の噂と「家の血で分ける」という紙が同じ部屋にある。因果は未確認だ。",
+        "nextIntent": "紙の年代と老人の家族史を確かめたい。"
+      },
+      {
+        "step": 64,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H9",
+        "confidence": 78,
+        "reason": "妻の死と古い印刷物の年代が近く、老人が発信者より受信者に見える。",
+        "nextIntent": "原サイトと転載の差を確認したい。"
+      },
+      {
+        "step": 94,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 96,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "neighbor_profile",
+      "sister_previous_incidents",
+      "old_pc_exists",
+      "red_brown_cloth",
+      "mother_externalization_fear",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_death_official_record",
+      "mother_care_was_sincere",
+      "mother_faith_internalization_path",
+      "unidentified_old_key",
+      "key_opens_neighbor_apartment",
+      "neighbor_long_widowhood",
+      "neighbor_family_contact_ended",
+      "neighbor_family_photo_gap",
+      "postmortem_care_items",
+      "layered_red_objects",
+      "butsuma_faith_accumulation",
+      "neighbor_faith_kept_inside",
+      "akano_yume_document",
+      "neighbor_injury_faith_possible_link",
+      "neighbor_faith_contained_after_loss",
+      "mother_was_nonblood_and_neighbor_frail",
+      "neighbor_early_recipient_after_wife_loss",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "possible_childhood_jigaeshi_participation",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "old_web_creation",
+      "loss_father",
+      "escape_into_local_history",
+      "online_friend_mina"
+    ]
+  },
+  {
+    "runId": 8,
+    "persona": "suspect_brother",
+    "ending": "NORMAL",
+    "endTime": 973,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 463
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 463
+      },
+      {
+        "node": "hospital",
+        "label": "高齢者に話しかける",
+        "time": 510
+      },
+      {
+        "node": "hospital_elder",
+        "label": "礼を言って病院を出る",
+        "time": 518
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 518
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 520
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 528
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 528
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 534
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 534
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 539
+      },
+      {
+        "node": "home_search",
+        "label": "母親の周辺を調べる",
+        "time": 539
+      },
+      {
+        "node": "home_mother_notes",
+        "label": "戻る",
+        "time": 557
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 557
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 557
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 572
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 577
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 587
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 637
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 637
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 757
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 757
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 797
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 797
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 817
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 817
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 817
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 822
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 827
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 827
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 845
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 845
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 853
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 853
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 853
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 873
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 888
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 938
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 938
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 973
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 973
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 973
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 973
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 973
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 973
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "止める",
+        "time": 973
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 23,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 49,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 51,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 53,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 64,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 66,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "local_custom_heard",
+      "jigaeshi_meaning",
+      "old_pc_exists",
+      "childhood_red_land_photo",
+      "red_brown_cloth",
+      "mother_care_notes",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_death_official_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "mother_visited_neighbor_yesterday",
+      "possible_childhood_jigaeshi_participation",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "no_akano_yume_in_religious_records",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "old_web_creation",
+      "mother_lost_husband",
+      "loss_father",
+      "escape_into_local_history"
+    ]
+  },
+  {
+    "runId": 9,
+    "persona": "trust_sister",
+    "ending": "NORMAL",
+    "endTime": 1035,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 475
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 475
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 522
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 522
+      },
+      {
+        "node": "home_search",
+        "label": "母親の周辺を調べる",
+        "time": 524
+      },
+      {
+        "node": "home_mother_notes",
+        "label": "戻る",
+        "time": 542
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 542
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 547
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 547
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 555
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 555
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 555
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 570
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 575
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 585
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 605
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 605
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 725
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 725
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 725
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 725
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 775
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 775
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 815
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 815
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 815
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 820
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 820
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 835
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 885
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 885
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 885
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 905
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 925
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 940
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 975
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 975
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 995
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 995
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 1035
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 1035
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1035
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1035
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1035
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 1035
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "黙って見送る",
+        "time": 1035
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 28,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 48,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 50,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 56,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 58,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 60,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 62,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 73,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 75,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "sister_previous_incidents",
+      "local_custom_heard",
+      "mother_care_notes",
+      "red_brown_cloth",
+      "old_pc_exists",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_death_official_record",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "no_akano_yume_in_religious_records",
+      "traditional_rite_has_no_self_harm",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "loss_father",
+      "old_web_creation",
+      "escape_into_local_history"
+    ]
+  },
+  {
+    "runId": 10,
+    "persona": "safety_first",
+    "ending": "NORMAL",
+    "endTime": 973,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "義弟に電話する",
+        "time": 475
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 480
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 483
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 483
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 530
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 530
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 532
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 532
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 574
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 578
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 593
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 593
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 603
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 653
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 653
+    …33502 tokens truncated… "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 585
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 585
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 595
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 645
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 645
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 765
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 765
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 805
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 805
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 825
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 825
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 825
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 840
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 890
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 890
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 910
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 910
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 950
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 950
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 950
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 970
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 970
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 970
+      },
+      {
+        "node": "brother_call",
+        "label": "どこが間違ってないと思った？",
+        "time": 970
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "老人が死んでいることを伝える",
+        "time": 970
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 20,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 35,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 37,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 39,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 41,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 54,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 56,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "sister_previous_incidents",
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "jigaeshi_meaning",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_death_official_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "mother_visited_neighbor_yesterday",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "traditional_rite_has_no_self_harm",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream",
+      "words_helped_brother"
+    ],
+    "selfMemory": [
+      "escape_into_local_history",
+      "old_web_creation",
+      "loss_father"
+    ]
+  },
+  {
+    "runId": 23,
+    "persona": "occult_believer",
+    "ending": "NORMAL",
+    "endTime": 1051,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 469
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 469
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 471
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 476
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 476
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 484
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 484
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 484
+      },
+      {
+        "node": "hospital",
+        "label": "高齢者に話しかける",
+        "time": 531
+      },
+      {
+        "node": "hospital_elder",
+        "label": "礼を言って病院を出る",
+        "time": 539
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 539
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 554
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 554
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 564
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 684
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 684
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 684
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 689
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 694
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を調べる",
+        "time": 694
+      },
+      {
+        "node": "mother_room_first",
+        "label": "戻る",
+        "time": 712
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 712
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 720
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 720
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 738
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 738
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 756
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 756
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 756
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 761
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 761
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 761
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 811
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 811
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 851
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 851
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 871
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 871
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 871
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 891
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 906
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 941
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 941
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 961
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 961
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 1001
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 1001
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 1051
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 1051
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1051
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1051
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1051
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 1051
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "止める",
+        "time": 1051
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 23,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 45,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 57,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 59,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 61,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 63,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 65,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 76,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 78,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "sister_previous_incidents",
+      "red_brown_cloth",
+      "old_pc_exists",
+      "local_custom_heard",
+      "jigaeshi_meaning",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_official_record",
+      "mother_care_was_sincere",
+      "mother_faith_internalization_path",
+      "possible_childhood_jigaeshi_participation",
+      "unidentified_old_key",
+      "key_opens_neighbor_apartment",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "mother_visited_neighbor_yesterday",
+      "no_akano_yume_in_religious_records",
+      "traditional_rite_has_no_self_harm",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "loss_father",
+      "old_web_creation",
+      "escape_into_local_history"
+    ]
+  },
+  {
+    "runId": 24,
+    "persona": "skeptic",
+    "ending": "NORMAL",
+    "endTime": 976,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 475
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 475
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 517
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 521
+      },
+      {
+        "node": "home_search",
+        "label": "母親の周辺を調べる",
+        "time": 523
+      },
+      {
+        "node": "home_mother_notes",
+        "label": "戻る",
+        "time": 541
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 541
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 549
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 549
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 555
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 555
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 560
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 560
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 560
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 575
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 575
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 585
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 635
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 635
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 655
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 655
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 655
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 655
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 775
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 775
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 815
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 815
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 815
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 820
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 820
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 840
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 845
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 853
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 853
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 858
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 858
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 876
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 876
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 894
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 894
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 894
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 894
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 902
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 902
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 907
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 907
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 907
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 912
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 912
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "生活の痕跡を調べる",
+        "time": 917
+      },
+      {
+        "node": "neighbor_life",
+        "label": "部屋を調べ続ける",
+        "time": 929
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "食事・介護用品を調べる",
+        "time": 929
+      },
+      {
+        "node": "neighbor_care",
+        "label": "部屋を調べ続ける",
+        "time": 941
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "仏間を調べる",
+        "time": 941
+      },
+      {
+        "node": "neighbor_red_objects",
+        "label": "部屋を調べ続ける",
+        "time": 953
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "黄ばんだA4を調べる",
+        "time": 953
+      },
+      {
+        "node": "neighbor_old_paper",
+        "label": "紙の内容を記録して戻る",
+        "time": 968
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "仏間の外に同じ痕跡がないか確かめる",
+        "time": 968
+      },
+      {
+        "node": "neighbor_late_boundary",
+        "label": "部屋を調べ続ける",
+        "time": 976
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 976
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 976
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 976
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 976
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 976
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "一緒に行く",
+        "time": 976
+      },
+      {
+        "node": "mother_go_together",
+        "label": "ここには誰もいない",
+        "time": 976
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 31,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 69,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 72,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 74,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 76,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 78,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H3",
+        "confidence": 82,
+        "reason": "普通の居室に対して仏間だけ赤い資料が堆積していた。",
+        "nextIntent": "黄ばんだ紙の内容を確認したい。"
+      },
+      {
+        "step": 79,
+        "node": "neighbor_old_paper",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 80,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 82,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H9",
+        "confidence": 78,
+        "reason": "妻の死と古い印刷物の年代が近く、老人が発信者より受信者に見える。",
+        "nextIntent": "原サイトと転載の差を確認したい。"
+      },
+      {
+        "step": 93,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 95,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 96,
+        "node": "mother_go_together",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "sister_previous_incidents",
+      "mother_externalization_fear",
+      "mother_care_notes",
+      "old_pc_exists",
+      "childhood_red_land_photo",
+      "red_brown_cloth",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_death_official_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "possible_childhood_jigaeshi_participation",
+      "unidentified_old_key",
+      "key_opens_neighbor_apartment",
+      "neighbor_long_widowhood",
+      "neighbor_family_contact_ended",
+      "neighbor_family_photo_gap",
+      "postmortem_care_items",
+      "layered_red_objects",
+      "butsuma_faith_accumulation",
+      "neighbor_faith_kept_inside",
+      "akano_yume_document",
+      "neighbor_faith_contained_after_loss",
+      "mother_was_nonblood_and_neighbor_frail",
+      "neighbor_early_recipient_after_wife_loss",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "old_web_creation",
+      "mother_lost_husband",
+      "loss_father"
+    ]
+  },
+  {
+    "runId": 25,
+    "persona": "trust_mother",
+    "ending": "NORMAL",
+    "endTime": 1074,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 466
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 466
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 468
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 474
+      },
+      {
+        "node": "home_search",
+        "label": "母親の周辺を調べる",
+        "time": 474
+      },
+      {
+        "node": "home_mother_notes",
+        "label": "戻る",
+        "time": 492
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 492
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 492
+      },
+      {
+        "node": "hospital",
+        "label": "高齢者に話しかける",
+        "time": 539
+      },
+      {
+        "node": "hospital_elder",
+        "label": "礼を言って病院を出る",
+        "time": 547
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 547
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 562
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 562
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 572
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 622
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 622
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 622
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 622
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 742
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 742
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 762
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 762
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 802
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 802
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 802
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 817
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 817
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 822
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 840
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 840
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 858
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 858
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 863
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 863
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 871
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 871
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 871
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 871
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 871
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 876
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 876
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 896
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 901
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 909
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 909
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 909
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 909
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 914
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 914
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 914
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 929
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 964
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 964
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 984
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 984
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 1034
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 1034
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 1074
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 1074
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1074
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1074
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1074
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 1074
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "一緒に行く",
+        "time": 1074
+      },
+      {
+        "node": "mother_go_together",
+        "label": "ここには誰もいない",
+        "time": 1074
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 21,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 38,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 53,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 65,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 67,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 69,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 71,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 73,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 84,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 86,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 87,
+        "node": "mother_go_together",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "neighbor_profile",
+      "childhood_red_land_photo",
+      "mother_care_notes",
+      "local_custom_heard",
+      "jigaeshi_meaning",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_death_official_record",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "unidentified_old_key",
+      "possible_childhood_jigaeshi_participation",
+      "key_opens_neighbor_apartment",
+      "no_akano_yume_in_religious_records",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "traditional_rite_has_no_self_harm",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "mother_lost_husband",
+      "loss_father",
+      "escape_into_local_history",
+      "old_web_creation"
+    ]
+  },
+  {
+    "runId": 26,
+    "persona": "distrust_mother",
+    "ending": "NORMAL",
+    "endTime": 1055,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 475
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 475
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 517
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 521
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 568
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 568
+      },
+      {
+        "node": "home_search",
+        "label": "母親の周辺を調べる",
+        "time": 570
+      },
+      {
+        "node": "home_mother_notes",
+        "label": "戻る",
+        "time": 588
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 588
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 596
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 596
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 601
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 601
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 601
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 616
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 616
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 626
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 746
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 746
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 746
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 766
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 771
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 776
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 776
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 794
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 794
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 812
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 812
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 812
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 812
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 820
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 820
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 820
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 825
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 825
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 840
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 860
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 860
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 895
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 895
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 945
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 945
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 945
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 945
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 995
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 995
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 1015
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 1015
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 1055
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 1055
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1055
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1055
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1055
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 1055
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "一緒に行く",
+        "time": 1055
+      },
+      {
+        "node": "mother_go_together",
+        "label": "ここには誰もいない",
+        "time": 1055
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 31,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 55,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 57,
+        "node": "library_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 59,
+        "node": "library_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 61,
+        "node": "library_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 63,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 82,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 84,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 85,
+        "node": "mother_go_together",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "sister_previous_incidents",
+      "neighbor_profile",
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "mother_care_notes",
+      "old_pc_exists",
+      "red_brown_cloth",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_official_record",
+      "unidentified_old_key",
+      "possible_childhood_jigaeshi_participation",
+      "key_opens_neighbor_apartment",
+      "no_akano_yume_in_religious_records",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "old_web_creation",
+      "loss_father",
+      "escape_into_local_history"
+    ]
+  },
+  {
+    "runId": 27,
+    "persona": "suspect_neighbor",
+    "ending": "NORMAL",
+    "endTime": 963,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 463
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 463
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 505
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 509
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 556
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 556
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 558
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 564
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 564
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 569
+      },
+      {
+        "node": "home_search",
+        "label": "母親の周辺を調べる",
+        "time": 569
+      },
+      {
+        "node": "home_mother_notes",
+        "label": "戻る",
+        "time": 587
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 587
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 587
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 602
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 602
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 612
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 632
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 632
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 682
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 682
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 802
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 802
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 802
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 817
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 852
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 852
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 892
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 892
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 892
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 897
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 915
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 915
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 920
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 920
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 938
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 938
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 938
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 938
+      },
+      {
+        "node": "act2_hub",
+        "label": "老人宅へ行く",
+        "time": 938
+      },
+      {
+        "node": "neighbor_home_hub",
+        "label": "老人宅を出る",
+        "time": 943
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 943
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 963
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 963
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 963
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 963
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "老人が死んでいることを伝える",
+        "time": 963
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 23,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 36,
+        "node": "library_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 38,
+        "node": "library_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 40,
+        "node": "library_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 53,
+        "node": "neighbor_home_hub",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 66,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 68,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "mother_externalization_fear",
+      "local_custom_heard",
+      "childhood_red_land_photo",
+      "red_brown_cloth",
+      "mother_care_notes",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "neighbor_death_official_record",
+      "no_akano_yume_in_religious_records",
+      "traditional_rite_has_no_self_harm",
+      "unidentified_old_key",
+      "key_opens_neighbor_apartment",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream"
+    ],
+    "selfMemory": [
+      "mother_lost_husband",
+      "loss_father",
+      "old_web_creation"
+    ]
+  },
+  {
+    "runId": 28,
+    "persona": "suspect_brother",
+    "ending": "NORMAL",
+    "endTime": 971,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "義弟に電話する",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 474
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 477
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 477
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 479
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 485
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 485
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 490
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 490
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 498
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 498
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 498
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 545
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 545
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 587
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 591
+      },
+      {
+        "node": "danchi_return",
+        "label": "最近の様子だけを聞く",
+        "time": 606
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 606
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 616
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 736
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 736
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 786
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 786
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 786
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 791
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 791
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 806
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 826
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 826
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 876
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 876
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 911
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 911
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 911
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 911
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 931
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 931
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 971
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 971
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 971
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 971
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 971
+      },
+      {
+        "node": "brother_call",
+        "label": "母さんに何を言われた？",
+        "time": 971
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "止める",
+        "time": 971
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 31,
+        "node": "danchi_return",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 44,
+        "node": "library_hub",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 46,
+        "node": "library_hub",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 48,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 50,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 67,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 69,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "akano_yume_name_from_brother",
+      "brother_red_dream",
+      "sister_previous_incidents",
+      "childhood_red_land_photo",
+      "red_brown_cloth",
+      "old_pc_exists",
+      "local_custom_heard",
+      "mother_externalization_fear",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_official_record",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "no_akano_yume_in_religious_records",
+      "mother_visited_neighbor_yesterday",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume"
+    ],
+    "selfMemory": [
+      "mother_lost_husband",
+      "loss_father",
+      "old_web_creation",
+      "escape_into_local_history"
+    ]
+  },
+  {
+    "runId": 29,
+    "persona": "trust_sister",
+    "ending": "NORMAL",
+    "endTime": 1087,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 466
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 466
+      },
+      {
+        "node": "hospital",
+        "label": "高齢者に話しかける",
+        "time": 513
+      },
+      {
+        "node": "hospital_elder",
+        "label": "礼を言って病院を出る",
+        "time": 521
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 521
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 563
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 567
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 569
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 575
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 575
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 575
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 590
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 595
+      },
+      {
+        "node": "verification_hub",
+        "label": "団地管理側へ確認する",
+        "time": 605
+      },
+      {
+        "node": "verify_management",
+        "label": "団地へ戻る",
+        "time": 655
+      },
+      {
+        "node": "verification_hub",
+        "label": "妹に確認する",
+        "time": 655
+      },
+      {
+        "node": "verify_sister",
+        "label": "ほかの確認を続ける",
+        "time": 675
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 675
+      },
+      {
+        "node": "act2_hub",
+        "label": "自宅を再探索する",
+        "time": 675
+      },
+      {
+        "node": "home_act2",
+        "label": "仏壇を見る",
+        "time": 680
+      },
+      {
+        "node": "act2_home_altar",
+        "label": "戻る",
+        "time": 685
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を調べる",
+        "time": 685
+      },
+      {
+        "node": "mother_room_first",
+        "label": "戻る",
+        "time": 703
+      },
+      {
+        "node": "home_act2",
+        "label": "家族写真を見直す",
+        "time": 703
+      },
+      {
+        "node": "act2_home_photos",
+        "label": "戻る",
+        "time": 711
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋をもう一度調べる",
+        "time": 711
+      },
+      {
+        "node": "mother_room_second",
+        "label": "戻る",
+        "time": 729
+      },
+      {
+        "node": "home_act2",
+        "label": "さっきの小箱を調べる",
+        "time": 729
+      },
+      {
+        "node": "mother_room_third",
+        "label": "鍵を持って戻る",
+        "time": 747
+      },
+      {
+        "node": "home_act2",
+        "label": "母親の部屋を確認する",
+        "time": 747
+      },
+      {
+        "node": "mother_room_exhausted",
+        "label": "戻る",
+        "time": 747
+      },
+      {
+        "node": "home_act2",
+        "label": "団地の廊下へ戻る",
+        "time": 747
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 747
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 762
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 812
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 812
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 832
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 832
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 872
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 872
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 907
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 907
+      },
+      {
+        "node": "act2_hub",
+        "label": "調査内容を整理する",
+        "time": 907
+      },
+      {
+        "node": "act2_hub",
+        "label": "死亡確認を続ける",
+        "time": 927
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 927
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 1047
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 1047
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 1087
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 1087
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 1087
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 1087
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 1087
+      },
+      {
+        "node": "brother_call",
+        "label": "どこが間違ってないと思った？",
+        "time": 1087
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "一緒に行く",
+        "time": 1087
+      },
+      {
+        "node": "mother_go_together",
+        "label": "ここには誰もいない",
+        "time": 1087
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 22,
+        "node": "danchi_return",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 48,
+        "node": "library_hub",
+        "currentHypothesis": "H2",
+        "confidence": 74,
+        "reason": "老人には親族傷害と退去の情報があり、母の変化とも時期が重なる。",
+        "nextIntent": "老人宅と母の介護記録を確認したい。"
+      },
+      {
+        "step": 50,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 52,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 54,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 56,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 75,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 77,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 78,
+        "node": "mother_go_together",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "local_custom_heard",
+      "jigaeshi_meaning",
+      "mother_externalization_fear",
+      "childhood_red_land_photo",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_datetime",
+      "neighbor_single_pension_tenancy",
+      "neighbor_family_trouble_record",
+      "mother_visited_neighbor_yesterday",
+      "mother_care_was_sincere",
+      "mother_faith_internalization_path",
+      "possible_childhood_jigaeshi_participation",
+      "unidentified_old_key",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "traditional_rite_has_no_self_harm",
+      "no_akano_yume_in_religious_records",
+      "neighbor_death_official_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume",
+      "brother_red_dream",
+      "words_helped_brother"
+    ],
+    "selfMemory": [
+      "mother_lost_husband",
+      "loss_father",
+      "escape_into_local_history",
+      "old_web_creation"
+    ]
+  },
+  {
+    "runId": 30,
+    "persona": "safety_first",
+    "ending": "NORMAL",
+    "endTime": 962,
+    "choices": [
+      {
+        "node": "sister_questions",
+        "label": "隣のおじいさんって誰？",
+        "time": 463
+      },
+      {
+        "node": "sister_questions",
+        "label": "母さんがおかしくなったのはいつから？",
+        "time": 466
+      },
+      {
+        "node": "sister_questions",
+        "label": "お前は何かされてないのか？",
+        "time": 469
+      },
+      {
+        "node": "sister_questions",
+        "label": "昨夜、何があった？",
+        "time": 472
+      },
+      {
+        "node": "sister_questions",
+        "label": "旦那はこのことを知ってるのか？",
+        "time": 475
+      },
+      {
+        "node": "sister_questions",
+        "label": "義弟に電話する",
+        "time": 478
+      },
+      {
+        "node": "sister_questions",
+        "label": "もういい",
+        "time": 483
+      },
+      {
+        "node": "free_action_hub",
+        "label": "病院へ行く",
+        "time": 483
+      },
+      {
+        "node": "hospital",
+        "label": "病院を出る",
+        "time": 530
+      },
+      {
+        "node": "free_action_hub",
+        "label": "自宅を調べる",
+        "time": 530
+      },
+      {
+        "node": "home_search",
+        "label": "家族写真を見る",
+        "time": 532
+      },
+      {
+        "node": "home_photos",
+        "label": "戻る",
+        "time": 538
+      },
+      {
+        "node": "home_search",
+        "label": "昔の自分の部屋を調べる",
+        "time": 538
+      },
+      {
+        "node": "home_old_room",
+        "label": "戻る",
+        "time": 546
+      },
+      {
+        "node": "home_search",
+        "label": "仏壇を見る",
+        "time": 546
+      },
+      {
+        "node": "home_altar",
+        "label": "戻る",
+        "time": 551
+      },
+      {
+        "node": "home_search",
+        "label": "探索を切り上げる",
+        "time": 551
+      },
+      {
+        "node": "free_action_hub",
+        "label": "警察へ行く",
+        "time": 551
+      },
+      {
+        "node": "police",
+        "label": "警察署を出る",
+        "time": 593
+      },
+      {
+        "node": "free_action_hub",
+        "label": "団地へ戻る",
+        "time": 597
+      },
+      {
+        "node": "danchi_return",
+        "label": "前の住居での話を聞く",
+        "time": 612
+      },
+      {
+        "node": "neighbor_fact",
+        "label": "母さんへ電話する",
+        "time": 617
+      },
+      {
+        "node": "verification_hub",
+        "label": "警察へ正式な確認を取る",
+        "time": 627
+      },
+      {
+        "node": "verify_police",
+        "label": "団地へ戻る",
+        "time": 747
+      },
+      {
+        "node": "verification_hub",
+        "label": "前の傷害事件を警察へ追加確認する",
+        "time": 747
+      },
+      {
+        "node": "verify_police_history",
+        "label": "確認結果を持って団地へ戻る",
+        "time": 787
+      },
+      {
+        "node": "verification_hub",
+        "label": "確認した情報を持って団地へ戻る",
+        "time": 787
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 787
+      },
+      {
+        "node": "library_hub",
+        "label": "「地還し」で詳しく探す",
+        "time": 802
+      },
+      {
+        "node": "library_jigaeshi",
+        "label": "調査内容を記録する",
+        "time": 852
+      },
+      {
+        "node": "library_hub",
+        "label": "「地域の宗教」で探す",
+        "time": 852
+      },
+      {
+        "node": "library_religion",
+        "label": "検索を続ける",
+        "time": 887
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 887
+      },
+      {
+        "node": "act2_hub",
+        "label": "図書館へ行く",
+        "time": 887
+      },
+      {
+        "node": "library_hub",
+        "label": "「赤い夢」で探す",
+        "time": 902
+      },
+      {
+        "node": "library_red_dream",
+        "label": "検索を続ける",
+        "time": 922
+      },
+      {
+        "node": "library_hub",
+        "label": "「昔の地鎮祭」で探す",
+        "time": 922
+      },
+      {
+        "node": "library_ground_rites",
+        "label": "検索を続ける",
+        "time": 962
+      },
+      {
+        "node": "library_hub",
+        "label": "図書館を出る",
+        "time": 962
+      },
+      {
+        "node": "act2_hub",
+        "label": "勤務先からの電話に出る",
+        "time": 962
+      },
+      {
+        "node": "work_call_1600",
+        "label": "それどころではない",
+        "time": 962
+      },
+      {
+        "node": "act3_hub",
+        "label": "古いPCを起動する",
+        "time": 962
+      },
+      {
+        "node": "brother_call",
+        "label": "何言ってんだ、お前",
+        "time": 962
+      },
+      {
+        "node": "mother_returns_evening",
+        "label": "黙って見送る",
+        "time": 962
+      }
+    ],
+    "thoughtLog": [
+      {
+        "step": 8,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 10,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 12,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 14,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 16,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 18,
+        "node": "sister_questions",
+        "currentHypothesis": "H1",
+        "confidence": 58,
+        "reason": "現時点で確かな異常行動は母による傷害だけだ。",
+        "nextIntent": "母の変化がいつ始まったか妹へ聞きたい。"
+      },
+      {
+        "step": 20,
+        "node": "sister_questions",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 35,
+        "node": "danchi_return",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 47,
+        "node": "library_hub",
+        "currentHypothesis": "H4",
+        "confidence": 68,
+        "reason": "母と義弟に共通する名称と赤い夢が出てきた。",
+        "nextIntent": "地域風習と文書が同じものか確かめたい。"
+      },
+      {
+        "step": 49,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 51,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 53,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 55,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 57,
+        "node": "library_hub",
+        "currentHypothesis": "H6",
+        "confidence": 84,
+        "reason": "地還しには血も傷も名称もなく、古い紙とは一致しない。",
+        "nextIntent": "変質前の文章を探したい。"
+      },
+      {
+        "step": 68,
+        "node": "brother_call",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      },
+      {
+        "step": 70,
+        "node": "mother_returns_evening",
+        "currentHypothesis": "H8",
+        "confidence": 91,
+        "reason": "旧サイトに名称・血・自傷がなく、後代の文書との差が確認できた。",
+        "nextIntent": "言葉が誰を救い、どこで害へ変わったか確かめたい。"
+      }
+    ],
+    "knowledge": [
+      "neighbor_profile",
+      "sister_previous_incidents",
+      "husband_knows",
+      "mother_initially_feared_butsuma",
+      "neighbor_did_not_recruit_mother",
+      "akano_yume_name_from_brother",
+      "brother_red_dream",
+      "local_custom_heard",
+      "childhood_red_land_photo",
+      "old_pc_exists",
+      "red_brown_cloth",
+      "mother_externalization_fear",
+      "neighbor_injury_rumor",
+      "neighbor_dead",
+      "mother_claims_postmortem_contact",
+      "neighbor_death_official_record",
+      "neighbor_relative_injury_confirmed",
+      "neighbor_nonprosecution_and_eviction",
+      "library_jigaeshi_confirmed",
+      "jigaeshi_not_akano_yume",
+      "no_akano_yume_in_religious_records",
+      "traditional_rite_has_no_self_harm",
+      "original_harmless_ritual",
+      "original_site_author",
+      "source_site_not_akano_yume"
+    ],
+    "selfMemory": [
+      "mother_lost_husband",
+      "old_web_creation",
+      "loss_father",
+      "escape_into_local_history"
+    ]
+  }
+]
+

@@ -1,0 +1,319 @@
+{
+  "generatedAt": "2026-09-01T12:06:32.106Z",
+  "runCount": 10000,
+  "firstRunCount": 9500,
+  "secondRunCount": 500,
+  "endings": {
+    "BAD": 1488,
+    "NORMAL": 8473,
+    "TRUE": 39,
+    "SECRET": 0,
+    "SOFTLOCK": 0
+  },
+  "endingPercentFirstRun": {
+    "BAD": 15,
+    "NORMAL": 84.6,
+    "TRUE": 0.4,
+    "SECRET": 0,
+    "SOFTLOCK": 0
+  },
+  "averageEndTime": 1003,
+  "averageKnowledgeAt1600": 22.2,
+  "rates": {
+    "mina": 1.1,
+    "neighborHome": 35.8,
+    "butsuma": 26.5,
+    "jigaeshi": 64.9,
+    "neighborInjury": 88.7,
+    "brotherInitial": 100,
+    "hospital": 86.3,
+    "police": 99.9,
+    "library": 87.5,
+    "pc": 100,
+    "secretFirstRun": 0,
+    "secretSecondRun": 0,
+    "oldRoomPaperMemory": 7.3,
+    "minaUnlocked": 7.3,
+    "hospitalRepeated": 0,
+    "policeRepeated": 0
+  },
+  "hypothesisRates": {
+    "H1": 100,
+    "H2": 88.7,
+    "H3": 26.5,
+    "H4": 23.4,
+    "H5": 8.3,
+    "H6": 64.9,
+    "H7": 71.3,
+    "H8": 100,
+    "H9": 17.4,
+    "H10": 100,
+    "H11": 1.3
+  },
+  "softlocks": [],
+  "representativeOrders": [
+    {
+      "order": "病院→警察→図書館→PC",
+      "count": 3666
+    },
+    {
+      "order": "警察→病院→図書館→PC",
+      "count": 2593
+    },
+    {
+      "order": "警察→老人宅→PC",
+      "count": 863
+    },
+    {
+      "order": "病院→警察→図書館→老人宅→PC",
+      "count": 678
+    },
+    {
+      "order": "警察→老人宅→図書館→PC",
+      "count": 495
+    },
+    {
+      "order": "警察→病院→図書館→老人宅→PC",
+      "count": 423
+    },
+    {
+      "order": "病院→警察→老人宅→図書館→PC",
+      "count": 403
+    },
+    {
+      "order": "警察→病院→老人宅→図書館→PC",
+      "count": 265
+    },
+    {
+      "order": "病院→警察→老人宅→PC",
+      "count": 193
+    },
+    {
+      "order": "警察→病院→老人宅→PC",
+      "count": 169
+    }
+  ],
+  "personas": {
+    "ordinary": {
+      "runs": 500,
+      "endings": {
+        "BAD": 82,
+        "NORMAL": 415,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1001
+    },
+    "horror_veteran": {
+      "runs": 500,
+      "endings": {
+        "BAD": 62,
+        "NORMAL": 435,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1001
+    },
+    "occult_believer": {
+      "runs": 500,
+      "endings": {
+        "BAD": 80,
+        "NORMAL": 417,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1003
+    },
+    "skeptic": {
+      "runs": 500,
+      "endings": {
+        "BAD": 66,
+        "NORMAL": 433,
+        "TRUE": 1,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1006
+    },
+    "trust_mother": {
+      "runs": 500,
+      "endings": {
+        "BAD": 57,
+        "NORMAL": 438,
+        "TRUE": 5,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1004
+    },
+    "distrust_mother": {
+      "runs": 500,
+      "endings": {
+        "BAD": 94,
+        "NORMAL": 405,
+        "TRUE": 1,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1003
+    },
+    "suspect_neighbor": {
+      "runs": 500,
+      "endings": {
+        "BAD": 79,
+        "NORMAL": 420,
+        "TRUE": 1,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 999
+    },
+    "suspect_brother": {
+      "runs": 500,
+      "endings": {
+        "BAD": 95,
+        "NORMAL": 404,
+        "TRUE": 1,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1001
+    },
+    "trust_sister": {
+      "runs": 500,
+      "endings": {
+        "BAD": 73,
+        "NORMAL": 427,
+        "TRUE": 0,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1003
+    },
+    "safety_first": {
+      "runs": 500,
+      "endings": {
+        "BAD": 81,
+        "NORMAL": 417,
+        "TRUE": 2,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1002
+    },
+    "rush_neighbor": {
+      "runs": 500,
+      "endings": {
+        "BAD": 77,
+        "NORMAL": 420,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1004
+    },
+    "internet_first": {
+      "runs": 500,
+      "endings": {
+        "BAD": 71,
+        "NORMAL": 429,
+        "TRUE": 0,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1003
+    },
+    "local_history": {
+      "runs": 500,
+      "endings": {
+        "BAD": 43,
+        "NORMAL": 454,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1003
+    },
+    "family_first": {
+      "runs": 500,
+      "endings": {
+        "BAD": 51,
+        "NORMAL": 446,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1001
+    },
+    "efficient": {
+      "runs": 500,
+      "endings": {
+        "BAD": 39,
+        "NORMAL": 458,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1001
+    },
+    "completionist": {
+      "runs": 500,
+      "endings": {
+        "BAD": 32,
+        "NORMAL": 465,
+        "TRUE": 3,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1019
+    },
+    "skipper": {
+      "runs": 500,
+      "endings": {
+        "BAD": 149,
+        "NORMAL": 350,
+        "TRUE": 1,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 998
+    },
+    "avoid_scary": {
+      "runs": 500,
+      "endings": {
+        "BAD": 81,
+        "NORMAL": 419,
+        "TRUE": 0,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1004
+    },
+    "deep_reader": {
+      "runs": 500,
+      "endings": {
+        "BAD": 70,
+        "NORMAL": 429,
+        "TRUE": 1,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1001
+    },
+    "casual": {
+      "runs": 500,
+      "endings": {
+        "BAD": 106,
+        "NORMAL": 392,
+        "TRUE": 2,
+        "SECRET": 0,
+        "SOFTLOCK": 0
+      },
+      "averageEndTime": 1001
+    }
+  }
+}
+

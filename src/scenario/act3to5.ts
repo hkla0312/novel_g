@@ -6,11 +6,9 @@ const notFlag = (key: string): Condition => ({ type: 'not', condition: flag(key)
 
 const trueRequirements: Condition = { type: 'all', conditions: [
   flag('author_revealed'), knowledge('library_jigaeshi_confirmed'), knowledge('neighbor_long_widowhood'),
-  knowledge('neighbor_faith_contained_after_loss'), knowledge('neighbor_injury_faith_possible_link'),
-  knowledge('neighbor_early_recipient_after_wife_loss'),
   flag('brother_understood'), flag('mother_accompanied'), flag('mother_empathy_spoken'),
-  { type: 'collectionCount', collection: 'selfMemory', atLeast: 4 },
-  { type: 'hidden', key: 'UNDERSTANDING', atLeast: 4 },
+  { type: 'collectionCount', collection: 'selfMemory', atLeast: 3 },
+  { type: 'hidden', key: 'UNDERSTANDING', atLeast: 3 },
 ] }
 
 const normalRequirements: Condition = { type: 'all', conditions: [
@@ -43,7 +41,7 @@ export const act3to5Nodes: ScenarioNode[] = [
     id: 'compare_custom_and_paper', title: '似ている言葉', text: [
       '地還しの記録は「家の難儀は家で分ける」。紙は「家の痛みは、家の血で分ける」。',
       '難儀が痛みになり、家が血になっている。赤い布は残ったが、継ぎ足された血と刃物は古い資料にない。',
-      '一度の詤曲ではないのかもしれない。誰かが少し言い換え、次の誰かがまた読み足した。その方が、紙の古さには合っている。',
+      '一度の改変ではないのかもしれない。誰かが少し言い換え、次の誰かがまた読み足した。その方が、紙の古さには合っている。',
     ], choices: [{ label: '比較を記録する', next: 'act3_hub' }], effects: [
       { type: 'setFlag', key: 'custom_compared', value: true },
       { type: 'addKnowledge', key: 'interpretation_drift_chain' },
@@ -95,7 +93,7 @@ export const act3to5Nodes: ScenarioNode[] = [
       '「俺は神様とかおまじないは信じてない」と書いてある。笑えない。父さんの死に意味を付ける大人へ、俺が心の中で繰り返した文句だった。',
       'その後に「こういう話を知ったら、少し楽になる人もいるかもしれない」と続く。',
       '信じたくない。でも、誰かを助けたい。子供の俺は、その矛盾ごとページにした。',
-    ], next: 'pc_town', effects: [{ type: 'adjustHidden', key: 'SELF', amount: 1 }],
+    ], next: 'pc_town', effects: [{ type: 'addSelfMemory', key: 'loss_father' }, { type: 'adjustHidden', key: 'SELF', amount: 1 }],
   },
   {
     id: 'pc_town', title: 'town.html', text: [
@@ -106,7 +104,26 @@ export const act3to5Nodes: ScenarioNode[] = [
     ], next: 'pc_aka', effects: [{ type: 'addKnowledge', key: 'original_harmless_ritual' }],
   },
   {
-    id: 'pc_aka', title: 'memo.html', text: [
+    id: 'pc_aka', title: 'memo.html', variants: [
+      { condition: { type: 'all', conditions: [flag('mina_contacted'), knowledge('library_jigaeshi_confirmed')] }, text: [
+        'ページの見出しは「赤い土の話」。「アカノユメ」という名前はどこにもない。図書館で見た地還しの記録と、言葉の並びが一致している。',
+        '老人の紙では「家の痛みは、家の血で分ける」。ここでは「家の難儀は、家の人で分ける」だった。血も刃物もない。',
+        'ページのソースに、ミナの書いたコメントが残っている。「リンク先、ここじゃないよ」。先に思い出した声が、今度は文字としてそこにあった。',
+        '心臓が一度、強く打った。ファイルの作成者名、更新履歴、余白に残った俺の本名。どれも同じ場所を指していた。',
+      ] },
+      { condition: knowledge('library_jigaeshi_confirmed'), text: [
+        'ページの見出しは「赤い土の話」。「アカノユメ」という名前はどこにもない。図書館で見た地還しの記録と、言葉の並びが一致している。',
+        '老人の紙と同じ骨組みがある。ただし、ここでは「家の難儀は、家の人で分ける」だった。血も刃物もない。',
+        'ページのソースに、ミナの書いたコメントが残っている。「リンク先、ここじゃないよ」。',
+        '心臓が一度、強く打った。ファイルの作成者名、更新履歴、余白に残った俺の本名。どれも同じ場所を指していた。',
+      ] },
+      { condition: knowledge('akano_yume_document'), text: [
+        'ページの見出しは「赤い土の話」。「アカノユメ」という名前はどこにもない。',
+        '黄ばんだA4と同じ文の骨組みがある。ただし、ここでは「家の難儀は、家の人で分ける」だった。紙にあった血と傷の意味は見つからない。',
+        'ページのソースに、ミナの書いたコメントが残っている。「リンク先、ここじゃないよ」。',
+        '心臓が一度、強く打った。ファイルの作成者名、更新履歴、余白に残った俺の本名。どれも同じ場所を指していた。',
+      ] },
+    ], text: [
       'ページの見出しは「赤い土の話」。「アカノユメ」という名前はどこにもない。',
       '老人の紙と同じ文の骨組みがある。ただし、ここでは「家の難儀は、家の人で分ける」だった。',
       'ページのソースに、ミナの書いたコメントが残っている。「リンク先、ここじゃないよ」。',
@@ -117,7 +134,7 @@ export const act3to5Nodes: ScenarioNode[] = [
   {
     id: 'author_reveal', title: '原点', text: [
       '黄ばんだ紙は、このページの言葉を転載した先で何度も書き換えられたものだ。アカノユメそのものを、俺が作ったわけではない。',
-      'だが、後に變形された言葉の元を書いた人間は、今この画面を見ている。',
+      'だが、後に変形された言葉の元を書いた人間は、今この画面を見ている。',
       '「……俺だ。」',
     ], next: 'brother_call', effects: [
       { type: 'setFlag', key: 'author_revealed', value: true },
@@ -141,7 +158,7 @@ export const act3to5Nodes: ScenarioNode[] = [
       { label: '何言ってんだ、お前', next: 'brother_reject' },
       { label: '母さんに何を言われた？', next: 'brother_information' },
       { label: 'どこが間違ってないと思った？', next: 'brother_understand' },
-    ],
+    ], effects: [{ type: 'addKnowledge', key: 'brother_red_dream' }],
   },
   {
     id: 'brother_reject', text: [
@@ -282,7 +299,30 @@ export const act3to5Nodes: ScenarioNode[] = [
     ], terminal: true,
   },
   {
-    id: 'normal_end', title: 'NORMAL END　帰宅', text: [
+    id: 'normal_end', title: 'NORMAL END　帰宅', variants: [
+      { condition: knowledge('words_helped_brother'), text: [
+        '俺は母さんへ古いPCを見せた。「アカノユメを作ったわけじゃない。でも、元になった言葉を書いたのは俺だ」',
+        '父さんを失った後、俺がどうして地域の風習を書いたのか。今日確かめられた範囲だけを話した。',
+        '元の意味へ戻せば全部解決する。そう思いたかった。だが、義弟が読んだのは俺の意図ではなかった。',
+        '母さんはすぐには信じなかった。それでも腕へ触れようとはしなくなった。妹と一緒に医療と生活支援へ繋げた。',
+        '数年後、義弟の部屋で赤い布と赤い糸が見つかった。コピーされた文章には、彼の言葉が書き足されていた。',
+        'その部屋の主がどこへ行ったのか、紙は教えてくれなかった。',
+      ] },
+      { condition: knowledge('mother_faith_internalization_path'), text: [
+        '俺は母さんへ古いPCを見せた。「アカノユメを作ったわけじゃない。でも、元になった言葉を書いたのは俺だ」',
+        '母さんは老人から命令されたわけではない。理解しようとして紙を読み、自分に必要な意味を拾った。だから元を示せば戻せる。俺はそう考えた。',
+        '母さんはすぐには信じなかった。それでも腕へ触れようとはしなくなった。妹と一緒に医療と生活支援へ繋げた。',
+        '数年後、義弟の部屋で赤い布と赤い糸が見つかった。コピーされた文章には、彼の言葉が書き足されていた。',
+        'その部屋の主がどこへ行ったのか、紙は教えてくれなかった。',
+      ] },
+      { condition: knowledge('neighbor_long_widowhood'), text: [
+        '俺は母さんへ古いPCを見せた。「アカノユメを作ったわけじゃない。でも、元になった言葉を書いたのは俺だ」',
+        '老人が人を傷つけた事実は消えない。それでも、最初から誰かを傷つけるために、あの紙を持っていたとも思えなかった。',
+        '母さんはすぐには信じなかった。それでも腕へ触れようとはしなくなった。妹と一緒に医療と生活支援へ繋げた。',
+        '数年後、義弟の部屋で赤い布と赤い糸が見つかった。コピーされた文章には、彼の言葉が書き足されていた。',
+        'その部屋の主がどこへ行ったのか、紙は教えてくれなかった。',
+      ] },
+    ], text: [
       '俺は母さんへ古いPCを見せた。「アカノユメを作ったわけじゃない。でも、元になった言葉を書いたのは俺だ」',
       '父さんを失った後、俺がどうして地域の風習を書いたのか。今日確かめられた範囲だけを話した。',
       '母さんはすぐには信じなかった。それでも腕へ触れようとはしなくなった。妹と一緒に医療と生活支援へ繋げた。',

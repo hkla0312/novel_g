@@ -14,8 +14,8 @@ export const freeActionNodes: ScenarioNode[] = [
       '母さんが出勤した後の部屋は静かだった。傷を診てもらうべきだ。警察へ相談することもできる。家に、理由へつながるものが残っているかもしれない。',
       '順番に正解があるとは思えない。今の俺にできることから始めるしかない。',
     ], choices: [
-      { label: '病院へ行く', next: 'hospital', timeCost: 12 },
-      { label: '警察へ行く', next: 'police', timeCost: 12 },
+      { label: '病院へ行く', next: 'hospital', timeCost: 12, condition: { type: 'not', condition: { type: 'flag', key: 'hospital_done' } } },
+      { label: '警察へ行く', next: 'police', timeCost: 12, condition: { type: 'not', condition: { type: 'flag', key: 'police_done' } } },
       { label: '自宅を調べる', next: 'home_search', timeCost: 2 },
       { label: '団地へ戻る', next: 'danchi_return', condition: canReturn },
     ],
@@ -120,11 +120,11 @@ export const freeActionNodes: ScenarioNode[] = [
     ],
   },
   {
-    id: 'danchi_injury_rumor', title: '団地入口の噓', location: 'housing_complex', text: [
+    id: 'danchi_injury_rumor', title: '団地入口の噂', location: 'housing_complex', text: [
       '「前のところでも、ちょっとあったらしいのよ」',
       '「家族と揉めたとか？」',
       '「孫だったかなあ。怪我させたって話は聞いたことある。警察も来たけど、身内のことで大事にはならなかったとか」',
-      '「それで前のところにいづらくなって、こっちの県営住宅に来たんじゃなかったかな。まあ、噓だけどね」',
+      '「それで前のところにいづらくなって、こっちの県営住宅に来たんじゃなかったかな。まあ、噂だけどね」',
       '女性は老人を責める口調ではなかった。話の年代も、孫だということさえ曖昧だった。',
     ], next: 'danchi_death_reveal', effects: [
       { type: 'addKnowledge', key: 'neighbor_injury_rumor' },
