@@ -101,3 +101,15 @@ effects: [
 
 PROLOGUE、負傷と応急処置、母・妹との会話、自由行動、隣人死亡判明、死亡確認、母親の部屋の段階的再探索、老人宅、アカノユメ資料、図書館、自宅再探索、SELF MEMORY、条件付きのミナ初回連絡、16:00の勤務先電話までプレイできます。調査順を変えても進行できます。
 
+## 14. Audio / CONFIG
+
+`src/audio/AudioManager.ts`がBGMと環境音を別チャンネルで管理します。初回クリック／タップ後にのみ再生を試み、同一トラックの再指定では再スタートしません。CONFIGのBGM・AMBIENCE音量とMUTEはlocalStorageへ保存されます。
+
+実音源は権利確認後、`public/audio/README.md`記載の6ファイル名で配置してください。未配置でもゲーム進行には影響しません。
+
+## 15. HUMAN PLAYTEST MODE
+
+開発サーバーまたは公開URLへ`?playtest=1`を付けて起動します。選択肢、取得状態、訪問場所、主要イベント、回答、ENDING時snapshotをlocalStorageへ記録し、END後にJSONをダウンロードできます。TRUE条件や不足knowledgeはプレイヤー画面へ表示しません。
+
+複数ログは`reports/human-playtest/sessions/`へ置き、`npm run report:human`で集計します。
+
