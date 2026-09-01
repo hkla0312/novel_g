@@ -206,7 +206,8 @@ export const act3to5Nodes: ScenarioNode[] = [
       'それから母さんは豆腐を冷蔵庫へ入れ、惣菜を皿へ移した。半分だけ別の容器によそう。', '「それ、何」', '「おじいちゃんの。ちょっと行ってくるね」',
     ] }], choices: [
       { label: '止める', next: 'mother_stop' },
-      { label: '一緒に行く', next: 'mother_go_together' },
+      { label: '一緒に行って、母さんの話を聞く', next: 'mother_go_together', condition: { type: 'all', conditions: [knowledge('neighbor_long_widowhood'), { type: 'collectionCount', collection: 'selfMemory', atLeast: 3 }] } },
+      { label: '一緒に行く', next: 'mother_go_together', condition: { type: 'not', condition: { type: 'all', conditions: [knowledge('neighbor_long_widowhood'), { type: 'collectionCount', collection: 'selfMemory', atLeast: 3 }] } } },
       { label: '黙って見送る', next: 'mother_let_go' },
       { label: '老人が死んでいることを伝える', next: 'mother_tell_death' },
     ],
