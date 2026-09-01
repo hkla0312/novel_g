@@ -173,9 +173,15 @@ export const act2Nodes: ScenarioNode[] = [
         '図書館で見た地還しの記録と似ている。俺自身が参加していた可能性は高い。',
         'だが写真に「地還し」と書かれているわけではない。高い可能性と確定は違う。',
       ],
+    }, {
+      condition: { type: 'knowledge', key: 'jigaeshi_meaning' },
+      text: [
+        '幼い俺が赤っぽい土の上に立っている。背後には赤茶色の布。',
+        '病院で聞いた風習に似ている。今朝赤い夢を見た俺が、赤だけを拾っている可能性も残る。',
+      ],
     }], text: [
       '幼い俺が赤っぽい土の上に立っている。背後には赤茶色の布。',
-      '病院で聞いた風習に似ている。今朝赤い夢を見た俺が、赤だけを拾っている可能性も残る。',
+      '工事か何かの行事だろうか。今の俺には、写真の外側までは分からない。',
     ], choices: [{ label: '戻る', next: 'home_act2' }], effects: [{ type: 'addKnowledge', key: 'possible_childhood_jigaeshi_participation' }],
   },
   {
@@ -309,11 +315,11 @@ export const act2Nodes: ScenarioNode[] = [
   },
   {
     id: 'neighbor_late_boundary', title: '仏間の外', location: 'neighbor_apartment', text: [
-      '妻の命日と、仏間で最も古い印刷物の時期は近い。インターネット黎明期の紙だ。老人が俺のページを直接読んだ証拠はない。すでに怪談めいた転載の一つへ触れたように見える。',
+      '妻の命日と、仏間で最も古い印刷物の時期は近い。インターネット黎明期の紙だ。どのページを誰が印刷したのかは分からない。',
       '写真と年賀状は、家族との時間がある年を境に止まっている。仏間の紙は、それより後も増えていた。',
       '老人は信仰を捨てていない。一方で、県営住宅へ来てからそれを仏間の外へ広げた跡もない。',
       '母さんは血縁者ではない。老人は条件の外にいる母さんを傷つけなかった。そもそも、歩くだけで息が上がる身体で、誰かを押さえつける力は残っていなかっただろう。',
-      'それだけではない。一度家族を失った人間が、また同じことをするのを恐れた。そう考えると、仏間の閉じ方には説明がつく。',
+      '家族との連絡が途切れた後、紙の言葉を他人へ持ち出すのを避けた可能性はある。そう考えると、仏間の閉じ方には説明がつく。',
       '説明がつくだけだ。老人自身の言葉は、もう聞けない。',
     ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
       { type: 'setFlag', key: 'neighbor_boundary_checked', value: true },
@@ -341,12 +347,20 @@ export const act2Nodes: ScenarioNode[] = [
     ], choices: [{ label: '検索を続ける', next: 'library_hub' }], effects: [{ type: 'setFlag', key: 'library_red_dream_done', value: true }],
   },
   {
-    id: 'library_religion', title: '検索：地域の宗教', location: 'library', text: [
-      '寺社、講、祭礼の資料は見つかった。赤を使う行事もあるが、アカノユメという名称はない。',
-      '老人の紙を「宗教」と決めたのは早かったかもしれない。少なくとも組織や教団へつながる資料は見つからなかった。',
+    id: 'library_religion', title: '検索：地域の宗教', location: 'library', variants: [
+      { condition: { type: 'knowledge', key: 'akano_yume_document' }, text: [
+        '寺社、講、祭礼の資料は見つかった。赤を使う行事もあるが、アカノユメという名称はない。',
+        '老人の紙を「宗教」と決めたのは早かったかもしれない。少なくとも組織や教団へつながる資料は見つからなかった。',
+      ] },
+      { condition: { type: 'knowledge', key: 'akano_yume_name_from_brother' }, text: [
+        '寺社、講、祭礼の資料は見つかった。赤を使う行事もあるが、「アカノユメ」という名称は記録されていない。',
+        '少なくとも、地域の宗教組織や教団の名称ではなさそうだ。',
+      ] },
+    ], text: [
+      '寺社、講、祭礼の資料は見つかった。赤を使う行事も複数ある。',
+      '母さんの言葉へ直接つながる宗教組織や教団は見つからなかった。検索語が広すぎるのかもしれない。',
     ], choices: [{ label: '検索を続ける', next: 'library_hub' }], effects: [
       { type: 'setFlag', key: 'library_religion_done', value: true },
-      { type: 'addKnowledge', key: 'no_akano_yume_in_religious_records' },
     ],
   },
   {
