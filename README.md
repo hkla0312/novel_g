@@ -62,7 +62,7 @@ src/
 
 ## 8. conditionの書き方
 
-`flag`、`knowledge`、`selfMemory`、`visitedNode`、`visitedLocation`、`time` を利用できます。`all` がAND、`any` がOR、`not` が否定です。
+`flag`、`knowledge`、`selfMemory`、`visitedNode`、`visitedLocation`、`time`、`hidden`、`collectionCount` を利用できます。`all` がAND、`any` がOR、`not` が否定です。
 
 ```ts
 {
@@ -91,7 +91,7 @@ effects: [
 
 ## 11. saveDataVersion
 
-セーブは3スロットで、キーは `akano-yume:save:1` から `:3` です。各データに `saveDataVersion` と保存日時を持たせます。現在はversion 1。将来は `store/saveStorage.ts` の `migrate` へ段階的な移行処理を追加できます。
+セーブは3スロットで、キーは `akano-yume:save:1` から `:3` です。各データに `saveDataVersion` と保存日時を持たせます。現在はversion 2。version 1のセーブは自動移行され、旧実装範囲の終了地点にいた場合はACT2開始地点から続行できます。将来の移行処理は `store/saveStorage.ts` の `migrate` へ段階的に追加します。
 
 ## 12. Debug Panel
 
@@ -99,5 +99,5 @@ effects: [
 
 ## 13. 現在プレイ可能な範囲
 
-PROLOGUE、負傷と応急処置、母・妹との会話、自由行動（病院・警察・自宅探索）、知識取得後の再探索、団地での隣人死亡判明、母への確認電話、縦スライス終了までプレイできます。病院・警察・自宅は順不同で、一部探索は再訪できます。図書館は将来範囲への導線のみです。
+PROLOGUE、負傷と応急処置、母・妹との会話、自由行動、隣人死亡判明、死亡確認、母親の部屋の段階的再探索、老人宅、アカノユメ資料、図書館、自宅再探索、SELF MEMORY、条件付きのミナ初回連絡、16:00の勤務先電話までプレイできます。調査順を変えても進行できます。
 

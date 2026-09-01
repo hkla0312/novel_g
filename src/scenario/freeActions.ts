@@ -22,8 +22,11 @@ export const freeActionNodes: ScenarioNode[] = [
   },
   {
     id: 'hospital', title: '病院', location: 'hospital', timeCost: 35, text: [
-      '医師は傷を洗浄し、一本ずつ確認した。「幸い、どれも浅いです。化膿と破傷風には気をつけてください」',
-      '原因を聞かれ、家族にやられた可能性があると答えると、医師は驚きながらも声を落とした。安全な場所はあるか、警察への相談は必要か。怪異を説明することも、俺を笑うこともなかった。',
+      '医師は傷を洗浄し、一本ずつ確認した。',
+      '「幸い、どれも浅いです。化膿と破傷風には気をつけてください」',
+      '原因を聞かれ、家族にやられた可能性があると答えた。医師は一瞬手を止め、声を落とした。',
+      '「今夜、安全に眠れる場所はありますか。警察への相談は？」',
+      '怪異を説明することも、俺を笑うこともなかった。',
       '処置を終えた待合室で、高齢の男女が昔の土地の話をしていた。家を建てる前に「地鎮さん」をした、いやあれは「地還し」だ、と名称で揉めている。',
       '赤い布、赤い紙、赤い土。土地を掘るときや大きく変えるとき、子供も一緒に参加したという。血や傷の話は一度も出ない。',
     ], choices: [
@@ -62,7 +65,7 @@ export const freeActionNodes: ScenarioNode[] = [
       '母さんのいない実家を調べることに、後ろめたさがあった。傷がなければしなかっただろう。だが傷はある。何も見なかったことにはできない。',
     ], choices: [
       { label: '仏壇を見る', next: 'home_altar', timeCost: 5 },
-      { label: '母親の周辺を調べる', next: 'home_mother_notes', timeCost: 7 },
+      { label: '母親の周辺を調べる', next: 'home_mother_notes', timeCost: 18, condition: { type: 'not', condition: { type: 'flag', key: 'mother_room_first_done' } }, effects: [{ type: 'setFlag', key: 'mother_room_first_done', value: true }, { type: 'adjustHidden', key: 'motherRoomSearchCount', amount: 1 }] },
       { label: '家族写真を見る', next: 'home_photos', timeCost: 6 },
       { label: '昔の自分の部屋を調べる', next: 'home_old_room', timeCost: 8 },
       { label: '探索を切り上げる', next: 'free_action_hub', effects: [{ type: 'setFlag', key: 'home_done', value: true }] },
@@ -73,12 +76,15 @@ export const freeActionNodes: ScenarioNode[] = [
       '仏壇には、若い父さんの写真がある。俺が幼い頃に死んだ。周りの大人は「見守っている」「運命だった」「向こうで待っている」と言った。',
       '子供の俺は、その言葉が嫌いだった。死んだことを、残された人間が勝手に意味のあることへ変えるな。そう思っていた。',
       '引き出しの奥に、古い赤茶色の布が畳まれていた。血の跡には見えない。用途は分からない。',
-    ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addKnowledge', key: 'red_brown_cloth' }],
+    ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addKnowledge', key: 'red_brown_cloth' }, { type: 'addSelfMemory', key: 'loss_father' }],
   },
   {
     id: 'home_mother_notes', title: '母親のメモ', location: 'home', text: [
-      '台所のメモ帳には、隣人の食事、薬、洗濯、ゴミ出しの日が細かく書かれていた。「塩分少なめ」「ゼリーなら食べる」「毛布、次回洗う」。',
-      '母さんは老人を本気で心配し、真面目に世話をしていた。それは演技には見えない。善意があったことと、俺の腕を傷つけたことは両立する。片方で片方を消してはいけない。',
+      '母さんの部屋には仕事の書類、化粧品、読みかけの文庫本がある。どれも見慣れた生活の物だ。',
+      '机のメモ帳には、隣人の食事、薬、洗濯、ゴミ出しの日が細かく書かれていた。',
+      '「塩分少なめ」「ゼリーなら食べる」「毛布、次回洗う」',
+      '押し入れには介護用の手袋と未開封の清拭用品まで揃っている。母さんは本気で老人を心配し、真面目に世話をしていた。',
+      '善意があったことと、俺の腕を傷つけたことは両立する。片方で片方を消してはいけない。',
     ], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addKnowledge', key: 'mother_care_notes' }],
   },
   {
@@ -119,7 +125,7 @@ export const freeActionNodes: ScenarioNode[] = [
       '死亡した日は、母さんが数日家を空けていた期間に重なる。母さんが戻ったとき、老人はもう死んでいた。知らなかった可能性はある。',
       'だが台所のメモは帰宅後も続いていた。食事、薬、洗濯、会話。母さんは、今も介護をしているつもりでいる。',
       '確認しなければならない。電話をかける指が、傷とは別の理由で震えた。',
-    ], choices: [{ label: '母さんへ電話する', next: 'final_call', timeCost: 2 }],
+    ], choices: [{ label: '母さんへ電話する', next: 'final_call', timeCost: 10 }],
   },
   {
     id: 'final_call', title: '母への確認', text: [
@@ -135,13 +141,13 @@ export const freeActionNodes: ScenarioNode[] = [
       '『何言ってるの？　昨日会ったって言ったでしょう。生きてる人を死んだなんて言うもんじゃないよ』',
       '俺は返事ができなかった。嘘をついている声には聞こえない。それでも老人が死亡しているのは、近所の噂ではなく、確認できる事実だった。',
       '二つの事実らしいものが、同じ場所に重ならずに存在していた。',
-    ], next: 'vertical_slice_end',
+    ], next: 'act2_opening', effects: [{ type: 'setFlag', key: 'mother_death_questioned', value: true }, { type: 'addKnowledge', key: 'mother_claims_postmortem_contact' }],
   },
   {
-    id: 'vertical_slice_end', title: '縦スライス版 終了', text: [
-      '母さんは、仕事へ戻るからと電話を切った。団地の窓はどれも同じように明るく、隣の部屋だけを見分けることはできなかった。',
-      '俺はまだ、何も説明できていない。',
-      '――『アカノユメ』縦スライス版はここまでです。',
+    id: 'vertical_slice_end', title: '16:00', text: [
+      '通話を切った。朝にはまだ「夕方から仕事」という普通の一日が残っていた。',
+      '今はもう、その順番へ戻れる気がしない。俺は今日知ったことを、もう一度最初から並べ直した。',
+      '――『アカノユメ』プレイアブル版・今回の実装範囲はここまでです。',
     ], terminal: true,
   },
 ]

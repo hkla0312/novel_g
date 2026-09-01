@@ -10,6 +10,8 @@ const validateCondition = (condition: Condition, path: string, errors: string[])
   else if ('key' in condition && !condition.key.trim()) errors.push(`${path}: condition key is empty`)
   else if ((condition.type === 'visitedNode' || condition.type === 'visitedLocation') && !condition.id.trim()) errors.push(`${path}: condition id is empty`)
   else if (condition.type === 'time' && condition.atOrBefore === undefined && condition.atOrAfter === undefined) errors.push(`${path}: time condition has no bound`)
+  else if (condition.type === 'hidden' && !condition.key.trim()) errors.push(`${path}: hidden condition key is empty`)
+  else if ((condition.type === 'hidden' || condition.type === 'collectionCount') && condition.atLeast === undefined && condition.atMost === undefined) errors.push(`${path}: numeric condition has no bound`)
 }
 
 export const validateScenario = (nodes: ScenarioNode[], startId = 'prologue'): ValidationResult => {

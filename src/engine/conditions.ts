@@ -15,6 +15,16 @@ export const evaluateCondition = (condition: Condition | undefined, state: GameS
     case 'time':
       return (condition.atOrBefore === undefined || state.currentTime <= condition.atOrBefore)
         && (condition.atOrAfter === undefined || state.currentTime >= condition.atOrAfter)
+    case 'hidden': {
+      const value = state.hidden[condition.key] ?? 0
+      return (condition.atLeast === undefined || value >= condition.atLeast)
+        && (condition.atMost === undefined || value <= condition.atMost)
+    }
+    case 'collectionCount': {
+      const value = state[condition.collection].length
+      return (condition.atLeast === undefined || value >= condition.atLeast)
+        && (condition.atMost === undefined || value <= condition.atMost)
+    }
   }
 }
 

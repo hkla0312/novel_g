@@ -8,6 +8,8 @@ export type Condition =
   | { type: 'visitedNode'; id: string }
   | { type: 'visitedLocation'; id: string }
   | { type: 'time'; atOrBefore?: number; atOrAfter?: number }
+  | { type: 'hidden'; key: string; atLeast?: number; atMost?: number }
+  | { type: 'collectionCount'; collection: 'knowledge' | 'selfMemory' | 'visitedNodes' | 'visitedLocations'; atLeast?: number; atMost?: number }
 
 export type Effect =
   | { type: 'setFlag'; key: string; value: boolean }

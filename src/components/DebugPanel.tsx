@@ -21,6 +21,7 @@ export function DebugPanel() {
     <DebugValues label="selfMemory" values={state.selfMemory} />
     <DebugValues label="visitedNodes" values={state.visitedNodes} />
     <DebugValues label="visitedLocations" values={state.visitedLocations} />
+    <DebugValues label="hidden" values={Object.entries(state.hidden).map(([name, value]) => `${name}: ${value}`)} />
   </aside>
 }
 
