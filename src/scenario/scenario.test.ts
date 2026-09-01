@@ -178,6 +178,9 @@ describe('vertical slice routes', () => {
     const labels = getAvailableChoices(scenario.neighbor_home_hub, afterLife).map((item) => item.label)
     expect(labels).toContain('食事・介護用品を調べる')
     expect(labels).toContain('仏間を調べる')
+    expect(getAvailableChoices(scenario.neighbor_life, afterLife).map((item) => item.label)).toContain('奥の仏間を確かめる')
+    const afterRed = { ...afterLife, flags: { ...afterLife.flags, neighbor_red_checked: true } }
+    expect(getAvailableChoices(scenario.neighbor_red_objects, afterRed).map((item) => item.label)).toContain('黄ばんだA4を調べる')
   })
 
   it('unlocks Mina from the document and the two relevant memories without unrelated SELF count', () => {
@@ -191,6 +194,13 @@ describe('vertical slice routes', () => {
   it('offers a contextual old-room lead immediately after acquiring the yellow A4', () => {
     const state = enterNode({ ...start(), knowledge: ['akano_yume_document'] }, scenario.act2_hub)
     expect(getAvailableChoices(scenario.act2_hub, state).map((item) => item.label)).toContain('黄ばんだ紙を持って昔の部屋へ戻る')
+  })
+
+  it('offers immediate Mina contact after recalling her without removing the return option', () => {
+    const state = enterNode(start(), scenario.old_room_headset_memory)
+    const labels = getAvailableChoices(scenario.old_room_headset_memory, state).map((item) => item.label)
+    expect(labels).toContain('ミナへ今すぐ連絡する')
+    expect(labels).toContain('連絡先を探して戻る')
   })
 
   it('records the memories explicitly recalled by the old room paper and PC about page', () => {
@@ -265,7 +275,7 @@ describe('vertical slice routes', () => {
     state = followNextUntil(state, 'brother_call')
     state = pick(state, 'どこが間違ってないと思った？')
     state = continueTo(state, 'mother_returns_evening')
-    state = pick(state, '一緒に行く')
+    state = pick(state, '一緒に行って、母さんの話を聞く')
     state = pick(state, '母さんは、おじいさんを助けたかったんだよな')
     state = continueTo(state, 'ending_junction')
     const ending = getNextNodeId(scenario.ending_junction, state)
