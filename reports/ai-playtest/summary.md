@@ -1,6 +1,6 @@
 # アカノユメ AI simulation report
 
-Generated: 2026-09-01T12:15:36.594Z
+Generated: 2026-09-01T15:32:51.342Z
 
 ## 機械集計
 
@@ -8,7 +8,7 @@ Generated: 2026-09-01T12:15:36.594Z
 - END: BAD 1432 / NORMAL 8537 / TRUE 31 / SECRET 0 / SOFTLOCK 0
 - 初回比率: BAD 14.4% / NORMAL 85.3% / TRUE 0.3% / SECRET 0% / SOFTLOCK 0%
 - 平均終了時刻（経過分）: 1003
-- 16:00時点平均knowledge: 22.3
+- 16:00時点平均knowledge: 21.9
 - softlock: 0
 
 ## 到達率
