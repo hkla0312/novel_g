@@ -2,20 +2,20 @@ import { useState } from 'react'
 import { BacklogModal } from './components/BacklogModal'
 import { DebugPanel } from './components/DebugPanel'
 import { SaveLoadModal } from './components/SaveLoadModal'
-import { selectChoices, selectCurrentNode, selectCurrentText, useGameStore } from './store/gameStore'
+import { getAvailableChoices, getNodeText } from './engine/gameEngine'
+import { scenario } from './scenario'
+import { useGameStore } from './store/gameStore'
 import { formatTime } from './utils/time'
 
 type Overlay = 'backlog' | 'save' | 'load' | null
 
 export default function App() {
   const [overlay, setOverlay] = useState<Overlay>(null)
-  const currentTime = useGameStore((state) => state.currentTime)
-  const node = useGameStore(selectCurrentNode)
-  const text = useGameStore(selectCurrentText)
-  const choices = useGameStore(selectChoices)
-  const chooseChoice = useGameStore((state) => state.chooseChoice)
-  const continueNode = useGameStore((state) => state.continueNode)
-  const restart = useGameStore((state) => state.restart)
+  const game = useGameStore()
+  const node = scenario[game.currentNode]
+  const text = getNodeText(node, game)
+  const choices = getAvailableChoices(node, game)
+  const { currentTime, chooseChoice, continueNode, restart } = game
 
   const confirmRestart = () => {
     if (window.confirm('保存していない進行状況は失われます。最初から始めますか？')) restart()
