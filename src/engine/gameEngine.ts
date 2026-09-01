@@ -13,6 +13,9 @@ export const getNodeText = (node: ScenarioNode, state: GameSnapshot): string[] =
 export const getAvailableChoices = (node: ScenarioNode, state: GameSnapshot): Choice[] =>
   (node.choices ?? []).filter((choice) => evaluateCondition(choice.condition, state))
 
+export const getNextNodeId = (node: ScenarioNode, state: GameSnapshot): string | undefined =>
+  node.routes?.find((route) => evaluateCondition(route.condition, state))?.next ?? node.next
+
 const makeEntries = (text: string[], time: number): BacklogEntry[] => text.map((content, index) => ({
   id: `${Date.now()}-${index}-${Math.random().toString(36).slice(2)}`,
   kind: 'text',

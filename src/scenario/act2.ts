@@ -92,7 +92,7 @@ export const act2Nodes: ScenarioNode[] = [
   {
     id: 'act2_review_notes', title: '整理する', text: [
       '事実と推測を分けて書く。老人の死亡。母さんの訪問。赤い物。古い言葉。',
-      '並べれば関係があるように見える。関係があるように並べたのが俺自身だという可能性も、消してはいけない。',
+      'この四つの間には、まだ埋まっていない穴がある。',
     ], next: 'act2_hub',
   },
   {
@@ -101,7 +101,7 @@ export const act2Nodes: ScenarioNode[] = [
     ], choices: [
       { label: '母親の部屋を調べる', next: 'mother_room_first', timeCost: 18, condition: { type: 'hidden', key: 'motherRoomSearchCount', atMost: 0 }, effects: [{ type: 'adjustHidden', key: 'motherRoomSearchCount', amount: 1 }, { type: 'setFlag', key: 'mother_room_first_done', value: true }] },
       { label: '母親の部屋をもう一度調べる', next: 'mother_room_second', timeCost: 18, condition: { type: 'hidden', key: 'motherRoomSearchCount', atLeast: 1, atMost: 1 }, effects: [{ type: 'adjustHidden', key: 'motherRoomSearchCount', amount: 1 }] },
-      { label: '母親の部屋を詳しく調べる', next: 'mother_room_third', timeCost: 18, condition: { type: 'hidden', key: 'motherRoomSearchCount', atLeast: 2, atMost: 2 }, effects: [{ type: 'adjustHidden', key: 'motherRoomSearchCount', amount: 1 }, { type: 'setFlag', key: 'neighborApartmentKey', value: true }] },
+      { label: 'さっきの小箱を調べる', next: 'mother_room_third', timeCost: 18, condition: { type: 'hidden', key: 'motherRoomSearchCount', atLeast: 2, atMost: 2 }, effects: [{ type: 'adjustHidden', key: 'motherRoomSearchCount', amount: 1 }, { type: 'setFlag', key: 'neighborApartmentKey', value: true }] },
       { label: '母親の部屋を確認する', next: 'mother_room_exhausted', condition: { type: 'hidden', key: 'motherRoomSearchCount', atLeast: 3 } },
       { label: '仏壇を見る', next: 'act2_home_altar', timeCost: 5 },
       { label: '家族写真を見直す', next: 'act2_home_photos', timeCost: 8 },
@@ -121,8 +121,8 @@ export const act2Nodes: ScenarioNode[] = [
   {
     id: 'mother_room_second', title: '母親の部屋・二回目', location: 'home', text: [
       '老人の死亡日を意識してメモを読み直す。帰宅後の欄にも「ゼリー」「薬」「洗濯」とある。',
-      '収納の奥に古い小箱があった。裁縫箱にも菓子箱にも見える。前にも視界には入っていたはずだ。',
-      '母さんの物だろう。生活用品に混じっているのに、これだけ少し古い。今は場所だけ覚えておく。',
+      '介護用品を戻したとき、収納の奥に古い小箱が見えた。前にも視界には入っていたはずだ。母さんの昔の裁縫箱だろうか。',
+      '目はすぐメモへ戻った。箱より、死亡後にも同じ記録が続いていることの方が気になった。',
     ], choices: [{ label: '戻る', next: 'home_act2' }], effects: [{ type: 'setFlag', key: 'old_box_noticed', value: true }],
   },
   {
@@ -213,7 +213,7 @@ export const act2Nodes: ScenarioNode[] = [
     id: 'neighbor_life', title: '生活の痕跡', location: 'neighbor_apartment', text: [
       '棚に若い夫婦の写真があった。女性の写真だけが後年の額にも入っている。妻を亡くしてから、長く一人で暮らしていたらしい。',
       '擦り減った椅子、補修した眼鏡ケース、安い湯飲み。どれも誰かの生活が続いた跡だ。',
-      '強制退去になった過去や暗い態度は気になる。だが、この部屋にあるのは危険人物の証明ではない。孤独だった人間の持ち物だ。',
+      '眼鏡ケースの縫い目は不揃いだった。自分で何度も縫い直したらしい。',
     ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
       { type: 'setFlag', key: 'neighbor_life_checked', value: true },
       { type: 'addKnowledge', key: 'neighbor_long_widowhood' },
@@ -234,7 +234,7 @@ export const act2Nodes: ScenarioNode[] = [
     id: 'neighbor_red_objects', title: '赤いもの', location: 'neighbor_apartment', text: [
       '色褪せた座布団。菓子箱を結ぶ赤い糸。古い包装紙。棚には赤鉛筆で線を引いた冊子がある。',
       '新しい物と古い物が混じっている。一度の儀式で揃えた物には見えない。長い時間の中で残され、結果として部屋が赤く見えている。',
-      '赤い部屋。そう呼べば意味ありげだ。だが呼び方を決めたのは俺だ。',
+      '赤い物は多い。それ以上の意味は、まだ物の側からは出てこない。',
     ], choices: [{ label: '部屋を調べ続ける', next: 'neighbor_home_hub' }], effects: [
       { type: 'setFlag', key: 'neighbor_red_checked', value: true },
       { type: 'addKnowledge', key: 'layered_red_objects' },
@@ -261,7 +261,7 @@ export const act2Nodes: ScenarioNode[] = [
       { label: '「赤い夢」で探す', next: 'library_red_dream', timeCost: 20, condition: notFlag('library_red_dream_done') },
       { label: '「地域の宗教」で探す', next: 'library_religion', timeCost: 35, condition: notFlag('library_religion_done') },
       { label: '「昔の地鎮祭」で探す', next: 'library_ground_rites', timeCost: 40, condition: notFlag('library_ground_rites_done') },
-      { label: '「地還し」で探す', next: 'library_jigaeshi', timeCost: 50, condition: notFlag('library_jigaeshi_done') },
+      { label: '「地還し」で詳しく探す', next: 'library_jigaeshi', timeCost: 50, condition: { type: 'all', conditions: [notFlag('library_jigaeshi_done'), { type: 'any', conditions: [{ type: 'knowledge', key: 'jigaeshi_meaning' }, { type: 'knowledge', key: 'local_custom_heard' }, { type: 'flag', key: 'jigaeshi_term_found' }] }] } },
       { label: '図書館を出る', next: 'act2_hub' },
     ],
   },
@@ -283,9 +283,11 @@ export const act2Nodes: ScenarioNode[] = [
   {
     id: 'library_ground_rites', title: '検索：昔の地鎮祭', location: 'library', text: [
       '土地を掘る前の行事をまとめた古い冊子が見つかった。赤い布、赤い紙、赤土。子供が土を返す写真もある。',
+      '呼び方は家や地域で違い、「地還し」「地鎮さん」「土返し」と記録されていた。ようやく絞り込める言葉を一つ得た。',
       '血、剃刀、自傷の記録はない。俺の腕に起きたことを、この風習だけでは説明できない。',
     ], choices: [{ label: '検索を続ける', next: 'library_hub' }], effects: [
       { type: 'setFlag', key: 'library_ground_rites_done', value: true },
+      { type: 'setFlag', key: 'jigaeshi_term_found', value: true },
       { type: 'addKnowledge', key: 'traditional_rite_has_no_self_harm' },
     ],
   },
@@ -325,7 +327,7 @@ export const act2Nodes: ScenarioNode[] = [
       '『お疲れさまです。今日の授業ですが、予定どおり来られそうですか？』',
       '塾の事務員の声だった。朝の俺は、夕方から仕事へ行くつもりでいた。腕を隠す服まで考えていた。',
       '病院、警察、死亡した隣人、母さんの鍵、黄ばんだ紙。調べるうちに、普通の一日の優先順位から仕事が外れていた。',
-    ], choices: [{ label: 'それどころではない', next: 'vertical_slice_end', effects: [{ type: 'setFlag', key: 'work_call_done', value: true }] }],
+    ], choices: [{ label: 'それどころではない', next: 'act3_opening', effects: [{ type: 'setFlag', key: 'work_call_done', value: true }] }],
   },
 ]
 

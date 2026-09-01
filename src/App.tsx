@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BacklogModal } from './components/BacklogModal'
 import { DebugPanel } from './components/DebugPanel'
 import { SaveLoadModal } from './components/SaveLoadModal'
-import { getAvailableChoices, getNodeText } from './engine/gameEngine'
+import { getAvailableChoices, getNextNodeId, getNodeText } from './engine/gameEngine'
 import { scenario } from './scenario'
 import { useGameStore } from './store/gameStore'
 import { formatTime } from './utils/time'
@@ -15,6 +15,7 @@ export default function App() {
   const node = scenario[game.currentNode]
   const text = getNodeText(node, game)
   const choices = getAvailableChoices(node, game)
+  const next = getNextNodeId(node, game)
   const { currentTime, chooseChoice, continueNode, restart } = game
 
   const confirmRestart = () => {
@@ -34,7 +35,7 @@ export default function App() {
 
         <div className="choices" aria-label="選択肢">
           {choices.map((choice) => <button key={`${choice.label}-${choice.next}`} onClick={() => chooseChoice(choice)}>{choice.label}</button>)}
-          {node?.next && <button onClick={continueNode}>続きを読む</button>}
+          {next && <button onClick={continueNode}>続きを読む</button>}
           {node?.terminal && <button onClick={confirmRestart}>最初から読む</button>}
         </div>
       </div>

@@ -42,6 +42,7 @@ export type ScenarioNode = {
   effects?: Effect[]
   condition?: Condition
   next?: string
+  routes?: Array<{ condition: Condition; next: string }>
   terminal?: boolean
 }
 

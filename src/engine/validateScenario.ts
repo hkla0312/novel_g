@@ -24,6 +24,7 @@ export const validateScenario = (nodes: ScenarioNode[], startId = 'prologue'): V
     if (node.timeCost !== undefined && (!Number.isFinite(node.timeCost) || node.timeCost < 0)) errors.push(`${node.id}: invalid timeCost`)
     if (node.condition) validateCondition(node.condition, `${node.id}.condition`, errors)
     node.variants?.forEach((variant, index) => validateCondition(variant.condition, `${node.id}.variants.${index}`, errors))
+    node.routes?.forEach((route, index) => validateCondition(route.condition, `${node.id}.routes.${index}`, errors))
     node.choices?.forEach((choice, index) => {
       if (choice.timeCost !== undefined && (!Number.isFinite(choice.timeCost) || choice.timeCost < 0)) errors.push(`${node.id}.choices.${index}: invalid timeCost`)
       if (choice.condition) validateCondition(choice.condition, `${node.id}.choices.${index}.condition`, errors)
@@ -31,6 +32,7 @@ export const validateScenario = (nodes: ScenarioNode[], startId = 'prologue'): V
   }
   for (const node of nodes) {
     if (node.next && !ids.has(node.next)) errors.push(`${node.id}: unknown next ${node.next}`)
+    node.routes?.forEach((route) => { if (!ids.has(route.next)) errors.push(`${node.id}: unknown route.next ${route.next}`) })
     node.choices?.forEach((choice) => { if (!ids.has(choice.next)) errors.push(`${node.id}: unknown choice.next ${choice.next}`) })
   }
   const reached = new Set<string>()
@@ -40,6 +42,7 @@ export const validateScenario = (nodes: ScenarioNode[], startId = 'prologue'): V
     const node = nodes.find((item) => item.id === id)
     if (!node) return
     if (node.next) walk(node.next)
+    node.routes?.forEach((route) => walk(route.next))
     node.choices?.forEach((choice) => walk(choice.next))
   }
   walk(startId)

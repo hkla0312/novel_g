@@ -21,5 +21,18 @@ describe('save migration', () => {
     expect(migrated?.saveDataVersion).toBe(SAVE_DATA_VERSION)
     expect(migrated?.snapshot.currentNode).toBe('act2_opening')
   })
+
+  it('moves a version 2 ending save to ACT3', () => {
+    const oldSave: SaveData = {
+      saveDataVersion: 2,
+      savedAt: '2026-01-02T00:00:00.000Z',
+      snapshot: {
+        currentNode: 'vertical_slice_end', currentTime: 960, flags: {}, knowledge: [], selfMemory: [],
+        visitedNodes: [], visitedLocations: [], backlog: [], hidden: { FACT: 3, UNDERSTANDING: 1, SELF: 2 },
+      },
+    }
+    localStorage.setItem('akano-yume:save:1', JSON.stringify(oldSave))
+    expect(loadGame(1)?.snapshot.currentNode).toBe('act3_opening')
+  })
 })
 

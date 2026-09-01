@@ -143,12 +143,5 @@ export const freeActionNodes: ScenarioNode[] = [
       '二つの事実らしいものが、同じ場所に重ならずに存在していた。',
     ], next: 'act2_opening', effects: [{ type: 'setFlag', key: 'mother_death_questioned', value: true }, { type: 'addKnowledge', key: 'mother_claims_postmortem_contact' }],
   },
-  {
-    id: 'vertical_slice_end', title: '16:00', text: [
-      '通話を切った。朝にはまだ「夕方から仕事」という普通の一日が残っていた。',
-      '今はもう、その順番へ戻れる気がしない。俺は今日知ったことを、もう一度最初から並べ直した。',
-      '――『アカノユメ』プレイアブル版・今回の実装範囲はここまでです。',
-    ], terminal: true,
-  },
 ]
 

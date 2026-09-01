@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { choose, enterNode, getAvailableChoices, getNodeText } from '../engine/gameEngine'
+import { choose, enterNode, getAvailableChoices, getNextNodeId, getNodeText } from '../engine/gameEngine'
 import { scenario } from '../scenario'
 import type { GameSnapshot } from '../types/game'
 import type { Choice } from '../types/scenario'
@@ -37,8 +37,10 @@ export const useGameStore = create<GameStore>((set, get) => ({
   chooseChoice: (choice) => set((state) => choose(snapshotFrom(state), choice, scenario)),
   continueNode: () => set((state) => {
     const node = scenario[state.currentNode]
-    if (!node?.next) return state
-    const target = scenario[node.next]
+    if (!node) return state
+    const next = getNextNodeId(node, snapshotFrom(state))
+    if (!next) return state
+    const target = scenario[next]
     return target ? enterNode(snapshotFrom(state), target) : state
   }),
   restart: () => set(createInitialSnapshot()),
