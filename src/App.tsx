@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BacklogModal } from './components/BacklogModal'
 import { ArchiveModal } from './components/ArchiveModal'
 import { DebugPanel } from './components/DebugPanel'
@@ -7,8 +7,11 @@ import { getAvailableChoices, getNextNodeId, getNodeText } from './engine/gameEn
 import { scenario } from './scenario'
 import { useGameStore } from './store/gameStore'
 import { formatTime } from './utils/time'
+import { ConfigModal } from './components/ConfigModal'
+import { PlaytestPanel } from './components/PlaytestPanel'
+import { audioManager } from './audio/AudioManager'
 
-type Overlay = 'backlog' | 'archive' | 'save' | 'load' | null
+type Overlay = 'backlog' | 'archive' | 'save' | 'load' | 'config' | null
 
 export default function App() {
   const [overlay, setOverlay] = useState<Overlay>(null)
@@ -18,9 +21,15 @@ export default function App() {
   const choices = getAvailableChoices(node, game)
   const next = getNextNodeId(node, game)
   const { currentTime, chooseChoice, continueNode, restart } = game
+  useEffect(() => { audioManager.applyNode(node) }, [node])
+  useEffect(() => {
+    const unlock = () => audioManager.unlock()
+    window.addEventListener('pointerdown', unlock, { once: true }); window.addEventListener('keydown', unlock, { once: true })
+    return () => { window.removeEventListener('pointerdown', unlock); window.removeEventListener('keydown', unlock) }
+  }, [])
 
   const confirmRestart = () => {
-    if (window.confirm('保存していない進行状況は失われます。最初から始めますか？')) restart()
+    if (window.confirm('保存していない進行状況は失われます。最初から始めますか？')) { audioManager.stopAll(); restart() }
   }
 
   return <div className="app-shell">
@@ -47,12 +56,15 @@ export default function App() {
       <button onClick={() => setOverlay('archive')}>ARCHIVE</button>
       <button onClick={() => setOverlay('save')}>SAVE</button>
       <button onClick={() => setOverlay('load')}>LOAD</button>
+      <button onClick={() => setOverlay('config')}>CONFIG</button>
       <button onClick={confirmRestart}>最初から</button>
     </nav>
 
     {overlay === 'backlog' && <BacklogModal onClose={() => setOverlay(null)} />}
     {overlay === 'archive' && <ArchiveModal onClose={() => setOverlay(null)} />}
     {(overlay === 'save' || overlay === 'load') && <SaveLoadModal mode={overlay} onClose={() => setOverlay(null)} />}
+    {overlay === 'config' && <ConfigModal onClose={() => setOverlay(null)} />}
+    <PlaytestPanel game={game} />
     <DebugPanel />
   </div>
 }
