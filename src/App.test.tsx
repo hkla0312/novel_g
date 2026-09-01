@@ -1,13 +1,20 @@
-import { renderToString } from 'react-dom/server'
+// @vitest-environment jsdom
+
+import { flushSync } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { describe, expect, it } from 'vitest'
 import App from './App'
 
 describe('initial application render', () => {
-  it('renders the title, prologue and continue control', () => {
-    const html = renderToString(<App />)
-    expect(html).toContain('アカノユメ')
-    expect(html).toContain('PROLOGUE')
-    expect(html).toContain('続きを読む')
+  it('mounts the interactive title, prologue and continue control', () => {
+    const container = document.createElement('div')
+    document.body.append(container)
+    const root = createRoot(container)
+    flushSync(() => root.render(<App />))
+    expect(container.textContent).toContain('アカノユメ')
+    expect(container.textContent).toContain('PROLOGUE')
+    expect(container.querySelector('button')?.textContent).toContain('続きを読む')
+    flushSync(() => root.unmount())
   })
 })
 
