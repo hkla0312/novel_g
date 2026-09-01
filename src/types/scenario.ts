@@ -44,5 +44,11 @@ export type ScenarioNode = {
   next?: string
   routes?: Array<{ condition: Condition; next: string }>
   terminal?: boolean
+  audio?: {
+    bgm?: 'main-investigation' | 'end-bad' | 'end-normal' | 'end-true' | 'end-secret' | null
+    ambience?: 'prologue-night' | null
+    fadeMs?: number
+    bgmVolumeScale?: number
+  }
 }
 
