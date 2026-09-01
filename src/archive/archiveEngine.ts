@@ -123,7 +123,7 @@ export const archiveDefinitions: ArchiveEntryDefinition[] = [
   {
     id: 'old_site', category: '資料', title: '古い個人サイト', visibleWhen: knowledge('original_site_author'), facts: [
       { text: '主人公が子供の頃に作った、地域の風習を記録する個人サイト。', source: '主人公の旧PC', sourceType: '物証', condition: knowledge('original_site_author') },
-      { text: 'サイト内に「アカノユメ」という名称はなく、血や自傷に関する記述もない。', source: '主人公の旧PC', sourceType: '物証', condition: knowledge('source_site_not_akano_yume') },
+      { text: 'サイト内に「アカノユメ」という名称はなく、血や自傷に関する記述もない。', source: '主人公の旧PC', sourceType: '物証', condition: { type: 'all', conditions: [knowledge('source_site_not_akano_yume'), any(knowledge('akano_yume_name_from_brother'), knowledge('akano_yume_document'))] } },
     ],
   },
   {
