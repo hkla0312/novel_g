@@ -145,6 +145,13 @@ button { color: inherit; }
 .config-list label { display: grid; grid-template-columns: 1fr auto; gap: 9px; color: var(--cold-light); font: .75rem system-ui, sans-serif; letter-spacing: .08em; }
 .config-list input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: #a8cfe8; }
 .config-list .config-check { grid-template-columns: auto 1fr; align-items: center; }
+.ending-intro { margin: 0 0 18px; color: var(--muted); font-size: .82rem; line-height: 1.8; }
+.ending-list { list-style-position: inside; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.ending-list li { display: grid; grid-template-columns: 1fr auto; gap: 14px; padding: 17px 4px; border-bottom: 1px solid var(--line); color: #707780; letter-spacing: .08em; }
+.ending-list li::marker { color: var(--muted); font: .7rem system-ui, sans-serif; }
+.ending-list li.is-cleared { color: var(--ink); }
+.ending-list small { align-self: center; color: var(--muted); font: .66rem system-ui, sans-serif; letter-spacing: .05em; }
+.ending-list .ending-secret { margin-top: 12px; border-top: 1px solid #20252b; }
 .playtest-badge { position: fixed; z-index: 8; left: 8px; top: 8px; color: #aab4be; font: .58rem system-ui, sans-serif; letter-spacing: .12em; opacity: .7; }
 .playtest-question { line-height: 1.8; }
 .modal textarea, .survey-list textarea { width: 100%; min-height: 104px; resize: vertical; padding: 12px; color: var(--ink); background: #07090c; border: 1px solid var(--line); line-height: 1.7; }
