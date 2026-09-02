@@ -20,7 +20,7 @@ export const act2Nodes: ScenarioNode[] = [
       { label: '団地管理側へ確認する', next: 'verify_management', timeCost: 50, condition: notFlag('verified_with_management') },
       { label: '警察へ正式な確認を取る', next: 'verify_police', timeCost: 120, condition: notFlag('verified_with_police') },
       { label: '前の傷害事件を警察へ追加確認する', next: 'verify_police_history', timeCost: 40, condition: { type: 'all', conditions: [{ type: 'flag', key: 'verified_with_police' }, { type: 'any', conditions: [{ type: 'knowledge', key: 'neighbor_injury_rumor' }, { type: 'knowledge', key: 'neighbor_family_trouble_record' }] }, notFlag('verified_neighbor_history_with_police')] } },
-      { label: '確認した情報を持って団地へ戻る', next: 'act2_hub', condition: { type: 'flag', key: 'neighbor_death_official' } },
+      { label: '団地の入り口へ戻る', next: 'act2_hub', condition: { type: 'flag', key: 'neighbor_death_official' } },
     ],
   },
   {
@@ -46,7 +46,7 @@ export const act2Nodes: ScenarioNode[] = [
       '「母は、その後も部屋へ出入りしていたかもしれません」',
       '「その件はこちらでは分かりません。鍵についても管理側からお渡しはできません」',
       '死亡日時は確認できた。母さんが誰と話したのかは、やはり分からない。',
-    ], choices: [{ label: '団地へ戻る', next: 'verification_hub' }], effects: [
+    ], choices: [{ label: '団地の入り口へ戻る', next: 'verification_hub' }], effects: [
       { type: 'setFlag', key: 'verified_with_management', value: true },
       { type: 'setFlag', key: 'neighbor_death_official', value: true },
       { type: 'addKnowledge', key: 'neighbor_death_datetime' },
@@ -71,7 +71,7 @@ export const act2Nodes: ScenarioNode[] = [
       '事情を最初から説明した。傷害のこと、隣人の死亡を聞いたこと、母さんが昨日会ったと主張していること。',
       '警察官は確認できる事実と家族の発言を分けて記録した。長く待った後、老人が四日前に死亡していることだけは確認された。',
       '母さんの認識については医療や安全確保も含めて家族で対応するよう勧められた。警察は答えを持っていない。無能なのではなく、答えられる範囲を越えている。',
-    ], choices: [{ label: '団地へ戻る', next: 'verification_hub' }], effects: [
+    ], choices: [{ label: '団地の入り口へ戻る', next: 'verification_hub' }], effects: [
       { type: 'setFlag', key: 'verified_with_police', value: true },
       { type: 'setFlag', key: 'neighbor_death_official', value: true },
       { type: 'addKnowledge', key: 'neighbor_death_official_record' },
@@ -83,7 +83,7 @@ export const act2Nodes: ScenarioNode[] = [
       '噂と住宅管理の記録を分けて説明した。警察官は、確認できる範囲は限られると断った上で過去の対応記録を調べた。',
       '老人が孫世代の親族へ怪我を負わせた件で、警察が対応していた。結果は不起訴。その後、老人は前の住居を退去している。',
       '記録にアカノユメや宗教的な儀式という記載はない。何を考えていたのかまでは、事実として確認できなかった。',
-    ], choices: [{ label: '確認結果を持って団地へ戻る', next: 'verification_hub' }], effects: [
+    ], choices: [{ label: '団地の入り口へ戻る', next: 'verification_hub' }], effects: [
       { type: 'setFlag', key: 'verified_neighbor_history_with_police', value: true },
       { type: 'addKnowledge', key: 'neighbor_relative_injury_confirmed' },
       { type: 'addKnowledge', key: 'neighbor_nonprosecution_and_eviction' },
@@ -170,8 +170,8 @@ export const act2Nodes: ScenarioNode[] = [
       condition: { type: 'knowledge', key: 'library_jigaeshi_confirmed' },
       text: [
         '幼い俺の足元に赤い土がある。後ろには赤茶色の布。周囲の大人は土を囲み、子供の俺にも何かを持たせていた。',
-        '図書館で見た地還しの記録と似ている。俺自身が参加していた可能性は高い。',
-        'だが写真に「地還し」と書かれているわけではない。高い可能性と確定は違う。',
+        '図書館で見た地還しの記録と同じように、大人たちは土を囲み、子供の俺にも何かを持たせていた。',
+        '写真の裏には、母さんの字で日付と「土を返した日」と書かれていた。',
       ],
     }, {
       condition: { type: 'knowledge', key: 'jigaeshi_meaning' },
@@ -277,7 +277,7 @@ export const act2Nodes: ScenarioNode[] = [
       '仏壇には亡くなった妻の遺影があった。異様なのは、その周囲だけだ。',
       '退色した赤布。赤い紐。赤鉛筆で書き込まれたコピー用紙。印刷方式も紙の色も違う。貼り直したテープ跡が、古い文字の上へ重なっている。',
       '同じ一文を何度も手書きした紙もあった。血の跡も刃物もない。一人の人間が何十年も手放せなかったものが、普通の仏間の中へ堆積していた。',
-      '襖の奥に、何度も折られた黄ばんだA4が見える。',
+      '少し開いた仏壇の引き出しから、年季の入ったA4用紙の端が見えている。',
     ], choices: [
       { label: '黄ばんだA4を調べる', next: 'neighbor_old_paper', timeCost: 15 },
       { label: '部屋を調べ続ける', next: 'neighbor_home_hub' },
@@ -290,7 +290,7 @@ export const act2Nodes: ScenarioNode[] = [
   },
   {
     id: 'neighbor_old_paper', title: '古い紙', location: 'neighbor_apartment', audio: { bgm: 'main-investigation', fadeMs: 1800, bgmVolumeScale: .42 }, text: [
-      '引き出しの底に、何度も折られた黄ばんだA4用紙があった。折り目は薄くなり、裏からテープで補修されている。',
+      '仏壇の引き出しを開けると、何度も折られた年季の入ったA4用紙があった。折り目は薄くなり、裏からテープで補修されている。',
       '印刷はかすれていた。昔のWebページを印刷したものらしい。余白には赤鉛筆の書き込みがある。',
       '見出しに「アカノユメ」とあった。',
       '本文の多くは読めない。それでも一行だけ残っている。',
