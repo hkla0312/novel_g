@@ -11,13 +11,12 @@ const canReturn: Condition = {
 export const freeActionNodes: ScenarioNode[] = [
   {
     id: 'free_action_hub', title: '自由行動', text: [
-      '母さんが出勤した後の部屋は静かだった。傷を診てもらうべきだ。警察へ相談することもできる。家に、理由へつながるものが残っているかもしれない。',
-      '順番に正解があるとは思えない。今の俺にできることから始めるしかない。',
+      '母さんが出勤した後の部屋は静かだった。壁の時計と、冷蔵庫の作動音だけが聞こえる。',
     ], choices: [
       { label: '病院へ行く', next: 'hospital', timeCost: 12, condition: { type: 'not', condition: { type: 'flag', key: 'hospital_done' } } },
       { label: '警察へ行く', next: 'police', timeCost: 12, condition: { type: 'not', condition: { type: 'flag', key: 'police_done' } } },
       { label: '自宅を調べる', next: 'home_search', timeCost: 2 },
-      { label: '団地へ戻る', next: 'danchi_return', condition: canReturn },
+      { label: '団地の入り口へ戻る', next: 'danchi_return', condition: canReturn },
     ],
   },
   {
@@ -26,7 +25,6 @@ export const freeActionNodes: ScenarioNode[] = [
       '「幸い、どれも浅いです。化膿と破傷風には気をつけてください」',
       '原因を聞かれ、家族にやられた可能性があると答えた。医師は一瞬手を止め、声を落とした。',
       '「今夜、安全に眠れる場所はありますか。警察への相談は？」',
-      '怪異を説明することも、俺を笑うこともなかった。',
       '処置を終えた待合室で、高齢の男女が昔の土地の話をしていた。家を建てる前に「地鎮さん」をした、いやあれは「地還し」だ、と名称で揉めている。',
       '赤い布、赤い紙、赤い土。土地を掘るときや大きく変えるとき、子供も一緒に参加したという。血や傷の話は一度も出ない。',
     ], choices: [
@@ -39,7 +37,7 @@ export const freeActionNodes: ScenarioNode[] = [
       '尋ねると、二人は少し意外そうにしながら説明してくれた。呼び名も道具も、地域どころか家ごとに違ったらしい。',
       '「土地から借りたものは土地へ返す、ってな」',
       '「家の難儀は家で分ける、とも言ったねえ。一人に介護も病気も背負わせるなってことよ」',
-      '生活の知恵としては理解できる。それがどうして剃刀になる？　今朝赤い夢を見たせいで、赤という情報だけを拾っている可能性もある。一致は因果ではない。',
+      '家族の誰か一人へ介護も病気も背負わせない。その言葉自体は、ごく普通の生活の話に聞こえた。剃刀も、傷も出てこない。',
       'もっと調べるなら市立図書館の郷土資料にあるかもしれない、と教えられた。',
     ], choices: [{ label: '礼を言って病院を出る', next: 'free_action_hub', effects: [{ type: 'setFlag', key: 'hospital_done', value: true }, { type: 'addKnowledge', key: 'jigaeshi_meaning' }, { type: 'setFlag', key: 'library_lead', value: true }] }],
   },
@@ -48,14 +46,14 @@ export const freeActionNodes: ScenarioNode[] = [
       '担当の警察官は腕の写真を撮り、残っていた刃をどう保管したか確認した。今夜安全に眠れる場所、母さんと距離を置けるか、妹にも危険がないか。必要なら避難先や被害届について案内するという。',
       '俺は隣人が怪しいのかもしれない、母さんは宗教のようなものに関わったのかもしれない、と説明しかけた。口にすると、どれも推測の形しかしていなかった。',
       '「それは現時点では推測ですね。確認できていることと分けましょう」',
-      '冷たい言い方ではなかった。むしろ、俺が恐怖で結びつけたものを一つずつほどいてくれた。母さんの職場へ所在確認をしてよいか尋ねられ、了承した。',
+      '冷たい言い方ではなかった。警察官は俺が実際に見たこと、母さんから聞いたこと、それ以外を順に確認した。母さんの職場へ所在確認をしてよいか尋ねられ、了承した。',
     ], choices: [{ label: '警察署を出る', next: 'police_call', effects: [{ type: 'setFlag', key: 'police_done', value: true }, { type: 'setFlag', key: 'police_consulted', value: true }] }],
   },
   {
     id: 'police_call', title: '母からの電話', timeCost: 4, text: [
       '外へ出たところで母さんから電話が来た。',
       '「警察に何話したの？」',
-      '背中が冷えた。なぜ知っている。そう思った直後、母さんが「職場に電話が来た」と続けた。警察が確認しただけだ。監視でも、不可解な力でもない。',
+      '背中が冷えた。なぜ知っている。そう思った直後、母さんが「職場に電話が来た」と続けた。警察が所在を確認した電話だった。',
       '「家のことを外へ出したら駄目。外へ持っていったら、また戻ってくるでしょう」',
       '何が戻るのか尋ねても、母さんは仕事中だからと電話を切った。普通の理由が分かった後にも、言葉だけが残った。',
     ], next: 'free_action_hub', effects: [{ type: 'addKnowledge', key: 'mother_externalization_fear' }],
@@ -97,7 +95,7 @@ export const freeActionNodes: ScenarioNode[] = [
       text: [
         '父さんがいた頃の四人家族と、死後の三人家族。俺は父親を失った。母さんは夫を失った。その違いを、初めて同じ写真の中で考えた。',
         '幼い俺が赤い土の上に立つ写真。背後には赤茶色の布。病院で聞いた「地還し」の道具と一致する。',
-        'これは地還しの写真ではないか。そう見える。だが知識を得た後だから、似たものを同じだと思い込んでいる可能性もある。写真だけでは断定できない。',
+        '赤い土の上で、幼い俺は大人に手を添えられ、何かを地面へ返そうとしていた。',
       ],
     }], choices: [{ label: '戻る', next: 'home_search' }], effects: [{ type: 'addKnowledge', key: 'childhood_red_land_photo' }, { type: 'addSelfMemory', key: 'mother_lost_husband' }],
   },
@@ -146,8 +144,8 @@ export const freeActionNodes: ScenarioNode[] = [
   {
     id: 'neighbor_fact', location: 'housing_complex', text: [
       '老人が亡くなったというのは、俺が帰省する前のことらしい。母さんは昨日も会ったと言っていた。',
-      '近所の女性の話と、母さんの話は同時には成立しない。どちらを先に疑うかで、見え方まで変わりそうだった。',
-      '確認しなければならない。電話をかける指が、傷とは別の理由で震えた。',
+      '母さんは昨日も会ったと言っていた。近所の女性は、その数日前に亡くなったと言う。',
+      '口の中が乾いた。電話をかける指が、傷とは別の理由で震えた。',
     ], choices: [{ label: '母さんへ電話する', next: 'final_call', timeCost: 10 }],
   },
   {
