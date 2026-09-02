@@ -15,6 +15,7 @@ describe('initial application render', () => {
     expect(container.textContent).toContain('PROLOGUE')
     expect(container.querySelector('button')?.textContent).toContain('続きを読む')
     expect(container.textContent).toContain('ARCHIVE')
+    expect(container.textContent).toContain('ENDING')
     flushSync(() => root.unmount())
   })
 })
