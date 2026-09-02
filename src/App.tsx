@@ -8,10 +8,11 @@ import { scenario } from './scenario'
 import { useGameStore } from './store/gameStore'
 import { formatTime } from './utils/time'
 import { ConfigModal } from './components/ConfigModal'
+import { EndingModal } from './components/EndingModal'
 import { PlaytestPanel } from './components/PlaytestPanel'
 import { audioManager } from './audio/AudioManager'
 
-type Overlay = 'backlog' | 'archive' | 'save' | 'load' | 'config' | null
+type Overlay = 'backlog' | 'archive' | 'ending' | 'save' | 'load' | 'config' | null
 
 export default function App() {
   const [overlay, setOverlay] = useState<Overlay>(null)
@@ -54,6 +55,7 @@ export default function App() {
     <nav className="toolbar" aria-label="ゲームメニュー">
       <button onClick={() => setOverlay('backlog')}>バックログ</button>
       <button onClick={() => setOverlay('archive')}>ARCHIVE</button>
+      <button onClick={() => setOverlay('ending')}>ENDING</button>
       <button onClick={() => setOverlay('save')}>SAVE</button>
       <button onClick={() => setOverlay('load')}>LOAD</button>
       <button onClick={() => setOverlay('config')}>CONFIG</button>
@@ -62,6 +64,7 @@ export default function App() {
 
     {overlay === 'backlog' && <BacklogModal onClose={() => setOverlay(null)} />}
     {overlay === 'archive' && <ArchiveModal onClose={() => setOverlay(null)} />}
+    {overlay === 'ending' && <EndingModal onClose={() => setOverlay(null)} />}
     {(overlay === 'save' || overlay === 'load') && <SaveLoadModal mode={overlay} onClose={() => setOverlay(null)} />}
     {overlay === 'config' && <ConfigModal onClose={() => setOverlay(null)} />}
     <PlaytestPanel game={game} />
