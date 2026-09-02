@@ -3,12 +3,12 @@ import { loadAudioSettings, saveAudioSettings, type AudioSettings } from './audi
 
 export type TrackId = 'prologue-night' | 'main-investigation' | 'end-bad' | 'end-normal' | 'end-true' | 'end-secret'
 const sources: Record<TrackId, string> = {
-  'prologue-night': `${import.meta.env.BASE_URL}audio/prologue-night.mp3`,
-  'main-investigation': `${import.meta.env.BASE_URL}audio/main-investigation.mp3`,
-  'end-bad': `${import.meta.env.BASE_URL}audio/end-bad.mp3`,
-  'end-normal': `${import.meta.env.BASE_URL}audio/end-normal.mp3`,
-  'end-true': `${import.meta.env.BASE_URL}audio/end-true.mp3`,
-  'end-secret': `${import.meta.env.BASE_URL}audio/end-secret.mp3`,
+  'prologue-night': 'https://opengameart.org/sites/default/files/ambient_horror.ogg',
+  'main-investigation': 'https://opengameart.org/sites/default/files/The%20Surreal%20Truth.mp3',
+  'end-bad': 'https://opengameart.org/sites/default/files/Infestation%20in%20the%20Control%20Room.mp3',
+  'end-normal': 'https://opengameart.org/sites/default/files/Final%20Captain%27s%20Log.mp3',
+  'end-true': 'https://opengameart.org/sites/default/files/The%20Depths%20of%20Hell.mp3',
+  'end-secret': 'https://opengameart.org/sites/default/files/Cage%20of%20the%20Cryptid.mp3',
 }
 
 type Channel = { id: TrackId | null; audio: HTMLAudioElement | null; scale: number }
@@ -55,7 +55,7 @@ export class AudioManager {
     const channel = kind === 'bgm' ? this.bgm : this.ambience
     if (!channel.audio) return
     const audio = channel.audio; const start = performance.now(); const base = this.volume(channel, kind)
-    const tick = (now: number) => { const p = Math.min(1, (now - start) / Math.max(1, ms)); audio.volume = base * (from + (to - from) * p); if (p < 1) requestAnimationFrame(tick) }
+    const tick = (now: number) => { const p = Math.max(0, Math.min(1, (now - start) / Math.max(1, ms))); audio.volume = Math.max(0, Math.min(1, base * (from + (to - from) * p))); if (p < 1) requestAnimationFrame(tick) }
     requestAnimationFrame(tick)
   }
   applyNode = (node?: ScenarioNode): void => {
