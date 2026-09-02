@@ -51,20 +51,20 @@ describe('vertical slice routes', () => {
     state = pick(state, '戻る')
     state = pick(state, '家族写真を見る')
     expect(state.knowledge).toContain('jigaeshi_meaning')
-    expect(state.backlog.some((entry) => entry.content.includes('地還しの写真'))).toBe(true)
+    expect(state.backlog.some((entry) => entry.content.includes('赤い土の上'))).toBe(true)
     state = pick(state, '戻る')
     state = pick(state, '昔の自分の部屋を調べる')
     state = pick(state, '戻る')
     state = pick(state, '探索を切り上げる')
-    state = pick(state, '団地へ戻る')
+    state = pick(state, '団地の入り口へ戻る')
     state = pick(state, '前の住居での話を聞く')
     state = followNextUntil(state, 'neighbor_fact')
     state = pick(state, '母さんへ電話する')
     state = continueTo(state, 'act2_opening')
     state = continueTo(state, 'verification_hub')
     state = pick(state, '団地管理側へ確認する')
-    state = pick(state, '団地へ戻る')
-    state = pick(state, '確認した情報を持って団地へ戻る')
+    state = pick(state, '団地の入り口へ戻る')
+    state = pick(state, '団地の入り口へ戻る')
 
     state = pick(state, '自宅を再探索する')
     state = pick(state, '母親の部屋をもう一度調べる')
@@ -126,16 +126,16 @@ describe('vertical slice routes', () => {
     state = pick(state, '自宅を調べる')
     state = pick(state, '探索を切り上げる')
     const labels = getAvailableChoices(scenario.free_action_hub, state).map((choice) => choice.label)
-    expect(labels).toContain('団地へ戻る')
-    state = pick(state, '団地へ戻る')
+    expect(labels).toContain('団地の入り口へ戻る')
+    state = pick(state, '団地の入り口へ戻る')
     state = pick(state, '前の住居での話を聞く')
     state = followNextUntil(state, 'neighbor_fact')
     state = pick(state, '母さんへ電話する')
     state = continueTo(state, 'act2_opening')
     state = continueTo(state, 'verification_hub')
     state = pick(state, '警察へ正式な確認を取る')
-    state = pick(state, '団地へ戻る')
-    state = pick(state, '確認した情報を持って団地へ戻る')
+    state = pick(state, '団地の入り口へ戻る')
+    state = pick(state, '団地の入り口へ戻る')
     state = pick(state, '自宅を再探索する')
     state = pick(state, '母親の部屋を調べる')
     state = pick(state, '戻る')
@@ -366,6 +366,26 @@ describe('vertical slice routes', () => {
     for (const id of ['bad_end', 'normal_end', 'true_end', 'true_end_close', 'secret_end']) {
       expect(scenario[id].title).not.toMatch(/BAD|NORMAL|TRUE|SECRET/)
     }
+  })
+
+  it('keeps revised prose free of player guidance and implausible HTML metadata', () => {
+    const allText = scenarioNodes.flatMap((node) => [
+      ...(node.text ?? []),
+      ...(node.variants ?? []).flatMap((variant) => variant.text),
+    ]).join('\n')
+    expect(allText).not.toContain('怪異を説明することも')
+    expect(allText).not.toContain('順番に正解')
+    expect(allText).not.toContain('どちらを先に疑うか')
+    expect(allText).not.toContain('ページのソースに')
+    expect(allText).not.toContain('余白に残った俺の本名')
+    expect(getNodeText(scenario.pc_index, start()).join('\n')).toContain('幼い頃の俺が名乗っていたハンドルネーム')
+  })
+
+  it('does not reveal the Akano Yume name in the PC comparison when only library research was collected', () => {
+    const libraryOnly = { ...start(), knowledge: ['library_jigaeshi_confirmed'] }
+    expect(getNodeText(scenario.pc_aka, libraryOnly).join('\n')).not.toContain('アカノユメ')
+    const nameKnown = { ...libraryOnly, knowledge: ['library_jigaeshi_confirmed', 'akano_yume_name_from_brother'] }
+    expect(getNodeText(scenario.pc_aka, nameKnown).join('\n')).toContain('アカノユメ')
   })
 
   it('keeps ACT3 generic when neither the A4 nor local custom was collected', () => {
