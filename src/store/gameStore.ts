@@ -4,7 +4,7 @@ import { scenario } from '../scenario'
 import type { GameSnapshot } from '../types/game'
 import type { Choice } from '../types/scenario'
 import { loadGame, saveGame } from './saveStorage'
-import { hasPreviousTrueClear, recordTrueClear } from './progressStorage'
+import { hasPreviousTrueClear, recordEndingClear, type EndingId } from './progressStorage'
 import { playtestLogger } from '../playtest/playtestLogger'
 
 const initialBase = (): GameSnapshot => ({
@@ -34,13 +34,17 @@ const snapshotFrom = (state: GameStore): GameSnapshot => ({
   visitedLocations: state.visitedLocations, backlog: state.backlog, hidden: state.hidden,
 })
 
+const recordEndingAt = (nodeId: string): void => {
+  if (['bad_end', 'normal_end', 'true_end', 'secret_end'].includes(nodeId)) recordEndingClear(nodeId as EndingId)
+}
+
 export const useGameStore = create<GameStore>((set, get) => ({
   ...createInitialSnapshot(),
   chooseChoice: (choice) => set((state) => {
     const before = snapshotFrom(state)
     const nextState = choose(before, choice, scenario)
     playtestLogger.transition(before, nextState, choice, getAvailableChoices(scenario[before.currentNode], before))
-    if (nextState.currentNode === 'true_end') recordTrueClear()
+    recordEndingAt(nextState.currentNode)
     return nextState
   }),
   continueNode: () => set((state) => {
@@ -53,7 +57,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const before = snapshotFrom(state)
     const nextState = enterNode(before, target)
     playtestLogger.transition(before, nextState)
-    if (nextState.currentNode === 'true_end') recordTrueClear()
+    recordEndingAt(nextState.currentNode)
     return nextState
   }),
   restart: () => set(createInitialSnapshot()),
